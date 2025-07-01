@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import { useInView } from '@/utils/useInView';
 import { ServicesToBrandsTransition } from '../OrganicTransitions';
@@ -50,7 +49,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
         id="core-services"
         ref={ref}
         className="relative py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden"
-        style={{ marginTop: '-80px', paddingTop: '104px' }} // Overlap con hero
+        style={{ marginTop: '-80px', paddingTop: '18px' }} // Overlap con hero
       >
         {/* Elementos conectores que vienen del hero */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
@@ -224,8 +223,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
                 animate={{ x: '200%' }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}
               />
-              <span className="relative z-10 mr-2">Ver todos los servicios</span>
-              <ChevronDown className="w-5 h-5 relative z-10" />
+              <span className="relative z-10 mr-2">Sigues hacia abajo?</span>
             </motion.button>
           </motion.div>
         </div>

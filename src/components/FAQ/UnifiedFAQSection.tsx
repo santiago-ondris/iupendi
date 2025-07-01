@@ -56,7 +56,7 @@ const UnifiedFAQSection: React.FC = () => {
         ref={ref}
         id="faq"
         className="relative py-20 bg-gradient-to-b from-gray-50 via-slate-50 to-gray-100 overflow-hidden"
-        style={{ marginTop: '-60px', paddingTop: '84px' }} // Overlap con Brands/DetailedServices
+        style={{ marginTop: '-180px', paddingTop: '24px' }} // Overlap con Brands/DetailedServices
       >
         {/* Elementos que llegan desde la sección anterior */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
@@ -240,7 +240,7 @@ const UnifiedFAQSection: React.FC = () => {
                   animate={{ rotate: [0, 15, -15, 0] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                 >
-                  ❓
+                  👀
                 </motion.span>
               </span>
               
@@ -367,7 +367,7 @@ const UnifiedFAQSection: React.FC = () => {
                   animate={{ x: '200%' }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 />
-                <span className="relative z-10">Habla con nosotros</span>
+                <span className="relative z-10">Hablanos de una vez!</span>
               </motion.button>
             </div>
 

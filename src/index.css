@@ -1,1 +1,61 @@
 @import "tailwindcss";
+
+* {
+    cursor: none !important;
+  }
+  
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 12px solid #D4F225;
+    transform: translate(-50%, -50%) rotate(45deg);
+    pointer-events: none;
+    z-index: 9999;
+    transition: border-left-width 0.15s ease,
+                border-top-width 0.15s ease,
+                border-bottom-width 0.15s ease;
+  }
+  
+  a:hover ~ .custom-cursor,
+  button:hover ~ .custom-cursor {
+    border-left-width: 16px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+  }
+  
+/* ———————————————
+   Ocultar scrollbar globalmente
+   ——————————————— */
+
+/* WebKit (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Firefox */
+  * {
+    scrollbar-width: none; /* “auto” ó “thin” ó “none” */
+  }
+  
+  /* IE / Edge */
+  * {
+    -ms-overflow-style: none; /* oculta scrollbar en IE 10+ y Edge Legacy */
+  }
+  
+  /* Progress bar de scroll */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #7252A5, #D4F225, #759CCF);
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 2px 4px rgba(114, 82, 165, 0.3);
+  }

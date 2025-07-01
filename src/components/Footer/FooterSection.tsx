@@ -32,7 +32,7 @@ const UnifiedFooterSection: React.FC = () => {
   const contactInfo = [
     { Icon: Mail, text: 'hola@iupendigital.com', href: 'mailto:hola@iupendigital.com' },
     { Icon: Phone, text: '+54 9 11 1234-5678', href: 'tel:+5491112345678' },
-    { Icon: MapPin, text: 'Córdoba, Argentina y en todo el mundo', href: '#' },
+    { Icon: MapPin, text: 'Sidney, y en todo el mundo', href: '#' },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -47,7 +47,7 @@ const UnifiedFooterSection: React.FC = () => {
       ref={ref}
       id="footer"
       className="relative bg-gradient-to-b from-gray-200 via-gray-300 to-gray-400 text-gray-900 overflow-hidden"
-      style={{ marginTop: '-80px', paddingTop: '104px' }} // Overlap con CTA
+      style={{ marginTop: '-180px', paddingTop: '24px' }} // Overlap con CTA
     >
       {/* Elementos que llegan desde CTA */}
       <div className="absolute top-0 left-0 w-full overflow-hidden">

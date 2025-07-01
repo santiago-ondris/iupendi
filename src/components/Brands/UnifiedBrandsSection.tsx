@@ -22,7 +22,7 @@ const UnifiedBrandsSection: React.FC = () => {
         ref={ref}
         id="brands"
         className="relative py-16 bg-gradient-to-b from-white via-gray-50 to-gray-50 overflow-hidden"
-        style={{ marginTop: '-60px', paddingTop: '84px' }} // Overlap con CoreServices
+        style={{ marginTop: '-180px', paddingTop: '24px' }} // Overlap con CoreServices
       >
         {/* Elementos que llegan desde CoreServices */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
@@ -238,19 +238,6 @@ const UnifiedBrandsSection: React.FC = () => {
               animate={{ scaleY: isInView ? 1 : 0 }}
               transition={{ duration: 0.6, delay: 1.8 }}
             />
-
-            <motion.p
-              className="text-gray-500 text-sm bg-white/60 backdrop-blur-sm rounded-full px-6 py-2 inline-block"
-              whileHover={{ scale: 1.02 }}
-            >
-              Más de <motion.span 
-                className="text-[#7252A5] font-bold"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >
-                500+ proyectos exitosos
-              </motion.span> nos respaldan
-            </motion.p>
 
             {/* Conectores hacia la siguiente sección */}
             <motion.div

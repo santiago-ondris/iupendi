@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Home, Briefcase, Users, MessageCircle } from 'lucide-react';
+import ScrollProgress from '@/components/Cursor&Scroll/ScrollProgres';
+import CustomCursor from '@/components/Cursor&Scroll/CustomCursor';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -39,6 +41,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden relative">
+      <CustomCursor />
+      <ScrollProgress />
       {/* Figuras flotantes globales con más presencia */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         {globalFloatingShapes.map((shape) => (

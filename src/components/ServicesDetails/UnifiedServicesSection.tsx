@@ -81,7 +81,7 @@ const UnifiedServicesSection: React.FC = () => {
         ref={ref}
         id="core-services"
         className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden"
-        style={{ marginTop: '-80px', paddingTop: '104px' }} // Overlap con hero
+        style={{ marginTop: '-180px', paddingTop: '4px' }} // Overlap
       >
         {/* Partículas conectoras entre secciones */}
         <div className="absolute inset-0 overflow-hidden">

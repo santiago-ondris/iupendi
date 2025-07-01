@@ -190,7 +190,7 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
           >
             <span className="flex items-center gap-2">
               <Zap className="w-5 h-5" style={{ color: colorValue }} />
-              Empezar ahora
+              Empezar ya mismo
             </span>
             <motion.div
               className="flex items-center gap-2"

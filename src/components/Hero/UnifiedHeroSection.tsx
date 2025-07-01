@@ -190,7 +190,7 @@ const HeroSection: React.FC = () => {
         >
           <div className="flex flex-col items-center">
             <span className="text-xs md:text-sm text-[#7252A5] font-medium mb-2 tracking-wider uppercase">
-              Ver servicios
+              Vamos abajo!
             </span>
             <motion.div
               className="w-10 h-10 md:w-12 md:h-12 border-2 border-[#7252A5] rounded-full flex items-center justify-center hover:bg-[#7252A5] hover:text-white transition-all duration-300"
