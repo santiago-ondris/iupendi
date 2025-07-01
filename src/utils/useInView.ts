@@ -1,4 +1,3 @@
-// src/utils/useInView.ts
 import { useEffect, useRef, useState } from 'react';
 
 interface UseInViewOptions {

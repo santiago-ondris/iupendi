@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import HeroSection from '../components/HeroSection';
-import CoreServicesSection from '../components/CoreServicesSection';
-import BrandsSection from '../components/BrandsSection';
-import ServicesDetailsSection from '../components/ServicesDetailsSection';
-import FAQSection from '../components/FAQSection';
-import SuperCTASection from '../components/SuperCTASection';
-import FooterSection from '../components/FooterSection';
+import HeroSection from '../components/Hero/HeroSection';
+import CoreServicesSection from '../components/CoreServices/CoreServicesSection';
+import SuperCTASection from '../components/SuperCTA/SpectacularCTASection';
+import FooterSection from '../components/Footer/FooterSection';
+import SpectacularServicesSection from '@/components/ServicesDetails/SpectacularServicesSection';
+import SpectacularBrandsSection from '@/components/Brands/SpectacularBrandsSection';
+import FAQSectionLight from '@/components/FAQ/FAQSectionLight';
 
 const HomePage: React.FC = () => {
   return (
@@ -18,9 +18,9 @@ const HomePage: React.FC = () => {
     >
       <HeroSection />
       <CoreServicesSection />
-      <BrandsSection />
-      <ServicesDetailsSection />
-      <FAQSection />
+      <SpectacularBrandsSection />
+      <SpectacularServicesSection  />
+      <FAQSectionLight />
       <SuperCTASection />
       <FooterSection />
     </motion.div>

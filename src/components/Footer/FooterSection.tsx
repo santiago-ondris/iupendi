@@ -1,5 +1,6 @@
+// src/components/FooterSectionLight.tsx
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import {
   Instagram,
   Linkedin,
@@ -9,17 +10,17 @@ import {
   MapPin,
   ArrowRight,
 } from 'lucide-react';
-import { useInView } from '../utils/useInView';
+import { useInView } from '@/utils/useInView';
 
-const FooterSection: React.FC = () => {
+const FooterSectionLight: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
 
   const navigationLinks = [
-    { name: 'Servicios', href: '#servicios' },
-    { name: 'Contacto', href: '#contacto' },
-    { name: 'Proyectos', href: '#proyectos' },
-    { name: 'Nosotros', href: '#nosotros' },
-    { name: 'Blog', href: '#blog' },
+    { name: 'Inicio', href: '#hero' },
+    { name: 'Servicios', href: '#core-services' },
+    { name: 'Clientes', href: '#brands' },
+    { name: 'FAQ', href: '#faq' },
+    { name: 'Contacto', href: '#super-cta' },
   ];
 
   const socialLinks = [
@@ -37,15 +38,24 @@ const FooterSection: React.FC = () => {
   return (
     <footer
       ref={ref}
-      className="relative bg-gradient-to-t from-black via-gray-900 to-gray-800 text-white overflow-hidden"
+      id="footer"
+      className="relative bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 text-gray-900 overflow-hidden"
     >
+      {/* Transición suave desde la sección anterior */}
+      <motion.div
+        className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-100 to-gray-50"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isInView ? 1 : 0 }}
+        transition={{ duration: 1 }}
+      />
+
       {/* Elementos decorativos de fondo */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-20 right-20 w-32 h-32 bg-[#D4F225]/5 rounded-full"
+          className="absolute top-20 right-20 w-32 h-32 bg-[#D4F225]/10 rounded-full"
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3],
+            opacity: [0.1, 0.2, 0.1],
           }}
           transition={{
             duration: 8,
@@ -54,7 +64,7 @@ const FooterSection: React.FC = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-20 left-20 w-24 h-24 bg-[#7252A5]/5 transform rotate-45"
+          className="absolute bottom-20 left-20 w-24 h-24 bg-[#7252A5]/10 transform rotate-45"
           animate={{
             rotate: [45, 225, 45],
             scale: [1, 1.1, 1],
@@ -63,6 +73,23 @@ const FooterSection: React.FC = () => {
             duration: 10,
             repeat: Infinity,
             ease: 'easeInOut',
+          }}
+        />
+        
+        {/* Gradientes radiales sutiles */}
+        <motion.div
+          className="absolute top-1/3 left-1/3 w-96 h-96 rounded-full opacity-5"
+          style={{ 
+            background: 'radial-gradient(circle, #759CCF 0%, transparent 70%)',
+          }}
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.03, 0.08, 0.03],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
         />
       </div>
@@ -79,7 +106,7 @@ const FooterSection: React.FC = () => {
           >
             <div className="flex justify-center items-center mb-4">
               <motion.div
-                className="w-20 h-20 bg-white rounded-full flex items-center justify-center"
+                className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-200"
                 whileHover={{ scale: 1.1, rotate: 360 }}
                 transition={{ duration: 0.8 }}
               >
@@ -93,7 +120,7 @@ const FooterSection: React.FC = () => {
             </div>
 
             <motion.h3
-              className="text-4xl md:text-5xl font-black"
+              className="text-4xl md:text-5xl font-black text-gray-900"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
@@ -103,7 +130,7 @@ const FooterSection: React.FC = () => {
             </motion.h3>
 
             <motion.p
-              className="text-xl text-gray-300 mt-4 max-w-2xl mx-auto"
+              className="text-xl text-gray-600 mt-4 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -123,7 +150,7 @@ const FooterSection: React.FC = () => {
               <motion.a
                 key={label}
                 href={href}
-                className="w-14 h-14 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center hover:bg-[#D4F225] hover:text-black transition-all duration-300"
+                className="w-14 h-14 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center hover:bg-[#D4F225] hover:border-[#D4F225] hover:text-black transition-all duration-300 text-gray-600 shadow-lg"
                 whileHover={{ scale: 1.1, y: -5 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -143,8 +170,8 @@ const FooterSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 1.2 }}
           >
             <motion.button
-              className="bg-[#D4F225] hover:bg-[#c4e520] text-black font-bold py-4 px-8 rounded-full text-lg flex items-center gap-3 mx-auto transition-all duration-300 shadow-xl hover:shadow-2xl"
-              whileHover={{ scale: 1.05 }}
+              className="bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-black font-bold py-4 px-8 rounded-full text-lg flex items-center gap-3 mx-auto transition-all duration-300 shadow-xl hover:shadow-2xl"
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               Empezar proyecto <ArrowRight className="w-5 h-5" />
@@ -154,7 +181,7 @@ const FooterSection: React.FC = () => {
 
         {/* Navegación y contacto */}
         <motion.div
-          className="grid md:grid-cols-2 gap-12 mb-16 border-t border-gray-700 pt-16"
+          className="grid md:grid-cols-2 gap-12 mb-16 border-t border-gray-300 pt-16"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
           transition={{ duration: 0.8, delay: 1.4 }}
@@ -162,7 +189,7 @@ const FooterSection: React.FC = () => {
           {/* Links de navegación */}
           <div>
             <h4
-              className="text-xl font-bold mb-6"
+              className="text-xl font-bold mb-6 text-gray-900"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
             >
               Navegación
@@ -172,11 +199,18 @@ const FooterSection: React.FC = () => {
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-300 hover:text-[#D4F225] transition-colors duration-300 block"
+                  className="text-gray-600 hover:text-[#7252A5] transition-colors duration-300 block font-medium"
                   whileHover={{ x: 5 }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -20 }}
                   transition={{ duration: 0.6, delay: 1.6 + index * 0.1 }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById(link.href.substring(1));
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   {link.name}
                 </motion.a>
@@ -187,7 +221,7 @@ const FooterSection: React.FC = () => {
           {/* Información de contacto */}
           <div>
             <h4
-              className="text-xl font-bold mb-6"
+              className="text-xl font-bold mb-6 text-gray-900"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
             >
               Contacto
@@ -197,7 +231,7 @@ const FooterSection: React.FC = () => {
                 <motion.a
                   key={text}
                   href={href}
-                  className="flex items-center gap-3 text-gray-300 hover:text-[#D4F225] transition-colors duration-300"
+                  className="flex items-center gap-3 text-gray-600 hover:text-[#7252A5] transition-colors duration-300"
                   whileHover={{ x: 5 }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -20 }}
@@ -213,12 +247,12 @@ const FooterSection: React.FC = () => {
 
         {/* Copyright */}
         <motion.div
-          className="text-center border-t border-gray-700 pt-8"
+          className="text-center border-t border-gray-300 pt-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: isInView ? 1 : 0 }}
           transition={{ duration: 0.8, delay: 2.0 }}
         >
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-500 text-sm">
             IUPENDI DIGITAL © 2025. Diseñado con{' '}
             <motion.span
               className="text-[#D4F225] inline-block"
@@ -231,8 +265,16 @@ const FooterSection: React.FC = () => {
           </p>
         </motion.div>
       </div>
+
+      {/* Firma final sutil */}
+      <motion.div
+        className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#D4F225] via-[#7252A5] to-[#759CCF]"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: isInView ? 1 : 0 }}
+        transition={{ duration: 2, delay: 2.5 }}
+      />
     </footer>
   );
 };
 
-export default FooterSection;
+export default FooterSectionLight;
