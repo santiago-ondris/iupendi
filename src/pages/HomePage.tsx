@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import HeroSection from '../components/Hero/HeroSection';
-import CoreServicesSection from '../components/CoreServices/CoreServicesSection';
-import SuperCTASection from '../components/SuperCTA/SpectacularCTASection';
-import FooterSection from '../components/Footer/FooterSection';
-import SpectacularServicesSection from '@/components/ServicesDetails/SpectacularServicesSection';
-import SpectacularBrandsSection from '@/components/Brands/SpectacularBrandsSection';
-import FAQSectionLight from '@/components/FAQ/FAQSectionLight';
+import UnifiedBrandsSection from '@/components/Brands/UnifiedBrandsSection';
+import UnifiedFAQSection from '@/components/FAQ/UnifiedFAQSection';
+import UnifiedHeroSection from '../components/Hero/UnifiedHeroSection';
+import UnifiedSuperCTASection from '../components/SuperCTA/UnifiedCTASection';
+import UnifiedFooterSection from '../components/Footer/FooterSection';
+import UnifiedCoreServicesSection from '@/components/CoreServices/UnifiedTwoServicesSection';
+import UnifiedServicesSection from '@/components/ServicesDetails/UnifiedServicesSection';
 
 const HomePage: React.FC = () => {
   return (
@@ -16,13 +16,13 @@ const HomePage: React.FC = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <HeroSection />
-      <CoreServicesSection />
-      <SpectacularBrandsSection />
-      <SpectacularServicesSection  />
-      <FAQSectionLight />
-      <SuperCTASection />
-      <FooterSection />
+      <UnifiedHeroSection />
+      <UnifiedCoreServicesSection  />
+      <UnifiedBrandsSection />
+      <UnifiedServicesSection />
+      <UnifiedFAQSection />
+      <UnifiedSuperCTASection />
+      <UnifiedFooterSection />
     </motion.div>
   );
 };
