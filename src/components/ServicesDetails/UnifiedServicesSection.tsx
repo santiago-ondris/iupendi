@@ -15,13 +15,14 @@ const UnifiedServicesSection: React.FC = () => {
     {
       id: 'paid-ads',
       icon: '🎯',
-      title: 'Paid Advertising',
-      description: 'Campañas publicitarias que convierten. Cada peso invertido trabaja para maximizar tu ROI.',
+      title: 'Paid Media',
+      description: 'Estrategias de Publicidad Digital que Convierten, No Solo Atraen Clics.',
       features: [
-        'Google Ads & Facebook Ads optimizados',
-        'Segmentación avanzada por audiencias',
-        'A/B Testing continuo de creatividades',
-        'Reportes en tiempo real y análisis profundo'
+        'Configuración de Cuentas',
+        'Estrategia y Planificación',
+        'Segmentación Inteligente',
+        'Creación de Campañas',
+        'Optimización y Reporte'
       ],
       accentColor: 'bg-[#D4F225]'
     },
@@ -29,38 +30,41 @@ const UnifiedServicesSection: React.FC = () => {
       id: 'social-media',
       icon: '📱',
       title: 'Social Media Management',
-      description: 'Construimos comunidades leales que se convierten en embajadores de tu marca.',
+      description: 'No se trata solo de publicar, se trata de conectar.',
       features: [
-        'Estrategia de contenido personalizada',
-        'Community management profesional',
-        'Análisis de tendencias y competencia',
-        'Crecimiento orgánico sostenible'
+        'Estrategia y Manual de Uso de Redes',
+        'Análisis de Mercado',
+        'Planificación de Contenido',
+        'Creatividad y Producción',
+        'Reunión Mensual de Resultados'
       ],
       accentColor: 'bg-[#7252A5]'
     },
     {
       id: 'content-creation',
       icon: '🎬',
-      title: 'Content Creation',
-      description: 'Contenido que conecta, emociona y convierte. Historias que tu audiencia no puede ignorar.',
+      title: 'Asesoramiento en Marketing Digital',
+      description: 'Te damos el plan, la estrategia y el acompañamiento. Vos lo ejecutás.',
       features: [
-        'Producción de video profesional',
-        'Fotografía de producto y lifestyle',
-        'Diseño gráfico y motion graphics',
-        'Copywriting persuasivo y storytelling'
+        'Análisis de Mercado y Marca',
+        'Definición de Estrategia Digital',
+        'Acompañamiento Personalizado',
+        'Capacitación y Recursos',
+        'Monitoreo y Optimización'
       ],
       accentColor: 'bg-[#759CCF]'
     },
     {
       id: 'web-development',
       icon: '⚡',
-      title: 'Web Development',
-      description: 'Sitios web que venden mientras duermes. Experiencias digitales que convierten visitantes en clientes.',
+      title: 'Sitio Web (Creación y Desarrollo)',
+      description: 'Tu web no solo tiene que verse bien, tiene que vender.',
       features: [
-        'Desarrollo web responsive y rápido',
-        'E-commerce optimizado para ventas',
-        'SEO técnico y optimización móvil',
-        'Integración con herramientas de marketing'
+        'Análisis y Estrategia',
+        'Wireframing y Diseño UI/UX',
+        'Desarrollo Web',
+        'Optimización y Pruebas',
+        'Lanzamiento y Mantenimiento'
       ],
       accentColor: 'bg-[#F2AE1F]'
     }
@@ -83,6 +87,7 @@ const UnifiedServicesSection: React.FC = () => {
         className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden"
         style={{ marginTop: '-180px', paddingTop: '4px' }} // Overlap
       >
+        
         {/* Partículas conectoras entre secciones */}
         <div className="absolute inset-0 overflow-hidden">
           {connectingParticles.map((particle) => (

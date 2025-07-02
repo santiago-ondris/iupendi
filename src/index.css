@@ -1,61 +1,306 @@
 @import "tailwindcss";
 
-* {
-    cursor: none !important;
-  }
+/* ===== CONFIGURACIÓN TAILWIND V4 CON @THEME ===== */
+:root {
+  /* Fuentes personalizadas - configuración nueva de v4 */
+  --font-sans: "Codec Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-codec: "Codec Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
-  .custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-left: 12px solid #D4F225;
-    transform: translate(-50%, -50%) rotate(45deg);
-    pointer-events: none;
-    z-index: 9999;
-    transition: border-left-width 0.15s ease,
-                border-top-width 0.15s ease,
-                border-bottom-width 0.15s ease;
-  }
-  
-  a:hover ~ .custom-cursor,
-  button:hover ~ .custom-cursor {
-    border-left-width: 16px;
-    border-top-width: 10px;
-    border-bottom-width: 10px;
-  }
-  
-/* ———————————————
-   Ocultar scrollbar globalmente
-   ——————————————— */
+  /* Colores de brand */
+  --color-brand-purple: #7252A5;
+  --color-brand-lime: #D4F225;
+  --color-brand-blue: #759CCF;
+  --color-brand-orange: #F2AE1F;
+  --color-brand-gray: #6E787D;
+  --color-brand-cream: #E7E8CF;
+  --color-brand-graydark: #292929;
+}
 
+/* ===== FUENTES CODEC PRO ===== */
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Bold-Italic-trial.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-ExtraBold-Italic-trial.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Extralight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Extralight-Italic-trial.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Heavy-Italic-trial.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Light-Italic-trial.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-News.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-News-Italic-trial.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Regular-trial.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Cold-Thin-Italic-trial.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-Bold-trial.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-ExtraBold-trial.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-Heavy-trial.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-Light-Italic-trial.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-News.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-News-trial.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Pro';
+  src: url('./assets/fonts/Codec-Warm-Regular-Italic-trial.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ===== CONFIGURACIÓN GLOBAL ===== */
+* {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid #D4F225;
+  transform: translate(-50%, -50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 9999;
+  transition: border-left-width 0.15s ease,
+              border-top-width 0.15s ease,
+              border-bottom-width 0.15s ease;
+}
+
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor {
+  border-left-width: 16px;
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+}
+
+/* ===== OCULTAR SCROLLBAR GLOBALMENTE ===== */
 /* WebKit (Chrome, Safari, Edge) */
 *::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Firefox */
-  * {
-    scrollbar-width: none; /* “auto” ó “thin” ó “none” */
-  }
-  
-  /* IE / Edge */
-  * {
-    -ms-overflow-style: none; /* oculta scrollbar en IE 10+ y Edge Legacy */
-  }
-  
-  /* Progress bar de scroll */
-  .scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: linear-gradient(90deg, #7252A5, #D4F225, #759CCF);
-    z-index: 9999;
-    transition: width 0.1s ease-out;
-    box-shadow: 0 2px 4px rgba(114, 82, 165, 0.3);
-  }
+  display: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* IE / Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+/* ===== PROGRESS BAR DE SCROLL ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #7252A5, #D4F225, #759CCF);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 2px 4px rgba(114, 82, 165, 0.3);
+}
+
+/* ===== APLICAR CODEC PRO COMO FUENTE BASE ===== */
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}

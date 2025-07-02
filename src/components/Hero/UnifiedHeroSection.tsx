@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
-import HeroLogo from './HeroLogo';
 import {
   titleContainerVariants,
   titleWordVariants,
@@ -19,7 +18,6 @@ const HeroSection: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Email submitted:', email);
-    // Aquí agregarás la lógica de envío
   };
 
   const handleScrollToServices = () => {
@@ -109,8 +107,95 @@ const HeroSection: React.FC = () => {
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto text-center w-full flex flex-col justify-center min-h-[85vh] -translate-y-10">
-          <HeroLogo />
+          
+          {/* Logo SVG */}
+          <motion.div
+            className="flex flex-col items-center mb-8 md:mb-12 relative"
+            initial={{ opacity: 0, scale: 0.5, y: -50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ 
+              duration: 1.2, 
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100 
+            }}
+          >
+            {/* Resplandor de fondo */}
+            <motion.div
+              className="absolute inset-0 w-32 h-32 md:w-40 md:h-40 bg-[#D4F225]/20 rounded-full blur-2xl"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: [0, 1.2, 1], opacity: [0, 0.6, 0.3] }}
+              transition={{ duration: 2, delay: 0.5 }}
+            />
 
+            {/* Contenedor del logo */}
+            <motion.div
+              className="relative z-10 w-24 h-auto md:w-32 md:h-auto"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ 
+                duration: 1,
+                delay: 0.7,
+                type: "spring",
+                stiffness: 120 
+              }}
+              whileHover={{ 
+                scale: 1.1,
+                rotate: [0, -5, 5, 0],
+                transition: { duration: 0.6 }
+              }}
+            >
+
+              {/* Partículas decorativas alrededor */}
+              {[...Array(6)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1 h-1 bg-[#D4F225] rounded-full"
+                  style={{
+                    left: `${20 + Math.cos(i * 60 * Math.PI / 180) * 60}%`,
+                    top: `${20 + Math.sin(i * 60 * Math.PI / 180) * 60}%`,
+                  }}
+                  animate={{
+                    scale: [0, 1, 0],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    delay: 1.5 + i * 0.2,
+                    repeat: Infinity,
+                    repeatDelay: 4,
+                  }}
+                />
+              ))}
+            </motion.div>
+
+            {/* Texto del logo */}
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+            </motion.div>
+
+            {/* Línea decorativa */}
+            <motion.div
+              className="w-16 h-0.5 bg-[#D4F225] mt-3"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
+            />
+
+            {/* Conector hacia el título */}
+            <motion.div
+              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-px h-4 bg-gradient-to-b from-[#D4F225] to-transparent"
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+            />
+          </motion.div>
+
+          {/* Título principal */}
           <motion.div
             className="mb-4 md:mb-6"
             variants={titleContainerVariants}
@@ -151,7 +236,7 @@ const HeroSection: React.FC = () => {
             más predecible, menos estresante y más divertido.
           </motion.p>
 
-          {/* Formulario de email — ahora sin límite de max-width */}
+          {/* Formulario de email */}
           <motion.form
             onSubmit={handleSubmit}
             className="flex flex-col sm:flex-row gap-4 w-full mx-auto mb-4 md:mb-6"
@@ -199,17 +284,6 @@ const HeroSection: React.FC = () => {
               <ChevronDown className="w-5 h-5 md:w-6 md:h-6" />
             </motion.div>
           </div>
-        </motion.div>
-
-        <motion.div
-          className="absolute bottom-4 right-6 z-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 3 }}
-        >
-          <p className="text-xs text-gray-400 max-w-48 text-right leading-relaxed">
-            *Pero es 100% legal (promesa de meñique)
-          </p>
         </motion.div>
       </section>
 

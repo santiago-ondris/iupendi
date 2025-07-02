@@ -7,6 +7,7 @@ import UnifiedSuperCTASection from '../components/SuperCTA/UnifiedCTASection';
 import UnifiedFooterSection from '../components/Footer/FooterSection';
 import UnifiedCoreServicesSection from '@/components/CoreServices/UnifiedTwoServicesSection';
 import UnifiedServicesSection from '@/components/ServicesDetails/UnifiedServicesSection';
+import ImageBridgeSection from '@/components/ImageBridgeSection';
 
 const HomePage: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => {
       transition={{ duration: 0.6 }}
     >
       <UnifiedHeroSection />
+      <ImageBridgeSection />
       <UnifiedCoreServicesSection  />
       <UnifiedBrandsSection />
       <UnifiedServicesSection />

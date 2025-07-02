@@ -307,7 +307,7 @@ const UnifiedSuperCTASection: React.FC = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Tu email (prometemos no spamear... mucho 😉)"
+                  placeholder="Tu email (no spameamos... tanto 😉)"
                   className="w-full px-8 py-5 text-lg bg-white/95 backdrop-blur-sm border-2 border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-[#D4F225]/30 focus:border-[#D4F225] transition-all duration-300 shadow-xl"
                   required
                   whileFocus={{ scale: 1.02, borderColor: '#D4F225' }}
@@ -339,7 +339,7 @@ const UnifiedSuperCTASection: React.FC = () => {
                   animate={{ x: '-200%' }}
                   transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 4, delay: 1 }}
                 />
-                <span className="relative z-10">¡Hagámoslo!</span>
+                <span className="relative z-10">¡Me convencieron!</span>
                 <ArrowRight className="w-6 h-6 relative z-10" />
               </motion.button>
             </form>
@@ -353,7 +353,7 @@ const UnifiedSuperCTASection: React.FC = () => {
             transition={{ duration: 0.8, delay: 3.8 }}
           >
             <p className="text-gray-600 text-sm">
-              *Respondemos rápido, pero no tanto como para parecer desesperados
+              *Respondemos rápido, pero no tanto como para parecer desesperados 😅
             </p>
             
             {/* Línea conectora hacia footer */}

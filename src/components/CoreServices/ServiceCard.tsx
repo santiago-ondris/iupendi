@@ -1,10 +1,7 @@
-// src/components/ServiceCard.tsx
-
 import React from 'react';
 import { motion } from 'motion/react';
 import { Star } from 'lucide-react';
 import {
-  iconVariants,
   subtitleVariants,
   titleVariants,
   descriptionVariants,
@@ -27,8 +24,6 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
-  icon,
-  iconColor,
   bgColor,
   subtitle,
   title,
@@ -49,7 +44,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       
       {/* Forma decorativa giratoria */}
       <motion.div
-        className={`absolute -top-10 -right-10 w-32 h-32 ${type === 'primary' ? 'bg-[#D4F225]/10' : 'bg-[#7252A5]/10'} rounded-full`}
+        className={`absolute -top-10 -right-10 w-32 h-32 ${type === 'primary' ? 'bg-[#D4F225]/10' : 'bg-[#F2AE1F]/10'} rounded-full`}
         animate={{
           scale: [1, 1.2, 1],
           rotate: [0, 180, 360],
@@ -62,21 +57,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       />
 
       <div className="relative z-10">
-        {/* Icono animado */}
-        <motion.div
-          className="mb-8 w-20 h-20 bg-black rounded-full flex items-center justify-center"
-          variants={iconVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <span className={`text-4xl font-black ${iconColor}`} style={{ fontFamily: 'Codec Pro, sans-serif' }}>
-            {icon}
-          </span>
-        </motion.div>
 
         {/* Subtítulo */}
         <motion.p
-          className={`text-sm font-bold tracking-wider mb-4 ${type === 'primary' ? 'text-[#D4F225]' : 'text-[#7252A5]'}`}
+          className={`text-sm font-bold tracking-wider mb-4 ${type === 'primary' ? 'text-[#D4F225]' : 'text-[#F2AE1F]'}`}
           variants={subtitleVariants}
           initial="hidden"
           animate="visible"
@@ -112,7 +96,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           className={`w-full ${
             type === 'primary'
               ? 'bg-[#D4F225] hover:bg-[#c4e520]'
-              : 'bg-[#7252A5] hover:bg-[#6341a0]'
+              : 'bg-[#F2AE1F] hover:bg-[#F2AE1F]'
           } text-black font-bold py-4 px-8 rounded-full text-lg mb-6 transition-all duration-300`}
           variants={buttonVariants}
           initial="hidden"
