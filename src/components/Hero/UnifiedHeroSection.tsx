@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next'; // ⭐ AGREGAR
 import {
   titleContainerVariants,
   titleWordVariants,
@@ -13,6 +14,7 @@ import {
 import { HeroToServicesTransition } from '../OrganicTransitions';
 
 const HeroSection: React.FC = () => {
+  const { t } = useTranslation(); // ⭐ AGREGAR
   const [email, setEmail] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,7 +29,7 @@ const HeroSection: React.FC = () => {
     }
   };
 
-  // Figuras flotantes mejoradas que se extienden hacia la siguiente sección
+  // Figuras flotantes - SIN CAMBIOS
   const floatingShapes = [
     { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
     { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
@@ -37,13 +39,11 @@ const HeroSection: React.FC = () => {
     { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
   ];
 
-  const titleWords = [
-    { text: "COMO", type: "normal" },
-    { text: "ESTEROIDES", type: "normal" },
-    { text: "PARA", type: "normal" },
-    { text: "TU", type: "normal" },
-    { text: "NEGOCIO", type: "highlight" },
-  ];
+  // ⭐ CAMBIO: Título dinámico por idioma
+  const titleWords = t('hero.title').split(' ').map((word, _idx) => ({
+    text: word,
+    type: word === 'NEGOCIO' || word === 'BUSINESS' ? 'highlight' : 'normal'
+  }));
 
   return (
     <>
@@ -51,7 +51,7 @@ const HeroSection: React.FC = () => {
         id="hero"
         className="relative h-screen bg-gradient-to-br from-gray-50 via-gray-50 to-white flex flex-col justify-center items-center px-6 py-8 overflow-hidden"
       >
-        {/* Background pattern con figuras flotantes mejoradas */}
+        {/* Background pattern - SIN CAMBIOS */}
         <div className="absolute inset-0 overflow-hidden z-0">
           {floatingShapes.map((shape, i) => (
             <motion.div
@@ -81,7 +81,7 @@ const HeroSection: React.FC = () => {
             />
           ))}
 
-          {/* Elementos que se extienden hacia la siguiente sección */}
+          {/* Elementos que se extienden - SIN CAMBIOS */}
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={`extending-${i}`}
@@ -106,9 +106,9 @@ const HeroSection: React.FC = () => {
           ))}
         </div>
         
-        {/* Contenido principal centrado verticalmente */}
+        {/* Contenido principal */}
         <div className="relative z-10 max-w-6xl mx-auto text-center w-full flex flex-col justify-center min-h-[45vh] -mt-40">
-          {/* Título principal */}
+          {/* ⭐ TÍTULO TRADUCIDO */}
           <motion.div
             className="mb-4 md:mb-6"
             variants={titleContainerVariants}
@@ -129,8 +129,9 @@ const HeroSection: React.FC = () => {
                     {word.text}
                   </motion.span>
                 ))}
+                {/* ⭐ PALABRA DESTACADA DINÁMICA */}
                 <motion.span className="inline-block text-[#7252A5] mr-4" variants={highlightWordVariants}>
-                  NEGOCIO
+                  {titleWords[titleWords.length - 1]?.text}
                 </motion.span>
                 <motion.span className="inline-block text-[#D4F225]" variants={asteriskVariants} animate={["visible", "float"]}>
                   ✱
@@ -139,17 +140,17 @@ const HeroSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Subtítulo */}
+          {/* ⭐ SUBTÍTULO TRADUCIDO */}
           <motion.p
             className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed font-text"
             variants={subtitleVariants}
             initial="hidden"
             animate="visible"
           >
-            Maria Pilar
+            {t('hero.subtitle')}
           </motion.p>
 
-          {/* Formulario de email */}
+          {/* ⭐ FORMULARIO TRADUCIDO */}
           <motion.form
             onSubmit={handleSubmit}
             className="flex flex-col sm:flex-row gap-4 w-full mx-auto mb-4 md:mb-6"
@@ -162,7 +163,7 @@ const HeroSection: React.FC = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="✋ Ingresá tu email..."
+                placeholder={t('hero.emailPlaceholder')} // ⭐ TRADUCIDO
                 className="w-full px-8 py-5 text-base md:text-lg bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-full focus:outline-none focus:ring-4 focus:ring-[#D4F225]/30 focus:border-[#D4F225] placeholder-gray-500 transition-all duration-300 shadow-lg"
                 required
                 whileFocus={{ scale: 1.02 }}
@@ -174,12 +175,12 @@ const HeroSection: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Hazlo <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+              {t('hero.cta')} <ArrowRight className="w-4 h-4 md:w-5 md:h-5" /> {/* ⭐ TRADUCIDO */}
             </motion.button>
           </motion.form>
         </div>
 
-        {/* Scroll indicator */}
+        {/* ⭐ SCROLL INDICATOR TRADUCIDO */}
         <motion.div
           className="absolute bottom-40 md:bottom-32 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer"
           variants={scrollIndicatorVariants}
@@ -189,7 +190,7 @@ const HeroSection: React.FC = () => {
         >
           <div className="flex flex-col items-center">
             <span className="text-xs md:text-sm text-[#7252A5] font-medium mb-2 tracking-wider uppercase">
-              Vamos abajo!
+              {t('hero.scrollText')} {/* ⭐ TRADUCIDO */}
             </span>
             <motion.div
               className="w-10 h-10 md:w-12 md:h-12 border-2 border-[#7252A5] rounded-full flex items-center justify-center hover:bg-[#7252A5] hover:text-white transition-all duration-300"
@@ -201,7 +202,6 @@ const HeroSection: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* Transición orgánica hacia servicios */}
       <HeroToServicesTransition />
     </>
   );

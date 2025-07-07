@@ -1,0 +1,155 @@
+{
+    "hero": {
+      "title": "COMO ESTEROIDES PARA TU NEGOCIO",
+      "subtitle": "Maria Pilar",
+      "emailPlaceholder": "✋ Ingresá tu email...",
+      "cta": "Hazlo",
+      "scrollText": "Vamos abajo!"
+    },
+    "navigation": {
+      "home": "Inicio",
+      "services": "Servicios", 
+      "clients": "Clientes",
+      "faq": "FAQ",
+      "contact": "Contacto",
+      "phone": "+54 9 11 1234-5678"
+    },
+    "services": {
+      "sectionTitle": "NUESTROS SERVICIOS",
+      "subtitle": "Elige entre nuestro servicio completo o aprende a gestionar tu propio marketing con expertos",
+      "cta": "¿Seguís bajando?",
+      "agency": {
+        "subtitle": "Maria Pilar",
+        "title": "AGENCIA",
+        "description": "Servicios de marketing digital gestionados y \"hechos para ti\" para empresas medianas a grandes que buscan acelerar el \"hiper-crecimiento\". Y sí, garantizamos resultados y olemos fantástico *guiño*.",
+        "button": "Empezar",
+        "rating": "{{rating}} estrellas de {{count}} reviews"
+      },
+      "courses": {
+        "subtitle": "APRENDE A HACERLO TÚ MISMO",
+        "title": "CURSOS",
+        "description": "Programas de capacitación en crecimiento empresarial para empresas serias sobre escalar su negocio de coaching, consultoría o servicios a siete y ocho cifras RÁPIDO (en meses, no años).",
+        "button": "Empezar",
+        "rating": "{{rating}} estrellas de {{count}} reviews"
+      }
+    },
+    "brands": {
+      "trusting": "Confian en nosotros"
+    },
+    "faq": {
+      "badge": "Preguntas Frecuentes",
+      "title": "TÚ PREGUNTAS, NOSOTROS RESPONDEMOS",
+      "subtitle": "Las respuestas que necesitas para tomar la mejor decisión para tu negocio",
+      "ctaTitle": "¿Tienes una pregunta específica?",
+      "ctaSubtitle": "Nuestro equipo está listo para resolver todas tus dudas",
+      "ctaButton": "Hablanos de una vez!",
+      "questions": {
+        "resultsTime": {
+          "question": "¿Cuánto tiempo tardamos en ver resultados?",
+          "answer": "Los primeros resultados los puedes ver en las primeras 2-4 semanas, pero los resultados más significativos y sostenibles los verás entre los 3-6 meses. Todo depende de tu industria, competencia y el estado actual de tu presencia digital.",
+          "highlight": "⚡"
+        },
+        "investment": {
+          "question": "¿Cuál es la inversión necesaria para empezar?",
+          "answer": "Nuestros planes se adaptan a diferentes presupuestos, desde startups hasta empresas consolidadas. La inversión inicial incluye estrategia, implementación y gestión mensual. Te damos una propuesta personalizada después de conocer tus objetivos específicos.",
+          "highlight": "💰"
+        },
+        "whatMakesDifferent": {
+          "question": "¿Qué nos hace diferentes de otras agencias?",
+          "answer": "No somos una agencia más. Nos involucramos de verdad en tu negocio, conocemos a tu audiencia como si fuera nuestra, y creamos estrategias que realmente funcionan. Además, siempre te mantenemos informado con reportes claros y honestos.",
+          "highlight": "🚀"
+        },
+        "servicesIncluded": {
+          "question": "¿Qué incluyen exactamente sus servicios?",
+          "answer": "Dependiendo del plan, incluimos estrategia digital completa, gestión de redes sociales, campañas publicitarias, creación de contenido, desarrollo web, SEO, email marketing y análisis de resultados. Todo lo que necesitas para dominar el mundo digital.",
+          "highlight": "📦"
+        },
+        "supportCommunication": {
+          "question": "¿Cómo funciona la comunicación y el soporte?",
+          "answer": "Tendrás acceso directo a tu account manager dedicado, reportes mensuales detallados, reuniones de seguimiento regulares y un canal de comunicación directo para resolver cualquier duda. Creemos en la transparencia total.",
+          "highlight": "💬"
+        }
+      }
+    },
+    "superCta": {
+      "note": "(No te juzgamos, es normal)",
+      "emailPlaceholder": "Mail (sin spam... tanto 😉)",
+      "button": "¡Me convencieron!",
+      "disclaimer": "*Respondemos rápido, pero no tanto como para parecer desesperados 😅",
+      "titlePart1": "¿Todavía no te",
+      "titleHighlight": "convencimos",
+      "titlePart2": "?",
+      "subtitle": "Dale, sabemos que",
+      "subtitleHighlight": "querés contactarnos"
+    },
+    "footer": {
+      "title": "IUPENDI DIGITAL",
+      "subtitle": "Agencia de marketing digital que conecta, crea y convierte",
+      "navigation": "Navegación",
+      "contact": "Contacto",
+      "ctaButton": "Empezar proyecto",
+      "copyright": "IUPENDI DIGITAL © 2025. Diseñado con",
+      "location": "en Córdoba"
+    },
+    "detailedServices": {
+      "sectionTitle": "SERVICIOS QUE CONVIERTEN",
+      "badge": "Servicios Premium",
+      "statsTitle": "Resultados que hablan por nosotros",
+      "subtitle": "No somos otra agencia más. Somos el equipo que transforma tu visión en resultados medibles y crecimiento exponencial",
+      "stats": {
+        "projects": "500+",
+        "projectsLabel": "Proyectos exitosos",
+        "satisfaction": "98%",
+        "satisfactionLabel": "Clientes satisfechos",
+        "roi": "3x",
+        "roiLabel": "ROI promedio"
+      },
+      "cta": "¿Hablamos de tu proyecto?",
+      "services": {
+        "paidAds": {
+          "title": "Paid Media",
+          "description": "Estrategias de Publicidad Digital que Convierten, No Solo Atraen Clics.",
+          "features": [
+            "Configuración de Cuentas",
+            "Estrategia y Planificación",
+            "Segmentación Inteligente",
+            "Creación de Campañas",
+            "Optimización y Reporte"
+          ]
+        },
+        "socialMedia": {
+          "title": "Social Media Management",
+          "description": "No se trata solo de publicar, se trata de conectar.",
+          "features": [
+            "Estrategia y Manual de Uso de Redes",
+            "Análisis de Mercado",
+            "Planificación de Contenido",
+            "Creatividad y Producción",
+            "Reunión Mensual de Resultados"
+          ]
+        },
+        "contentCreation": {
+          "title": "Asesoramiento en Marketing Digital",
+          "description": "Te damos el plan, la estrategia y el acompañamiento. Vos lo ejecutás.",
+          "features": [
+            "Análisis de Mercado y Marca",
+            "Definición de Estrategia Digital",
+            "Acompañamiento Personalizado",
+            "Capacitación y Recursos",
+            "Monitoreo y Optimización"
+          ]
+        },
+        "webDevelopment": {
+          "title": "Sitio Web (Creación y Desarrollo)",
+          "description": "Tu web no solo tiene que verse bien, tiene que vender.",
+          "features": [
+            "Análisis y Estrategia",
+            "Wireframing y Diseño UI/UX",
+            "Desarrollo Web",
+            "Optimización y Pruebas",
+            "Lanzamiento y Mantenimiento"
+          ]
+        }
+      }
+    }
+  }

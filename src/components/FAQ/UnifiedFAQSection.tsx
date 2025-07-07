@@ -8,9 +8,11 @@ import {
   ctaVariants
 } from '@/utils/FAQ/faqAnimations';
 import { FAQToCTATransition } from '../OrganicTransitions';
+import { useTranslation } from 'react-i18next';
 
 const UnifiedFAQSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
+  const { t } = useTranslation();
 
   const floatingShapes = [
     { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-64 h-64', delay: 0 },
@@ -23,38 +25,38 @@ const UnifiedFAQSection: React.FC = () => {
 
   const faqData = [
     {
-      id: 'results-time',
-      question: '¿Cuánto tiempo tardamos en ver resultados?',
-      answer: 'Los primeros resultados los puedes ver en las primeras 2-4 semanas, pero los resultados más significativos y sostenibles los verás entre los 3-6 meses. Todo depende de tu industria, competencia y el estado actual de tu presencia digital.',
-      highlight: '⚡',
+      id: 'resultsTime',
+      question: t('faq.questions.resultsTime.question'),
+      answer: t('faq.questions.resultsTime.answer'),
+      highlight: t('faq.questions.resultsTime.highlight'),
       accentColor: 'bg-[#D4F225] hover:bg-[#c4e520]'
     },
     {
-      id: 'investment-required',
-      question: '¿Cuál es la inversión necesaria para empezar?',
-      answer: 'Nuestros planes se adaptan a diferentes presupuestos, desde startups hasta empresas consolidadas. La inversión inicial incluye estrategia, implementación y gestión mensual. Te damos una propuesta personalizada después de conocer tus objetivos específicos.',
-      highlight: '💰',
+      id: 'investment',
+      question: t('faq.questions.investment.question'),
+      answer: t('faq.questions.investment.answer'),
+      highlight: t('faq.questions.investment.highlight'),
       accentColor: 'bg-[#7252A5] hover:bg-[#6341a0]'
     },
     {
-      id: 'what-makes-different',
-      question: '¿Qué nos hace diferentes de otras agencias?',
-      answer: 'No somos una agencia más. Nos involucramos de verdad en tu negocio, conocemos a tu audiencia como si fuera nuestra, y creamos estrategias que realmente funcionan. Además, siempre te mantenemos informado con reportes claros y honestos.',
-      highlight: '🚀',
+      id: 'whatMakesDifferent',
+      question: t('faq.questions.whatMakesDifferent.question'),
+      answer: t('faq.questions.whatMakesDifferent.answer'),
+      highlight: t('faq.questions.whatMakesDifferent.highlight'),
       accentColor: 'bg-[#759CCF] hover:bg-[#6589c1]'
     },
     {
-      id: 'services-included',
-      question: '¿Qué incluyen exactamente sus servicios?',
-      answer: 'Dependiendo del plan, incluimos estrategia digital completa, gestión de redes sociales, campañas publicitarias, creación de contenido, desarrollo web, SEO, email marketing y análisis de resultados. Todo lo que necesitas para dominar el mundo digital.',
-      highlight: '📦',
+      id: 'servicesIncluded',
+      question: t('faq.questions.servicesIncluded.question'),
+      answer: t('faq.questions.servicesIncluded.answer'),
+      highlight: t('faq.questions.servicesIncluded.highlight'),
       accentColor: 'bg-[#F2AE1F] hover:bg-[#e09d0e]'
     },
     {
-      id: 'support-communication',
-      question: '¿Cómo funciona la comunicación y el soporte?',
-      answer: 'Tendrás acceso directo a tu account manager dedicado, reportes mensuales detallados, reuniones de seguimiento regulares y un canal de comunicación directo para resolver cualquier duda. Creemos en la transparencia total.',
-      highlight: '💬',
+      id: 'supportCommunication',
+      question: t('faq.questions.supportCommunication.question'),
+      answer: t('faq.questions.supportCommunication.answer'),
+      highlight: t('faq.questions.supportCommunication.highlight'),
       accentColor: 'bg-[#D4F225] hover:bg-[#c4e520]'
     }
   ];
@@ -215,7 +217,7 @@ const UnifiedFAQSection: React.FC = () => {
                 transition={{ duration: 2, repeat: Infinity }}
               />
               <span className="text-xs sm:text-sm font-medium text-gray-700 tracking-wider uppercase">
-                Preguntas Frecuentes
+                {t('faq.badge')}
               </span>
               
               {/* Conectores laterales responsivos */}
@@ -241,12 +243,12 @@ const UnifiedFAQSection: React.FC = () => {
               animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.9 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <span className="block">TÚ PREGUNTAS,</span>
+              <span className="block">{t('faq.title').split(' ').slice(0, 2).join(' ')}</span>
                 <span className="block">
-                  <span className="text-[#7252A5]">NOSOTROS</span>
+                  <span className="text-[#7252A5]">{t('faq.title').split(' ').slice(2, 4).join(' ')}</span>
                   <br className="sm:hidden" />
                   <span className="block">
-                    <span className="text-[#D4F225]">RESPONDEMOS</span>
+                    <span className="text-[#D4F225]">{t('faq.title').split(' ').slice(4).join(' ')}</span>
                     <motion.span
                       className="inline-block text-[#759CCF] ml-2 sm:ml-4 text-2xl sm:text-4xl md:text-6xl lg:text-7xl"
                       animate={{ rotate: [0, 15, -15, 0] }}
@@ -279,9 +281,7 @@ const UnifiedFAQSection: React.FC = () => {
                 transition={{ duration: 1, delay: 1.2 }}
               />
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed text-center px-4">
-                Las respuestas que necesitas para tomar la{' '}
-                <span className="text-[#7252A5] font-semibold">mejor decisión</span>{' '}
-                para tu negocio
+                {t('faq.subtitle')}
               </p>
               <motion.div
                 className="hidden sm:block w-12 lg:w-16 h-px bg-gradient-to-l from-transparent via-gray-300 to-transparent"
@@ -353,7 +353,7 @@ const UnifiedFAQSection: React.FC = () => {
                 animate={{ opacity: isInView ? 1 : 0 }}
                 transition={{ duration: 0.8, delay: 2.7 }}
               >
-                ¿Tienes una pregunta específica?
+                {t('faq.ctaTitle')}
               </motion.h3>
               
               <motion.p
@@ -362,7 +362,7 @@ const UnifiedFAQSection: React.FC = () => {
                 animate={{ opacity: isInView ? 1 : 0 }}
                 transition={{ duration: 0.8, delay: 2.9 }}
               >
-                Nuestro equipo está listo para resolver todas tus dudas
+                {t('faq.ctaSubtitle')}
               </motion.p>
               
               <motion.button
@@ -380,7 +380,7 @@ const UnifiedFAQSection: React.FC = () => {
                   animate={{ x: '200%' }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 />
-                <span className="relative z-10">Hablanos de una vez!</span>
+                <span className="relative z-10">{t('faq.ctaButton')}</span>
               </motion.button>
             </div>
 

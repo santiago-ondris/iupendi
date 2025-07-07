@@ -3,9 +3,12 @@ import { motion } from 'motion/react';
 import SpectacularLogoCarousel from './SpectacularLogoCarousel';
 import { useInView } from '@/utils/useInView';
 import { BrandsToDetailedServicesTransition } from '../OrganicTransitions';
+import { useTranslation } from 'react-i18next';
+
 
 const UnifiedBrandsSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.3 });
+  const { t } = useTranslation();
 
   // Partículas conectoras que vienen de CoreServices
   const connectingParticles = Array.from({ length: 10 }, (_, i) => ({
@@ -167,7 +170,7 @@ const UnifiedBrandsSection: React.FC = () => {
                 animate={{ scale: [1, 1.5, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              <span className="relative z-10">Confían en nosotros</span>
+              <span className="relative z-10">{t('brands.trusting')}</span>
               <motion.div
                 className="w-1 h-1 bg-[#7252A5] rounded-full relative z-10"
                 animate={{ scale: [1, 1.5, 1] }}
@@ -316,7 +319,7 @@ const UnifiedBrandsSection: React.FC = () => {
         />
       </section>
 
-      {/* Transición orgánica hacia DetailedServices */}
+      {/* Transición hacia DetailedServices */}
       <BrandsToDetailedServicesTransition />
     </>
   );

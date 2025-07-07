@@ -3,10 +3,12 @@ import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { useInView } from '@/utils/useInView';
 import { CTAToFooterTransition } from '../OrganicTransitions';
+import { useTranslation } from 'react-i18next';
 
 const UnifiedSuperCTASection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.3 });
   const [email, setEmail] = useState('');
+  const { t } = useTranslation();
 
   const floatingShapes = [
     { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
@@ -173,15 +175,15 @@ const UnifiedSuperCTASection: React.FC = () => {
               animate={{ opacity: isInView ? 1 : 0 }}
               transition={{ duration: 0.8, delay: 1 }}
             >
-              ¿Todavía no te{' '}
+              {t('superCta.titlePart1')}{' '}
               <motion.span
                 className="text-[#7252A5] inline-block relative"
                 initial={{ rotateY: 0 }}
                 animate={{ rotateY: isInView ? [0, 360, 0] : 0 }}
                 transition={{ duration: 1, delay: 1.7 }}
               >
-                convencimos
-                {/* Subrayado animado */}
+                {t('superCta.titleHighlight')}
+                {/* Subrayado animado - SIN CAMBIOS */}
                 <motion.div
                   className="absolute bottom-0 left-0 w-full h-1 bg-[#D4F225]"
                   initial={{ scaleX: 0 }}
@@ -199,25 +201,9 @@ const UnifiedSuperCTASection: React.FC = () => {
                 }}
                 transition={{ duration: 0.6, delay: 2.5 }}
               >
-                ?
+                {t('superCta.titlePart2')}
               </motion.span>
             </motion.h2>
-          </motion.div>
-
-          {/* Subtítulo con personalidad mejorada */}
-          <motion.div
-            className="mb-12 relative"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-          >
-            {/* Marco decorativo */}
-            <motion.div
-              className="absolute -inset-4 border border-gray-300/30 rounded-2xl"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: isInView ? 0.5 : 0, scale: isInView ? 1 : 0.9 }}
-              transition={{ duration: 0.8, delay: 1.8 }}
-            />
 
             <motion.p
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 font-medium mb-3 sm:mb-4 px-4"
@@ -225,21 +211,21 @@ const UnifiedSuperCTASection: React.FC = () => {
               animate={{ opacity: isInView ? 1 : 0 }}
               transition={{ duration: 0.8, delay: 1.8 }}
             >
-              Dale, sabemos que{' '}
+              {t('superCta.subtitle')}{' '}
               <motion.span
                 className="text-[#7252A5] font-bold bg-[#7252A5]/15 px-3 py-1 rounded-lg relative overflow-hidden"
                 initial={{ scale: 1 }}
                 animate={{ scale: isInView ? [1, 1.05, 1] : 1 }}
                 transition={{ duration: 0.6, delay: 2.4 }}
               >
-                {/* Efecto de brillo en el highlight */}
+                {/* Efecto de brillo - SIN CAMBIOS */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12"
                   initial={{ x: '-100%' }}
                   animate={{ x: '200%' }}
                   transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 4 }}
                 />
-                <span className="relative z-10">querés contactarnos</span>
+                <span className="relative z-10">{t('superCta.subtitleHighlight')}</span>
               </motion.span>
             </motion.p>
             
@@ -251,7 +237,7 @@ const UnifiedSuperCTASection: React.FC = () => {
             >
               <Sparkles className="w-6 h-6 text-[#D4F225]" />
               <span className="text-gray-600 text-lg">
-                (No te juzgamos, es normal)
+                  {t('superCta.note')}
               </span>
               <Sparkles className="w-6 h-6 text-[#D4F225]" />
             </motion.div>
@@ -306,7 +292,7 @@ const UnifiedSuperCTASection: React.FC = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Mail (sin spam... tanto 😉)"
+                  placeholder={t('superCta.emailPlaceholder')}
                   className="w-full px-8 py-5 text-lg bg-white/95 backdrop-blur-sm border-2 border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-[#D4F225]/30 focus:border-[#D4F225] transition-all duration-300 shadow-xl"
                   required
                   whileFocus={{ scale: 1.02, borderColor: '#D4F225' }}
@@ -338,7 +324,7 @@ const UnifiedSuperCTASection: React.FC = () => {
                   animate={{ x: '-200%' }}
                   transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 4, delay: 1 }}
                 />
-                <span className="relative z-10">¡Me convencieron!</span>
+                <span className="relative z-10">{t('superCta.button')}</span>
                 <ArrowRight className="w-6 h-6 relative z-10" />
               </motion.button>
             </form>
@@ -352,7 +338,7 @@ const UnifiedSuperCTASection: React.FC = () => {
             transition={{ duration: 0.8, delay: 3.8 }}
           >
             <p className="text-gray-600 text-sm">
-              *Respondemos rápido, pero no tanto como para parecer desesperados 😅
+              {t('superCta.disclaimer')}
             </p>
             
             {/* Línea conectora hacia footer */}

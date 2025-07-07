@@ -7,7 +7,7 @@ import {
   descriptionVariants,
   buttonVariants,
   ratingVariants
-} from '../../utils/Cards/cardAnimations';  // <-- centralizamos aquí :contentReference[oaicite:1]{index=1}
+} from '../../utils/Cards/cardAnimations';
 
 interface ServiceCardProps {
   id: string;
@@ -30,7 +30,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
   buttonText,
   rating,
-  reviews,
   type
 }) => {
   return (
@@ -124,9 +123,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
               />
             ))}
           </div>
-          <span className="text-gray-300 text-sm ml-2">
-            {rating} estrellas de {reviews.toLocaleString()} reviews
-          </span>
         </motion.div>
       </div>
     </motion.div>

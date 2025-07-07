@@ -38,7 +38,7 @@ function useIsMobile(breakpoint = 640) { // 640px ≈ Tailwind 'sm'
 const SpectacularLogoCarousel: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
-  // Triplicamos los logos para el efecto infinito
+  // logos triplicados para el efecto infinito
   const extendedLogos = [...brandLogos, ...brandLogos, ...brandLogos];
   const isMobile = useIsMobile();
   const logoWidth = isMobile ? 125 : 300;
@@ -46,7 +46,7 @@ const SpectacularLogoCarousel: React.FC = () => {
 
   return (
     <div className="relative w-full overflow-hidden">
-      {/* Gradientes laterales mejorados */}
+      {/* Gradientes laterales */}
       <motion.div
         className="absolute left-0 top-0 w-8 sm:w-16 md:w-32 h-full bg-gradient-to-r from-white via-white/95 to-transparent z-20"
         initial={{ opacity: 0 }}

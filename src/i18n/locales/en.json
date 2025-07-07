@@ -1,0 +1,155 @@
+{
+    "hero": {
+      "title": "LIKE STEROIDS FOR YOUR BUSINESS",
+      "subtitle": "Maria Pilar",
+      "emailPlaceholder": "✋ Enter your email...",
+      "cta": "Let's do it",
+      "scrollText": "Let's go down!"
+    },
+    "navigation": {
+      "home": "Home",
+      "services": "Services",
+      "clients": "Clients", 
+      "faq": "FAQ",
+      "contact": "Contact",
+      "phone": "+54 9 11 1234-5678"
+    },
+    "services": {
+      "sectionTitle": "OUR SERVICES",
+      "subtitle": "Choose between our full service or learn to manage your own marketing with experts",
+      "cta": "Keep scrolling?",
+      "agency": {
+        "subtitle": "Maria Pilar",
+        "title": "AGENCY",
+        "description": "Managed \"done-for-you\" digital marketing services for medium to large companies looking to accelerate \"hyper-growth\". And yes, we guarantee results and smell fantastic *wink*.",
+        "button": "Get Started",
+        "rating": "{{rating}} stars from {{count}} reviews"
+      },
+      "courses": {
+        "subtitle": "LEARN TO DO IT YOURSELF",
+        "title": "COURSES", 
+        "description": "Business growth training programs for companies serious about scaling their coaching, consulting or services business to seven and eight figures FAST (in months, not years). Tienen que tener estos renglones",
+        "button": "Get Started",
+        "rating": "{{rating}} stars from {{count}} reviews"
+      }
+    },
+    "brands": {
+      "trusting": "They trust us"
+    },
+    "faq": {
+      "badge": "Frequently Asked Questions",
+      "title": "YOU ASK, WE ANSWER",
+      "subtitle": "The answers you need to make the best decision for your business",
+      "ctaTitle": "Have a specific question?",
+      "ctaSubtitle": "Our team is ready to resolve all your doubts",
+      "ctaButton": "Talk to us now!",
+      "questions": {
+        "resultsTime": {
+          "question": "How long does it take to see results?",
+          "answer": "You can see the first results in the first 2-4 weeks, but the most significant and sustainable results you will see between 3-6 months. It all depends on your industry, competition and the current state of your digital presence.",
+          "highlight": "⚡"
+        },
+        "investment": {
+          "question": "What is the investment required to get started?",
+          "answer": "Our plans adapt to different budgets, from startups to established companies. The initial investment includes strategy, implementation and monthly management. We give you a personalized proposal after knowing your specific objectives.",
+          "highlight": "💰"
+        },
+        "whatMakesDifferent": {
+          "question": "What makes us different from other agencies?",
+          "answer": "We're not just another agency. We really get involved in your business, we know your audience as if it were ours, and we create strategies that really work. We also always keep you informed with clear and honest reports.",
+          "highlight": "🚀"
+        },
+        "servicesIncluded": {
+          "question": "What exactly do your services include?",
+          "answer": "Depending on the plan, we include complete digital strategy, social media management, advertising campaigns, content creation, web development, SEO, email marketing and results analysis. Everything you need to dominate the digital world.",
+          "highlight": "📦"
+        },
+        "supportCommunication": {
+          "question": "How does communication and support work?",
+          "answer": "You will have direct access to your dedicated account manager, detailed monthly reports, regular follow-up meetings and a direct communication channel to resolve any questions. We believe in total transparency.",
+          "highlight": "💬"
+        }
+      }
+    },
+    "superCta": {
+      "subtitle": "Come on, we know you want to",
+      "note": "(We don't judge, it's normal)",
+      "emailPlaceholder": "Email (no spam... that much 😉)",
+      "button": "You convinced me!",
+      "disclaimer": "*We respond quickly, but not so fast as to seem desperate 😅",
+      "titlePart1": "Still not",
+      "titleHighlight": "convinced",
+      "titlePart2": "?",
+      "subtitleHighlight": "contact us"
+    },
+    "footer": {
+      "title": "IUPENDI DIGITAL",
+      "subtitle": "Digital marketing agency that connects, creates and converts",
+      "navigation": "Navigation",
+      "contact": "Contact",
+      "ctaButton": "Start project",
+      "copyright": "IUPENDI DIGITAL © 2025. Designed with",
+      "location": "in Córdoba"
+    },
+    "detailedServices": {
+      "sectionTitle": "SERVICES THAT CONVERT",
+      "badge": "Premium Services",
+      "statsTitle": "Results that speak for themselves",
+      "subtitle": "We're not just another agency. We're the team that transforms your vision into measurable results and exponential growth",
+      "stats": {
+        "projects": "500+",
+        "projectsLabel": "Successful projects",
+        "satisfaction": "98%",
+        "satisfactionLabel": "Satisfied clients",
+        "roi": "3x",
+        "roiLabel": "Average ROI"
+      },
+      "cta": "Let's talk about your project?",
+      "services": {
+        "paidAds": {
+          "title": "Paid Media",
+          "description": "Digital Advertising Strategies that Convert, Not Just Attract Clicks.",
+          "features": [
+            "Account Setup",
+            "Strategy and Planning",
+            "Smart Targeting",
+            "Campaign Creation",
+            "Optimization and Reporting"
+          ]
+        },
+        "socialMedia": {
+          "title": "Social Media Management",
+          "description": "It's not just about posting, it's about connecting.",
+          "features": [
+            "Social Media Strategy and Manual",
+            "Market Analysis",
+            "Content Planning",
+            "Creativity and Production",
+            "Monthly Results Meeting"
+          ]
+        },
+        "contentCreation": {
+          "title": "Digital Marketing Consulting",
+          "description": "We give you the plan, strategy and support. You execute it.",
+          "features": [
+            "Market and Brand Analysis",
+            "Digital Strategy Definition",
+            "Personalized Support",
+            "Training and Resources",
+            "Monitoring and Optimization"
+          ]
+        },
+        "webDevelopment": {
+          "title": "Website Development",
+          "description": "Your website doesn't just have to look good, it has to sell.",
+          "features": [
+            "Analysis and Strategy",
+            "Wireframing and UI/UX Design",
+            "Web Development",
+            "Optimization and Testing",
+            "Launch and Maintenance"
+          ]
+        }
+      }
+    }
+  }

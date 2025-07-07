@@ -1,11 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 import ServiceCard from './ServiceCard';
 import { useInView } from '@/utils/useInView';
 import { ServicesToBrandsTransition } from '../OrganicTransitions';
 
 const UnifiedCoreServicesSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
+  const { t } = useTranslation(); 
 
   const services = [
     {
@@ -13,10 +15,10 @@ const UnifiedCoreServicesSection: React.FC = () => {
       icon: 'I',
       iconColor: 'text-[#D4F225]',
       bgColor: 'bg-gray-800',
-      subtitle: 'Maria Pilar',
-      title: 'AGENCIA',
-      description: 'Servicios de marketing digital gestionados y "hechos para ti" para empresas medianas a grandes que buscan acelerar el "hiper-crecimiento". Y sí, garantizamos resultados y olemos fantástico *guiño*.',
-      buttonText: 'Empezar',
+      subtitle: t('services.agency.subtitle'), 
+      title: t('services.agency.title'),
+      description: t('services.agency.description'), 
+      buttonText: t('services.agency.button'),
       rating: 4.8,
       reviews: 1247,
       type: 'primary' as const
@@ -26,10 +28,10 @@ const UnifiedCoreServicesSection: React.FC = () => {
       icon: 'I',
       iconColor: 'text-[#7252A5]',
       bgColor: 'bg-gray-700',
-      subtitle: 'APRENDE A HACERLO TÚ MISMO',
-      title: 'CURSOS',
-      description: 'Programas de capacitación en crecimiento empresarial para empresas serias sobre escalar su negocio de coaching, consultoría o servicios a siete y ocho cifras RÁPIDO (en meses, no años).',
-      buttonText: 'Empezar',
+      subtitle: t('services.courses.subtitle'), 
+      title: t('services.courses.title'),
+      description: t('services.courses.description'), 
+      buttonText: t('services.courses.button'), 
       rating: 4.9,
       reviews: 3847,
       type: 'secondary' as const
@@ -49,9 +51,9 @@ const UnifiedCoreServicesSection: React.FC = () => {
         id="core-services"
         ref={ref}
         className="relative py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden"
-        style={{ marginTop: '-40px', paddingTop: '28px' }} // Overlap con hero
+        style={{ marginTop: '-40px', paddingTop: '28px' }}
       >
-        {/* Elementos conectores que vienen del hero */}
+        {/* Elementos conectores */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
           {[...Array(6)].map((_, i) => (
             <motion.div
@@ -86,14 +88,14 @@ const UnifiedCoreServicesSection: React.FC = () => {
         />
 
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          {/* Header con líneas conectoras */}
+          {/* HEADER */}
           <motion.div
             className="mb-16 relative"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Línea conectora desde hero */}
+            {/* Línea conectora */}
             <motion.div
               className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-px h-6 bg-gradient-to-b from-gray-300 to-transparent"
               initial={{ scaleY: 0 }}
@@ -101,6 +103,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             />
 
+            {/* TÍTULO */}
             <motion.h2 
               className="text-5xl md:text-7xl font-black text-gray-800 mb-6 tracking-wider relative"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
@@ -108,9 +111,9 @@ const UnifiedCoreServicesSection: React.FC = () => {
               animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.9 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              NUESTROS SERVICIOS
+              {t('services.sectionTitle')} 
               
-              {/* Elementos decorativos conectores */}
+              {/* Elemento decorativo  */}
               <motion.div
                 className="absolute -right-8 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-[#D4F225]/30 rounded-full"
                 animate={{ scale: [1, 1.3, 1] }}
@@ -118,7 +121,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
               />
             </motion.h2>
 
-            {/* Subtítulo con líneas laterales */}
+            {/* SUBTÍTULO  */}
             <motion.div
               className="flex items-center justify-center gap-4 max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
@@ -132,7 +135,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
                 transition={{ duration: 0.8, delay: 1 }}
               />
               <p className="text-lg text-gray-600 text-center">
-                Elige entre nuestro servicio completo o aprende a gestionar tu propio marketing con expertos
+                {t('services.subtitle')}
               </p>
               <motion.div
                 className="hidden md:block w-12 h-px bg-gradient-to-l from-transparent to-gray-300"
@@ -143,14 +146,14 @@ const UnifiedCoreServicesSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Grid animado con conectores */}
+          {/* Grid de servicios */}
           <motion.div
             className="grid lg:grid-cols-2 gap-8 lg:gap-12 relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: isInView ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            {/* Conector central entre las dos cards */}
+            {/* Conectores centrales */}
             <motion.div
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-24 bg-gradient-to-b from-transparent via-gray-300 to-transparent hidden lg:block z-20"
               initial={{ scaleY: 0 }}
@@ -164,6 +167,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
               transition={{ duration: 1, delay: 2 }}
             />
 
+            {/* SERVICIOS CON DATOS */}
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
@@ -195,14 +199,14 @@ const UnifiedCoreServicesSection: React.FC = () => {
             ))}
           </motion.div>
 
-          {/* CTA conectado visualmente */}
+          {/* CTA  */}
           <motion.div
             className="mt-16 relative"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
             transition={{ duration: 0.8, delay: 2.4 }}
           >
-            {/* Línea conectora desde las cards */}
+            {/* Línea conectora */}
             <motion.div
               className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-px h-6 bg-gradient-to-b from-gray-300 to-transparent"
               initial={{ scaleY: 0 }}
@@ -223,12 +227,12 @@ const UnifiedCoreServicesSection: React.FC = () => {
                 animate={{ x: '200%' }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}
               />
-              <span className="relative z-10 mr-2">¿Seguis bajando?</span>
+              <span className="relative z-10 mr-2">{t('services.cta')}</span>
             </motion.button>
           </motion.div>
         </div>
 
-        {/* Elementos que fluyen hacia brands */}
+        {/* Elementos que fluyen */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">
           {[...Array(8)].map((_, i) => (
             <motion.div
@@ -254,7 +258,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Formas decorativas conectadas */}
+        {/* Formas decorativas */}
         <motion.div
           className="absolute top-20 right-10 w-20 h-20 bg-[#D4F225]/15 rounded-full"
           animate={{
@@ -281,7 +285,6 @@ const UnifiedCoreServicesSection: React.FC = () => {
         />
       </section>
 
-      {/* Transición orgánica hacia brands */}
       <ServicesToBrandsTransition />
     </>
   );
