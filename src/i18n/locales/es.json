@@ -1,10 +1,10 @@
 {
     "hero": {
-      "title": "COMO ESTEROIDES PARA TU NEGOCIO",
-      "subtitle": "Maria Pilar",
+      "title": "NO HACEMOS MAGIA. HACEMOS MARKETING",
+      "subtitle": "En un mundo lleno de ruido, ser auténtico es un acto de valentía",
       "emailPlaceholder": "✋ Ingresá tu email...",
-      "cta": "Hazlo",
-      "scrollText": "Vamos abajo!"
+      "cta": "Animate",
+      "scrollText": "No te quedes arriba"
     },
     "navigation": {
       "home": "Inicio",
@@ -16,20 +16,20 @@
     },
     "services": {
       "sectionTitle": "NUESTROS SERVICIOS",
-      "subtitle": "Elige entre nuestro servicio completo o aprende a gestionar tu propio marketing con expertos",
+      "subtitle": "Te acompañamos en todo, o te enseñamos a hacerlo. Vos elegís.",
       "cta": "¿Seguís bajando?",
       "agency": {
-        "subtitle": "Maria Pilar",
+        "subtitle": "APRENDE DE NOSOTROS.",
         "title": "AGENCIA",
-        "description": "Servicios de marketing digital gestionados y \"hechos para ti\" para empresas medianas a grandes que buscan acelerar el \"hiper-crecimiento\". Y sí, garantizamos resultados y olemos fantástico *guiño*.",
-        "button": "Empezar",
+        "description": "Servicios de marketing digital gestionados para empresas en movimiento. Delegá con tranquilidad, nos ocupamos de tu crecimiento como si fuera propio.",
+        "button": "Empezá ahora",
         "rating": "{{rating}} estrellas de {{count}} reviews"
       },
       "courses": {
-        "subtitle": "APRENDE A HACERLO TÚ MISMO",
+        "subtitle": "APRENDE CON NOSOTROS.",
         "title": "CURSOS",
-        "description": "Programas de capacitación en crecimiento empresarial para empresas serias sobre escalar su negocio de coaching, consultoría o servicios a siete y ocho cifras RÁPIDO (en meses, no años).",
-        "button": "Empezar",
+        "description": "Capacitate para manejar y hacer crecer tu marca vos mismo. Nuestros programas te enseñan cómo escalar tu negocio de coaching o consultoría de manera rápida y efectiva.",
+        "button": "Empezá ahora",
         "rating": "{{rating}} estrellas de {{count}} reviews"
       }
     },
@@ -38,10 +38,10 @@
     },
     "faq": {
       "badge": "Preguntas Frecuentes",
-      "title": "TÚ PREGUNTAS, NOSOTROS RESPONDEMOS",
+      "title": "VOS PREGUNTAS, NOSOTROS RESPONDEMOS",
       "subtitle": "Las respuestas que necesitas para tomar la mejor decisión para tu negocio",
-      "ctaTitle": "¿Tienes una pregunta específica?",
-      "ctaSubtitle": "Nuestro equipo está listo para resolver todas tus dudas",
+      "ctaTitle": "¿Tenés una pregunta específica?",
+      "ctaSubtitle": "Estamos para resolver todas tus dudas",
       "ctaButton": "Hablanos de una vez!",
       "questions": {
         "resultsTime": {
@@ -104,7 +104,7 @@
         "roi": "3x",
         "roiLabel": "ROI promedio"
       },
-      "cta": "¿Hablamos de tu proyecto?",
+      "cta": "Despeguemos tu proyecto",
       "services": {
         "paidAds": {
           "title": "Paid Media",

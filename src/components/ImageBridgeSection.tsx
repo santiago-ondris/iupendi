@@ -9,8 +9,8 @@ const ImageBridgeSection: React.FC = () => {
     <section 
       ref={ref}
       id="image-bridge"
-      className="relative h-screen overflow-hidden"
-      style={{ marginTop: '-100px', paddingTop: '100px' }} // Overlap con hero
+      className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden"
+      style={{ marginTop: '-190px', paddingTop: '100px' }} // Overlap con hero
     >
       {/* Imagen de fondo */}
       <motion.div
@@ -23,7 +23,7 @@ const ImageBridgeSection: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <img
-          src="/src/assets/images/team-image.jpg" // Ajusta la ruta según tu estructura
+          src="/src/assets/images/teamimg2.png" 
           alt="Equipo Iupendi Digital trabajando"
           className="w-full h-full object-cover object-center"
         />
@@ -60,13 +60,13 @@ const ImageBridgeSection: React.FC = () => {
 
       {/* Indicadores de scroll hacia siguiente sección */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
         transition={{ duration: 0.8, delay: 1.8 }}
       >
         <motion.div
-          className="w-1 h-16 bg-gradient-to-b from-white/60 to-transparent rounded-full"
+          className="w-1 h-8 sm:h-16 bg-gradient-to-b from-white/60 to-transparent rounded-full"
           animate={{ scaleY: [1, 0.5, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         />

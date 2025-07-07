@@ -87,7 +87,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
           transition={{ duration: 1.5 }}
         />
 
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 text-center relative z-10 font-text">
           {/* HEADER */}
           <motion.div
             className="mb-16 relative"
@@ -105,7 +105,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
 
             {/* TÍTULO */}
             <motion.h2 
-              className="text-5xl md:text-7xl font-black text-gray-800 mb-6 tracking-wider relative"
+              className="text-5xl md:text-7xl font-black text-[#6E787D] mb-6 tracking-wider relative"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.9 }}

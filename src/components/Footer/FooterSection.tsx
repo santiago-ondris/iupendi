@@ -11,9 +11,11 @@ import {
   Heart,
 } from 'lucide-react';
 import { useInView } from '@/utils/useInView';
+import { useTranslation } from 'react-i18next';
 
 const UnifiedFooterSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
+  const { t } = useTranslation();
 
   const navigationLinks = [
     { name: 'Inicio', href: '#hero', icon: '🏠' },
@@ -168,12 +170,11 @@ const UnifiedFooterSection: React.FC = () => {
 
             <motion.h3
               className="text-4xl md:text-5xl font-black text-gray-900 mb-2"
-              style={{ fontFamily: 'Codec Pro, sans-serif' }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              IUPENDI DIGITAL
+              {t('footer.title')}
             </motion.h3>
 
             <motion.p
@@ -182,7 +183,7 @@ const UnifiedFooterSection: React.FC = () => {
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 1 }}
             >
-              Agencia de marketing digital que conecta, crea y convierte
+              {t('footer.subtitle')}
             </motion.p>
 
             {/* Líneas conectoras laterales */}
@@ -217,7 +218,7 @@ const UnifiedFooterSection: React.FC = () => {
                   y: -8,
                   backgroundColor: color,
                   borderColor: color,
-                  color: 'white'
+                  color: 'orange'
                 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -270,7 +271,7 @@ const UnifiedFooterSection: React.FC = () => {
                 animate={{ x: '-200%' }}
                 transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 5, delay: 1 }}
               />
-              <span className="relative z-10">Empezar proyecto</span>
+              <span className="relative z-10">{t('footer.ctaButton')}</span>
               <ArrowRight className="w-5 h-5 relative z-10" />
             </motion.button>
           </motion.div>
@@ -304,7 +305,7 @@ const UnifiedFooterSection: React.FC = () => {
               className="text-xl font-bold mb-6 text-gray-900"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
             >
-              Navegación
+              {t('footer.navigation')}
             </h4>
             <div className="grid grid-cols-2 gap-4">
               {navigationLinks.map((link, index) => (
@@ -339,7 +340,7 @@ const UnifiedFooterSection: React.FC = () => {
               className="text-xl font-bold mb-6 text-gray-900"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
             >
-              Contacto
+              {t('footer.contact')}
             </h4>
             <div className="space-y-4">
               {contactInfo.map(({ Icon, text, href }, index) => (
@@ -376,7 +377,7 @@ const UnifiedFooterSection: React.FC = () => {
           />
 
           <p className="text-gray-500 text-sm">
-            IUPENDI DIGITAL © 2025. Diseñado con{' '}
+            {t('footer.copyright')}
             <motion.span
               className="inline-flex items-center mx-1"
               animate={{ scale: [1, 1.2, 1] }}
@@ -384,7 +385,7 @@ const UnifiedFooterSection: React.FC = () => {
             >
               <Heart className="w-4 h-4 text-[#D4F225] fill-current" />
             </motion.span>{' '}
-            en Córdoba
+            {t('footer.location')}
           </p>
         </motion.div>
       </div>

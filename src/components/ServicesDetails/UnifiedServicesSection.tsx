@@ -68,34 +68,34 @@ const UnifiedServicesSection: React.FC = () => {
         
         {/* Figuras flotantes */}
         <div className="absolute inset-0 overflow-hidden z-0">
-        {floatingShapes.map((shape, i) => (
-          <motion.div
-            key={i}
-            className={`absolute ${shape.size} ${
-              shape.type === 'circle' 
-                ? `${shape.color} rounded-full` 
-                : `${shape.color} transform rotate-45`
-            }`}
-            style={{
-              left: `${5 + Math.random() * 90}%`,
-              top: `${5 + Math.random() * 90}%`,
-              zIndex: 1,
-            }}
-            animate={{
-              y: [0, -40, 0],
-              x: [0, Math.random() * 30 - 15, 0],
-              rotate: shape.type === 'square' ? [45, 225, 45] : [0, 360, 0],
-              scale: [1, 1.15, 1],
-            }}
-            transition={{
-              duration: 10 + Math.random() * 6,
-              repeat: Infinity,
-              delay: shape.delay,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+          {floatingShapes.map((shape, i) => (
+            <motion.div
+              key={i}
+              className={`absolute ${shape.size} ${
+                shape.type === 'circle' 
+                  ? `${shape.color} rounded-full` 
+                  : `${shape.color} transform rotate-45`
+              }`}
+              style={{
+                left: `${5 + Math.random() * 90}%`,
+                top: `${5 + Math.random() * 90}%`,
+                zIndex: 1,
+              }}
+              animate={{
+                y: [0, -40, 0],
+                x: [0, Math.random() * 30 - 15, 0],
+                rotate: shape.type === 'square' ? [45, 225, 45] : [0, 360, 0],
+                scale: [1, 1.15, 1],
+              }}
+              transition={{
+                duration: 10 + Math.random() * 6,
+                repeat: Infinity,
+                delay: shape.delay,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
 
         <motion.div
           className="relative z-10 max-w-7xl mx-auto px-6"
@@ -181,23 +181,23 @@ const UnifiedServicesSection: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* ESTADÍSTICAS */}
+            {/* ESTADÍSTICAS INTEGRADAS */}
             <motion.div
-              className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-8 md:p-12 shadow-xl mb-16 overflow-hidden"
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40, scale: isInView ? 1 : 0.9 }}
+              className="mb-16 relative"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
               transition={{ duration: 1, delay: 0.8 }}
             >
-              {/* Fondo animado */}
+              {/* Fondo animado sutil */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#7252A5]/5 via-transparent to-[#D4F225]/5"
+                className="absolute inset-0 bg-gradient-to-r from-[#7252A5]/3 via-transparent to-[#D4F225]/3 -mx-8"
                 animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
               />
 
               {/* TÍTULO DE ESTADÍSTICAS */}
               <motion.h3
-                className="text-xl md:text-2xl font-bold text-gray-700 mb-8 relative z-10"
+                className="text-lg md:text-xl font-bold text-gray-700 mb-8 text-center relative z-10"
                 style={{ fontFamily: 'Codec Pro, sans-serif' }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isInView ? 1 : 0 }}
@@ -233,18 +233,10 @@ const UnifiedServicesSection: React.FC = () => {
                     animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
                     transition={{ duration: 0.8, delay: 1.2 + index * 0.2 }}
                   >
-                    {/* Círculo decorativo */}
-                    <motion.div
-                      className="absolute inset-0 rounded-full opacity-5 group-hover:opacity-10 transition-opacity duration-300"
-                      style={{ backgroundColor: stat.color }}
-                      initial={{ scale: 0 }}
-                      animate={{ scale: isInView ? 1 : 0 }}
-                      transition={{ duration: 0.6, delay: 1.4 + index * 0.1 }}
-                    />
                     
                     {/* NÚMERO  */}
                     <motion.div
-                      className="text-6xl md:text-8xl lg:text-9xl font-black mb-2 relative z-10"
+                      className="text-2xl sm:text-3xl md:text-4xl font-black mb-1 relative z-10"
                       style={{ 
                         fontFamily: 'Codec Pro, sans-serif',
                         color: stat.color
@@ -266,7 +258,7 @@ const UnifiedServicesSection: React.FC = () => {
                     
                     {/* LABEL  */}
                     <motion.div
-                      className="text-lg md:text-xl font-semibold text-gray-700 relative z-10"
+                      className="text-sm sm:text-base md:text-lg font-semibold text-gray-700 relative z-10"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: isInView ? 1 : 0 }}
                       transition={{ duration: 0.6, delay: 1.8 + index * 0.2 }}
@@ -276,7 +268,7 @@ const UnifiedServicesSection: React.FC = () => {
 
                     {/* Línea decorativa */}
                     <motion.div
-                      className="w-16 h-1 rounded-full mx-auto mt-4"
+                      className="w-8 sm:w-12 h-0.5 rounded-full mx-auto mt-3"
                       style={{ backgroundColor: stat.color }}
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: isInView ? 1 : 0 }}
@@ -285,10 +277,10 @@ const UnifiedServicesSection: React.FC = () => {
 
                     {/* Partícula flotante */}
                     <motion.div
-                      className="absolute -top-4 -right-4 w-3 h-3 rounded-full opacity-60"
+                      className="absolute -top-2 -right-2 w-2 h-2 rounded-full opacity-60"
                       style={{ backgroundColor: stat.color }}
                       animate={{
-                        y: [0, -10, 0],
+                        y: [0, -8, 0],
                         opacity: [0.6, 1, 0.6],
                       }}
                       transition={{
@@ -301,15 +293,15 @@ const UnifiedServicesSection: React.FC = () => {
                 ))}
               </div>
 
-              {/* Líneas conectoras */}
+              {/* Líneas conectoras entre estadísticas */}
               <motion.div
-                className="absolute top-1/2 left-1/3 w-px h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent hidden md:block"
+                className="absolute top-1/2 left-1/3 w-px h-8 bg-gradient-to-b from-transparent via-gray-300 to-transparent hidden md:block"
                 initial={{ scaleY: 0 }}
                 animate={{ scaleY: isInView ? 1 : 0 }}
                 transition={{ duration: 0.8, delay: 2.4 }}
               />
               <motion.div
-                className="absolute top-1/2 right-1/3 w-px h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent hidden md:block"
+                className="absolute top-1/2 right-1/3 w-px h-8 bg-gradient-to-b from-transparent via-gray-300 to-transparent hidden md:block"
                 initial={{ scaleY: 0 }}
                 animate={{ scaleY: isInView ? 1 : 0 }}
                 transition={{ duration: 0.8, delay: 2.6 }}
@@ -317,7 +309,7 @@ const UnifiedServicesSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Grid de servicios - SIN CAMBIOS (las traducciones van en las cards individuales) */}
+          {/* Grid de servicios */}
           <motion.div 
             className="grid md:grid-cols-2 gap-8 lg:gap-12 relative"
             variants={sectionContainerVariants}

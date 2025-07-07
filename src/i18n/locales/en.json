@@ -1,10 +1,10 @@
 {
     "hero": {
-      "title": "LIKE STEROIDS FOR YOUR BUSINESS",
-      "subtitle": "Maria Pilar",
+      "title": "DON´T DO MAGIC. DO MARKETING",
+      "subtitle": "In a world full of noise, being authentic is an act of courage.",
       "emailPlaceholder": "✋ Enter your email...",
       "cta": "Let's do it",
-      "scrollText": "Let's go down!"
+      "scrollText": "Don't stay up"
     },
     "navigation": {
       "home": "Home",
@@ -16,19 +16,19 @@
     },
     "services": {
       "sectionTitle": "OUR SERVICES",
-      "subtitle": "Choose between our full service or learn to manage your own marketing with experts",
+      "subtitle": "We'll help you with everything, or we'll teach you how to do it. The choice is yours.",
       "cta": "Keep scrolling?",
       "agency": {
-        "subtitle": "Maria Pilar",
+        "subtitle": "LEARN FROM US",
         "title": "AGENCY",
-        "description": "Managed \"done-for-you\" digital marketing services for medium to large companies looking to accelerate \"hyper-growth\". And yes, we guarantee results and smell fantastic *wink*.",
+        "description": "Managed digital marketing services for businesses on the move. Delegate with confidence; we take care of your growth as if it were our own.",
         "button": "Get Started",
         "rating": "{{rating}} stars from {{count}} reviews"
       },
       "courses": {
-        "subtitle": "LEARN TO DO IT YOURSELF",
+        "subtitle": "LEARN WITH US.",
         "title": "COURSES", 
-        "description": "Business growth training programs for companies serious about scaling their coaching, consulting or services business to seven and eight figures FAST (in months, not years). Tienen que tener estos renglones",
+        "description": "Train yourself to manage and grow your brand. Our programs teach you how to scale your coaching or consulting business quickly and effectively.",
         "button": "Get Started",
         "rating": "{{rating}} stars from {{count}} reviews"
       }
@@ -41,7 +41,7 @@
       "title": "YOU ASK, WE ANSWER",
       "subtitle": "The answers you need to make the best decision for your business",
       "ctaTitle": "Have a specific question?",
-      "ctaSubtitle": "Our team is ready to resolve all your doubts",
+      "ctaSubtitle": "We are ready to resolve all your doubts",
       "ctaButton": "Talk to us now!",
       "questions": {
         "resultsTime": {
@@ -104,7 +104,7 @@
         "roi": "3x",
         "roiLabel": "Average ROI"
       },
-      "cta": "Let's talk about your project?",
+      "cta": "Let’s make it happen!",
       "services": {
         "paidAds": {
           "title": "Paid Media",
