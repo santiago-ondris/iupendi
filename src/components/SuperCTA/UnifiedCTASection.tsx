@@ -18,7 +18,7 @@ const UnifiedSuperCTASection: React.FC = () => {
       <section 
         ref={ref}
         id="super-cta"
-        className="relative py-32 bg-gradient-to-br from-gray-100 via-slate-100 to-gray-200 overflow-hidden"
+        className="relative py-20 sm:py-24 md:py-32 bg-gradient-to-br from-gray-100 via-slate-100 to-gray-200 overflow-hidden"
         style={{ marginTop: '-80px', paddingTop: '104px' }} // Overlap con FAQ
       >
         {/* Elementos que llegan desde FAQ */}
@@ -130,10 +130,10 @@ const UnifiedSuperCTASection: React.FC = () => {
           />
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           {/* Línea conectora desde FAQ */}
           <motion.div
-            className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-px h-12 bg-gradient-to-b from-gray-400 to-transparent"
+            className="absolute -top-16 sm:-top-20 left-1/2 transform -translate-x-1/2 w-px h-8 sm:h-12 bg-gradient-to-b from-gray-400 to-transparent"
             initial={{ scaleY: 0 }}
             animate={{ scaleY: isInView ? 1 : 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -141,7 +141,7 @@ const UnifiedSuperCTASection: React.FC = () => {
 
           {/* Pregunta principal con animación dramática */}
           <motion.div
-            className="mb-12 relative"
+            className="mb-8 sm:mb-12 relative"
             initial={{ opacity: 0, scale: 0.5, rotateX: -90 }}
             animate={{ 
               opacity: isInView ? 1 : 0, 
@@ -168,7 +168,7 @@ const UnifiedSuperCTASection: React.FC = () => {
             />
 
             <motion.h2 
-              className="text-6xl md:text-8xl font-black text-gray-900 mb-6"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-4 sm:mb-6 px-2"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: isInView ? 1 : 0 }}
@@ -221,7 +221,7 @@ const UnifiedSuperCTASection: React.FC = () => {
             />
 
             <motion.p
-              className="text-2xl md:text-3xl text-gray-700 font-medium mb-4 relative z-10"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 font-medium mb-3 sm:mb-4 px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: isInView ? 1 : 0 }}
               transition={{ duration: 0.8, delay: 1.8 }}
@@ -300,7 +300,7 @@ const UnifiedSuperCTASection: React.FC = () => {
 
             <form 
               onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto relative z-10"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-2xl mx-auto relative z-10 px-4 sm:px-0"
             >
               <div className="flex-1 relative">
                 <motion.input

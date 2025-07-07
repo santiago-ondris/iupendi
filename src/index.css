@@ -241,35 +241,6 @@
   font-display: swap;
 }
 
-/* ===== CONFIGURACIÓN GLOBAL ===== */
-* {
-  cursor: none !important;
-}
-
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 12px solid #D4F225;
-  transform: translate(-50%, -50%) rotate(45deg);
-  pointer-events: none;
-  z-index: 9999;
-  transition: border-left-width 0.15s ease,
-              border-top-width 0.15s ease,
-              border-bottom-width 0.15s ease;
-}
-
-a:hover ~ .custom-cursor,
-button:hover ~ .custom-cursor {
-  border-left-width: 16px;
-  border-top-width: 10px;
-  border-bottom-width: 10px;
-}
-
 /* ===== OCULTAR SCROLLBAR GLOBALMENTE ===== */
 /* WebKit (Chrome, Safari, Edge) */
 *::-webkit-scrollbar {

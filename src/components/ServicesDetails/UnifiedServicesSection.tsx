@@ -199,7 +199,7 @@ const UnifiedServicesSection: React.FC = () => {
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
                 No somos otra agencia más. Somos el equipo que{' '}
                 <span className="text-[#7252A5] font-semibold">transforma tu visión</span>{' '}
                 en resultados medibles y{' '}
@@ -208,8 +208,8 @@ const UnifiedServicesSection: React.FC = () => {
                 </span>
               </p>
 
-              {/* Líneas conectoras hacia las cards */}
-              <div className="flex justify-center items-center gap-8">
+              {/* Líneas conectoras hacia las estadísticas */}
+              <div className="flex justify-center items-center gap-8 mb-6">
                 {[0, 1, 2].map((i) => (
                   <motion.div
                     key={i}
@@ -222,47 +222,127 @@ const UnifiedServicesSection: React.FC = () => {
               </div>
             </motion.div>
 
-            {/* Estadísticas conectadas */}
+            {/* Estadísticas MEJORADAS - Mucho más grandes y llamativas */}
             <motion.div
-              className="flex justify-center gap-8 md:gap-12 mt-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              className="relative bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-8 md:p-12 shadow-xl mb-16 overflow-hidden"
+              initial={{ opacity: 0, y: 40, scale: 0.9 }}
+              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40, scale: isInView ? 1 : 0.9 }}
+              transition={{ duration: 1, delay: 0.8 }}
             >
-              {[
-                { number: '500+', label: 'Proyectos exitosos' },
-                { number: '98%', label: 'Clientes satisfechos' },
-                { number: '3x', label: 'ROI promedio' }
-              ].map((stat, index) => (
-                <motion.div 
-                  key={index} 
-                  className="text-center relative"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  {/* Conector visual */}
-                  <motion.div
-                    className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-gradient-to-b from-gray-300 to-transparent"
-                    initial={{ scaleY: 0 }}
-                    animate={{ scaleY: isInView ? 1 : 0 }}
-                    transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
-                  />
-                  <motion.div
-                    className="text-3xl md:text-4xl font-black text-[#7252A5]"
-                    style={{ fontFamily: 'Codec Pro, sans-serif' }}
-                    initial={{ scale: 0 }}
-                    animate={{ scale: isInView ? 1 : 0 }}
-                    transition={{ 
-                      duration: 0.6, 
-                      delay: 1.4 + index * 0.1,
-                      type: "spring",
-                      stiffness: 200
-                    }}
+              {/* Fondo animado sutil */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-[#7252A5]/5 via-transparent to-[#D4F225]/5"
+                animate={{ x: ['-100%', '100%'] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              />
+
+              {/* Título de las estadísticas */}
+              <motion.h3
+                className="text-xl md:text-2xl font-bold text-gray-700 mb-8 relative z-10"
+                style={{ fontFamily: 'Codec Pro, sans-serif' }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isInView ? 1 : 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+              >
+                Resultados que hablan por nosotros
+              </motion.h3>
+
+              {/* Grid de estadísticas */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+                {[
+                  { number: '500+', label: 'Proyectos exitosos', color: '#7252A5' },
+                  { number: '98%', label: 'Clientes satisfechos', color: '#D4F225' },
+                  { number: '3x', label: 'ROI promedio', color: '#759CCF' }
+                ].map((stat, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="text-center relative group"
+                    whileHover={{ scale: 1.05 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
+                    transition={{ duration: 0.8, delay: 1.2 + index * 0.2 }}
                   >
-                    {stat.number}
+                    {/* Círculo decorativo de fondo */}
+                    <motion.div
+                      className="absolute inset-0 rounded-full opacity-5 group-hover:opacity-10 transition-opacity duration-300"
+                      style={{ backgroundColor: stat.color }}
+                      initial={{ scale: 0 }}
+                      animate={{ scale: isInView ? 1 : 0 }}
+                      transition={{ duration: 0.6, delay: 1.4 + index * 0.1 }}
+                    />
+                    
+                    {/* Número principal - MUY GRANDE */}
+                    <motion.div
+                      className="text-6xl md:text-8xl lg:text-9xl font-black mb-2 relative z-10"
+                      style={{ 
+                        fontFamily: 'Codec Pro, sans-serif',
+                        color: stat.color
+                      }}
+                      initial={{ scale: 0, rotateY: -90 }}
+                      animate={{ 
+                        scale: isInView ? 1 : 0,
+                        rotateY: isInView ? 0 : -90
+                      }}
+                      transition={{ 
+                        duration: 0.8, 
+                        delay: 1.6 + index * 0.2,
+                        type: "spring",
+                        stiffness: 150
+                      }}
+                    >
+                      {stat.number}
+                    </motion.div>
+                    
+                    {/* Label */}
+                    <motion.div
+                      className="text-lg md:text-xl font-semibold text-gray-700 relative z-10"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: isInView ? 1 : 0 }}
+                      transition={{ duration: 0.6, delay: 1.8 + index * 0.2 }}
+                    >
+                      {stat.label}
+                    </motion.div>
+
+                    {/* Línea decorativa debajo */}
+                    <motion.div
+                      className="w-16 h-1 rounded-full mx-auto mt-4"
+                      style={{ backgroundColor: stat.color }}
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: isInView ? 1 : 0 }}
+                      transition={{ duration: 0.6, delay: 2 + index * 0.2 }}
+                    />
+
+                    {/* Partícula flotante */}
+                    <motion.div
+                      className="absolute -top-4 -right-4 w-3 h-3 rounded-full opacity-60"
+                      style={{ backgroundColor: stat.color }}
+                      animate={{
+                        y: [0, -10, 0],
+                        opacity: [0.6, 1, 0.6],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        delay: index * 0.5,
+                      }}
+                    />
                   </motion.div>
-                  <div className="text-sm text-gray-600 mt-1">{stat.label}</div>
-                </motion.div>
-              ))}
+                ))}
+              </div>
+
+              {/* Líneas conectoras entre estadísticas */}
+              <motion.div
+                className="absolute top-1/2 left-1/3 w-px h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent hidden md:block"
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: isInView ? 1 : 0 }}
+                transition={{ duration: 0.8, delay: 2.4 }}
+              />
+              <motion.div
+                className="absolute top-1/2 right-1/3 w-px h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent hidden md:block"
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: isInView ? 1 : 0 }}
+                transition={{ duration: 0.8, delay: 2.6 }}
+              />
             </motion.div>
           </motion.div>
 

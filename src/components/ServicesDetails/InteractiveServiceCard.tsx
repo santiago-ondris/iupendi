@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, Zap } from 'lucide-react';
 import {
   serviceCardVariants,
@@ -43,7 +43,6 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
       whileHover="hover"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      style={{ transformStyle: 'preserve-3d' }}
     >
       {/* Card principal */}
       <motion.div
@@ -210,35 +209,6 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
           <span className="text-sm">⌄</span>
         </motion.div>
       </motion.div>
-
-      {/* Información expandida */}
-      <AnimatePresence>
-        {isExpanded && (
-          <motion.div
-            className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl p-6 shadow-xl border border-gray-100 z-20"
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{ duration: 0.3 }}
-          >
-            <h4 className="font-bold text-gray-900 mb-3">¿Por qué elegir este servicio?</h4>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              Implementamos estrategias probadas que han ayudado a más de 500+ empresas a alcanzar sus objetivos digitales. 
-              Nuestro enfoque personalizado garantiza resultados medibles y un ROI superior.
-            </p>
-            <div className="flex items-center gap-4 text-sm">
-              <span className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-green-500" />
-                Resultados en 30 días
-              </span>
-              <span className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-blue-500" />
-                Soporte 24/7
-              </span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.div>
   );
 };

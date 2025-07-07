@@ -164,7 +164,7 @@ const UnifiedFAQSection: React.FC = () => {
         </div>
 
         <motion.div
-          className="relative z-10 max-w-5xl mx-auto px-6"
+          className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6"
           variants={faqSectionVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -184,7 +184,7 @@ const UnifiedFAQSection: React.FC = () => {
 
             {/* Badge superior con marco conector */}
             <motion.div
-              className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-3 mb-8 relative overflow-hidden"
+              className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-2 sm:px-6 sm:py-3 mb-6 sm:mb-8 relative overflow-hidden"
               whileHover={{ scale: 1.05 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
@@ -203,28 +203,28 @@ const UnifiedFAQSection: React.FC = () => {
                 animate={{ scale: [1, 1.5, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              <span className="text-sm font-medium text-gray-700 tracking-wider uppercase">
+              <span className="text-xs sm:text-sm font-medium text-gray-700 tracking-wider uppercase">
                 Preguntas Frecuentes
               </span>
               
-              {/* Conectores laterales */}
+              {/* Conectores laterales responsivos */}
               <motion.div
-                className="absolute -left-8 top-1/2 transform -translate-y-1/2 w-6 h-px bg-gradient-to-r from-transparent to-gray-300"
+                className="absolute -left-6 sm:-left-8 top-1/2 transform -translate-y-1/2 w-4 sm:w-6 h-px bg-gradient-to-r from-transparent to-gray-300"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: isInView ? 1 : 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
               />
               <motion.div
-                className="absolute -right-8 top-1/2 transform -translate-y-1/2 w-6 h-px bg-gradient-to-l from-transparent to-gray-300"
+                className="absolute -right-6 sm:-right-8 top-1/2 transform -translate-y-1/2 w-4 sm:w-6 h-px bg-gradient-to-l from-transparent to-gray-300"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: isInView ? 1 : 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
               />
             </motion.div>
 
-            {/* Título principal con efectos conectores */}
+            {/* 🎯 TÍTULO PRINCIPAL RESPONSIVE MEJORADO */}
             <motion.h2 
-              className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-none relative"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 mb-4 sm:mb-6 leading-none relative px-2"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.9 }}
@@ -233,45 +233,47 @@ const UnifiedFAQSection: React.FC = () => {
               <span className="block">TÚ PREGUNTAS,</span>
               <span className="block">
                 <span className="text-[#7252A5]">NOSOTROS</span>
-                <br />
-                <span className="text-[#D4F225]">RESPONDEMOS</span>
-                <motion.span
-                  className="inline-block text-[#759CCF] ml-4"
-                  animate={{ rotate: [0, 15, -15, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                >
-                  👀
-                </motion.span>
+                <br className="sm:hidden" />
+                <span className="block sm:inline">
+                  <span className="text-[#D4F225]">RESPONDEMOS</span>
+                  <motion.span
+                    className="inline-block text-[#759CCF] ml-2 sm:ml-4 text-2xl sm:text-4xl md:text-6xl lg:text-7xl"
+                    animate={{ rotate: [0, 15, -15, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                  >
+                    👀
+                  </motion.span>
+                </span>
               </span>
               
-              {/* Elementos decorativos conectores */}
+              {/* Elementos decorativos conectores responsivos */}
               <motion.div
-                className="absolute -right-6 top-1/4 w-3 h-3 bg-[#D4F225]/30 rounded-full"
+                className="absolute -right-2 sm:-right-6 top-1/4 w-2 sm:w-3 h-2 sm:h-3 bg-[#D4F225]/30 rounded-full"
                 animate={{ scale: [1, 1.4, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
             </motion.h2>
             
-            {/* Subtítulo con líneas conectoras */}
+            {/* Subtítulo con líneas conectoras responsivas */}
             <motion.div
-              className="flex items-center justify-center gap-4 max-w-4xl mx-auto"
+              className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <motion.div
-                className="hidden md:block w-16 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"
+                className="hidden sm:block w-12 lg:w-16 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: isInView ? 1 : 0 }}
                 transition={{ duration: 1, delay: 1.2 }}
               />
-              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed text-center">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed text-center px-4">
                 Las respuestas que necesitas para tomar la{' '}
                 <span className="text-[#7252A5] font-semibold">mejor decisión</span>{' '}
                 para tu negocio
               </p>
               <motion.div
-                className="hidden md:block w-16 h-px bg-gradient-to-l from-transparent via-gray-300 to-transparent"
+                className="hidden sm:block w-12 lg:w-16 h-px bg-gradient-to-l from-transparent via-gray-300 to-transparent"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: isInView ? 1 : 0 }}
                 transition={{ duration: 1, delay: 1.2 }}
@@ -281,7 +283,7 @@ const UnifiedFAQSection: React.FC = () => {
 
           {/* Grid de FAQ Cards con conectores */}
           <motion.div 
-            className="space-y-6 relative"
+            className="space-y-4 sm:space-y-6 relative"
             variants={faqSectionVariants}
           >
             {/* Línea conectora central vertical */}
@@ -300,9 +302,9 @@ const UnifiedFAQSection: React.FC = () => {
                 custom={index}
                 className="relative"
               >
-                {/* Conectores hacia la línea central */}
+                {/* Conectores hacia la línea central - solo en desktop */}
                 <motion.div
-                  className={`absolute top-1/2 ${index % 2 === 0 ? 'right-1/2' : 'left-1/2'} w-8 h-px bg-gradient-to-${index % 2 === 0 ? 'l' : 'r'} from-gray-200 to-transparent`}
+                  className={`absolute top-1/2 ${index % 2 === 0 ? 'right-1/2' : 'left-1/2'} w-6 sm:w-8 h-px bg-gradient-to-${index % 2 === 0 ? 'l' : 'r'} from-gray-200 to-transparent hidden md:block`}
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: isInView ? 1 : 0 }}
                   transition={{ duration: 0.6, delay: 1.8 + index * 0.1 }}
@@ -314,18 +316,18 @@ const UnifiedFAQSection: React.FC = () => {
 
           {/* CTA integrado con conexiones */}
           <motion.div
-            className="mt-20 text-center relative"
+            className="mt-16 sm:mt-20 text-center relative"
             variants={ctaVariants}
           >
             {/* Línea conectora desde las FAQs */}
             <motion.div
-              className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-px h-8 bg-gradient-to-b from-gray-300 to-transparent"
+              className="absolute -top-8 sm:-top-10 left-1/2 transform -translate-x-1/2 w-px h-6 sm:h-8 bg-gradient-to-b from-gray-300 to-transparent"
               initial={{ scaleY: 0 }}
               animate={{ scaleY: isInView ? 1 : 0 }}
               transition={{ duration: 0.8, delay: 2.5 }}
             />
 
-            <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+            <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl relative overflow-hidden mx-4 sm:mx-0">
               {/* Fondo animado */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-[#7252A5]/5 via-transparent to-[#D4F225]/5"
@@ -334,7 +336,7 @@ const UnifiedFAQSection: React.FC = () => {
               />
               
               <motion.h3
-                className="text-3xl md:text-4xl font-black text-gray-900 mb-4 relative z-10"
+                className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3 sm:mb-4 relative z-10"
                 style={{ fontFamily: 'Codec Pro, sans-serif' }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isInView ? 1 : 0 }}
@@ -344,7 +346,7 @@ const UnifiedFAQSection: React.FC = () => {
               </motion.h3>
               
               <motion.p
-                className="text-gray-600 mb-8 text-lg relative z-10"
+                className="text-gray-600 mb-6 sm:mb-8 text-base sm:text-lg relative z-10 px-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isInView ? 1 : 0 }}
                 transition={{ duration: 0.8, delay: 2.9 }}
@@ -353,7 +355,7 @@ const UnifiedFAQSection: React.FC = () => {
               </motion.p>
               
               <motion.button
-                className="bg-gradient-to-r from-[#7252A5] to-[#6341a0] hover:from-[#6341a0] hover:to-[#5a3899] text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transition-all duration-300 relative z-10 overflow-hidden"
+                className="bg-gradient-to-r from-[#7252A5] to-[#6341a0] hover:from-[#6341a0] hover:to-[#5a3899] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 relative z-10 overflow-hidden"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -373,7 +375,7 @@ const UnifiedFAQSection: React.FC = () => {
 
             {/* Línea conectora hacia la siguiente sección */}
             <motion.div
-              className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-px h-8 bg-gradient-to-t from-gray-300 to-transparent"
+              className="absolute -bottom-8 sm:-bottom-10 left-1/2 transform -translate-x-1/2 w-px h-6 sm:h-8 bg-gradient-to-t from-gray-300 to-transparent"
               initial={{ scaleY: 0 }}
               animate={{ scaleY: isInView ? 1 : 0 }}
               transition={{ duration: 0.8, delay: 3.3 }}

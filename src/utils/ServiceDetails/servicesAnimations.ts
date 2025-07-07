@@ -57,8 +57,6 @@ export const serviceCardVariants: Variants = {
   hover: {
     y: -15,
     scale: 1.02,
-    rotateX: 5,
-    rotateY: 5,
     transition: {
       duration: 0.3,
       type: "spring",
