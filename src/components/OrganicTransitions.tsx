@@ -153,7 +153,7 @@ export const FAQToCTATransition: React.FC = () => (
 
 // 6. CTA → Footer
 export const CTAToFooterTransition: React.FC = () => (
-  <div className="relative -mb-20 z-10">
+  <div className="relative -mb-50 z-10">
     <svg
       viewBox="0 0 1440 180"
       className="w-full h-20 md:h-36 lg:h-45"

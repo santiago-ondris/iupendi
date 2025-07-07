@@ -47,7 +47,7 @@ const UnifiedFooterSection: React.FC = () => {
       ref={ref}
       id="footer"
       className="relative bg-gradient-to-b from-gray-200 via-gray-300 to-gray-400 text-gray-900 overflow-hidden"
-      style={{ marginTop: '-180px', paddingTop: '24px' }} // Overlap con CTA
+      style={{ marginTop: '-200px', paddingTop: '24px' }} // Overlap con CTA
     >
       {/* Elementos que llegan desde CTA */}
       <div className="absolute top-0 left-0 w-full overflow-hidden">
@@ -127,7 +127,7 @@ const UnifiedFooterSection: React.FC = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
         {/* Línea conectora desde CTA */}
         <motion.div
           className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-px h-12 bg-gradient-to-b from-gray-500 to-transparent"
@@ -138,7 +138,7 @@ const UnifiedFooterSection: React.FC = () => {
 
         {/* Sección principal del footer con marco */}
         <motion.div
-          className="text-center mb-16 relative"
+          className="text-center mb-10 relative"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -165,28 +165,6 @@ const UnifiedFooterSection: React.FC = () => {
               animate={{ scaleY: isInView ? 1 : 0 }}
               transition={{ duration: 0.6, delay: 1 }}
             />
-
-            <div className="flex justify-center items-center mb-4">
-              <motion.div
-                className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl border-2 border-gray-300 relative overflow-hidden"
-                whileHover={{ scale: 1.1, rotate: 360 }}
-                transition={{ duration: 0.8 }}
-              >
-                {/* Efecto de brillo en el logo */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D4F225]/30 to-transparent -skew-x-12"
-                  initial={{ x: '-100%' }}
-                  animate={{ x: '200%' }}
-                  transition={{ duration: 3, repeat: Infinity, repeatDelay: 5 }}
-                />
-                <span
-                  className="text-3xl font-black text-[#7252A5] relative z-10"
-                  style={{ fontFamily: 'Codec Pro, sans-serif' }}
-                >
-                  I
-                </span>
-              </motion.div>
-            </div>
 
             <motion.h3
               className="text-4xl md:text-5xl font-black text-gray-900 mb-2"
@@ -224,7 +202,7 @@ const UnifiedFooterSection: React.FC = () => {
 
           {/* Redes sociales con efectos premium */}
           <motion.div
-            className="flex justify-center gap-6 mb-12"
+            className="flex justify-center gap-4 mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
             transition={{ duration: 0.8, delay: 1.2 }}
@@ -261,7 +239,7 @@ const UnifiedFooterSection: React.FC = () => {
 
           {/* CTA final con marco especial */}
           <motion.div
-            className="mb-16 relative"
+            className="mb-2 relative"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.9 }}
             transition={{ duration: 0.8, delay: 1.6 }}
@@ -300,7 +278,7 @@ const UnifiedFooterSection: React.FC = () => {
 
         {/* Navegación y contacto con conectores */}
         <motion.div
-          className="grid md:grid-cols-2 gap-12 mb-16 border-t border-gray-400/30 pt-16 relative"
+          className="grid md:grid-cols-2 gap-4 mb-2 border-t border-gray-400/30 pt-10 relative"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
           transition={{ duration: 0.8, delay: 2 }}
@@ -384,7 +362,7 @@ const UnifiedFooterSection: React.FC = () => {
 
         {/* Copyright con elementos finales */}
         <motion.div
-          className="text-center border-t border-gray-400/30 pt-8 relative"
+          className="text-center border-t border-gray-400/30 pt-1 relative"
           initial={{ opacity: 0 }}
           animate={{ opacity: isInView ? 1 : 0 }}
           transition={{ duration: 0.8, delay: 3 }}

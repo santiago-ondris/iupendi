@@ -9,16 +9,16 @@ import {
 import { ServicesToBrandsTransition } from '../OrganicTransitions';
 
 const UnifiedServicesSection: React.FC = () => {
-  const { ref, isInView } = useInView({ threshold: 0.2 });
+  const { ref, isInView } = useInView({ threshold: 0.1 });
 
   const floatingShapes = [
-  { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
-  { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
-  { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
-  { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
-  { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
-  { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
-];
+    { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
+    { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
+    { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
+    { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
+    { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
+    { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
+  ];
 
   const servicesData = [
     {
@@ -88,7 +88,7 @@ const UnifiedServicesSection: React.FC = () => {
         style={{ marginTop: '-180px', paddingTop: '4px' }} // Overlap
       >
         
-      <div className="absolute inset-0 overflow-hidden z-0">
+        <div className="absolute inset-0 overflow-hidden z-0">
         {floatingShapes.map((shape, i) => (
           <motion.div
             key={i}

@@ -275,3 +275,26 @@ body {
   font-family: var(--font-sans);
   font-weight: 400;
 }
+
+/* Prueba: Solo Codec Bold */
+@font-face {
+  font-family: 'Codec Bold Test';
+  src: url('./assets/fonts/Codec-Cold-Bold-trial.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Codec Bold Text';
+  src: url('./assets/fonts/Codec-Cold-Regular-trial.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Configuración Tailwind v4 para la prueba */
+@theme {
+  --font-test: "Codec Bold Test", sans-serif;
+  --font-text: "Codec Bold Text", sans-serif;
+}

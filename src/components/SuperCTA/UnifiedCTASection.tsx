@@ -8,6 +8,15 @@ const UnifiedSuperCTASection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.3 });
   const [email, setEmail] = useState('');
 
+  const floatingShapes = [
+    { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
+    { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
+    { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
+    { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
+    { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
+    { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
+  ];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Email submitted:', email);
@@ -19,7 +28,7 @@ const UnifiedSuperCTASection: React.FC = () => {
         ref={ref}
         id="super-cta"
         className="relative py-20 sm:py-24 md:py-32 bg-gradient-to-br from-gray-100 via-slate-100 to-gray-200 overflow-hidden"
-        style={{ marginTop: '-80px', paddingTop: '104px' }} // Overlap con FAQ
+        style={{ marginTop: '-190px', paddingTop: '104px' }} // Overlap con FAQ
       >
         {/* Elementos que llegan desde FAQ */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
@@ -49,86 +58,76 @@ const UnifiedSuperCTASection: React.FC = () => {
 
         {/* Elementos decorativos de fondo conectados */}
         <div className="absolute inset-0">
-          {/* Gradientes radiales evolutivos más prominentes */}
+        {/* Figuras flotantes como el Hero */}
+        {floatingShapes.map((shape, i) => (
           <motion.div
-            className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-radial from-[#D4F225]/15 to-transparent rounded-full"
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-          <motion.div
-            className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-radial from-[#7252A5]/12 to-transparent rounded-full"
-            animate={{
-              scale: [1.2, 1, 1.2],
-              rotate: [360, 180, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-          
-          {/* Partículas flotantes más visibles */}
-          {[...Array(15)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-[#D4F225]/25 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                opacity: [0.25, 0.6, 0.25],
-                scale: [1, 1.5, 1],
-              }}
-              transition={{
-                duration: 4 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-
-          {/* Gradientes adicionales para más ambiente */}
-          <motion.div
-            className="absolute top-1/3 right-1/3 w-72 h-72 rounded-full opacity-8"
-            style={{ 
-              background: 'radial-gradient(circle, #759CCF 0%, transparent 70%)',
+            key={i}
+            className={`absolute ${shape.size} ${
+              shape.type === 'circle' 
+                ? `${shape.color} rounded-full` 
+                : `${shape.color} transform rotate-45`
+            }`}
+            style={{
+              left: `${5 + Math.random() * 90}%`,
+              top: `${5 + Math.random() * 90}%`,
+              zIndex: 1,
             }}
             animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.08, 0.15, 0.08],
+              y: [0, -40, 0],
+              x: [0, Math.random() * 30 - 15, 0],
+              rotate: shape.type === 'square' ? [45, 225, 45] : [0, 360, 0],
+              scale: [1, 1.15, 1],
             }}
             transition={{
-              duration: 12,
+              duration: 10 + Math.random() * 6,
               repeat: Infinity,
+              delay: shape.delay,
               ease: "easeInOut",
             }}
           />
+        ))}
 
-          {/* Líneas conectoras que cruzan toda la sección */}
-          <motion.div
-            className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#D4F225]/20 to-transparent"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: isInView ? 1 : 0 }}
-            transition={{ duration: 3, delay: 1 }}
-          />
-          
-          <motion.div
-            className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7252A5]/15 to-transparent"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: isInView ? 1 : 0 }}
-            transition={{ duration: 3.5, delay: 1.5 }}
-          />
-        </div>
+        {/* Gradientes radiales evolutivos más prominentes */}
+        <motion.div
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-radial from-[#D4F225]/15 to-transparent rounded-full"
+          animate={{
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-radial from-[#7252A5]/12 to-transparent rounded-full"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            rotate: [360, 180, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+
+        {/* Resto del contenido existente */}
+        <motion.div
+          className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#D4F225]/20 to-transparent"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: isInView ? 1 : 0 }}
+          transition={{ duration: 3, delay: 1 }}
+        />
+        
+        <motion.div
+          className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7252A5]/15 to-transparent"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: isInView ? 1 : 0 }}
+          transition={{ duration: 3.5, delay: 1.5 }}
+        />
+      </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           {/* Línea conectora desde FAQ */}
@@ -228,7 +227,7 @@ const UnifiedSuperCTASection: React.FC = () => {
             >
               Dale, sabemos que{' '}
               <motion.span
-                className="text-[#D4F225] font-bold bg-[#D4F225]/15 px-3 py-1 rounded-lg relative overflow-hidden"
+                className="text-[#7252A5] font-bold bg-[#7252A5]/15 px-3 py-1 rounded-lg relative overflow-hidden"
                 initial={{ scale: 1 }}
                 animate={{ scale: isInView ? [1, 1.05, 1] : 1 }}
                 transition={{ duration: 0.6, delay: 2.4 }}

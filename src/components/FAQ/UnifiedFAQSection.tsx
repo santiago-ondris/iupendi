@@ -12,6 +12,15 @@ import { FAQToCTATransition } from '../OrganicTransitions';
 const UnifiedFAQSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
 
+  const floatingShapes = [
+    { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-64 h-64', delay: 0 },
+    { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-48 h-48', delay: 1 },
+    { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-80 h-80', delay: 2 },
+    { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-40 h-40', delay: 0.5 },
+    { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0.8 },
+    { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 2.2 },
+  ];
+
   const faqData = [
     {
       id: 'results-time',
@@ -56,7 +65,7 @@ const UnifiedFAQSection: React.FC = () => {
         ref={ref}
         id="faq"
         className="relative py-20 bg-gradient-to-b from-gray-50 via-slate-50 to-gray-100 overflow-hidden"
-        style={{ marginTop: '-180px', paddingTop: '24px' }} // Overlap con Brands/DetailedServices
+        style={{ marginTop: '-80px', paddingTop: '24px' }} // Overlap con Brands/DetailedServices
       >
         {/* Elementos que llegan desde la sección anterior */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
@@ -86,82 +95,84 @@ const UnifiedFAQSection: React.FC = () => {
 
         {/* Elementos decorativos de fondo conectados */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Gradientes radiales evolutivos */}
+        {/* Figuras flotantes como el Hero */}
+        {floatingShapes.map((shape, i) => (
           <motion.div
-            className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-5"
-            style={{ 
-              background: 'radial-gradient(circle, #7252A5 0%, transparent 70%)',
+            key={i}
+            className={`absolute ${shape.size} ${
+              shape.type === 'circle' 
+                ? `${shape.color} rounded-full` 
+                : `${shape.color} transform rotate-45`
+            }`}
+            style={{
+              left: `${5 + Math.random() * 90}%`,
+              top: `${5 + Math.random() * 90}%`,
+              zIndex: 1,
             }}
             animate={{
-              scale: [1, 1.1, 1],
-              opacity: [0.05, 0.12, 0.05],
+              y: [0, -40, 0],
+              x: [0, Math.random() * 30 - 15, 0],
+              rotate: shape.type === 'square' ? [45, 225, 45] : [0, 360, 0],
+              scale: [1, 1.15, 1],
             }}
             transition={{
-              duration: 12,
+              duration: 10 + Math.random() * 6,
               repeat: Infinity,
+              delay: shape.delay,
               ease: "easeInOut",
             }}
           />
-          
-          <motion.div
-            className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full opacity-5"
-            style={{ 
-              background: 'radial-gradient(circle, #D4F225 0%, transparent 70%)',
-            }}
-            animate={{
-              scale: [1.1, 1, 1.1],
-              opacity: [0.05, 0.12, 0.05],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 3,
-            }}
-          />
+        ))}
 
-          {/* Líneas conectoras que cruzan la sección */}
-          <motion.div
-            className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7252A5]/10 to-transparent"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: isInView ? 1 : 0 }}
-            transition={{ duration: 3, delay: 1 }}
-          />
-          
-          <motion.div
-            className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#D4F225]/10 to-transparent"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: isInView ? 1 : 0 }}
-            transition={{ duration: 3.5, delay: 1.5 }}
-          />
+        {/* Gradientes radiales evolutivos más prominentes */}
+        <motion.div
+          className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-5"
+          style={{ 
+            background: 'radial-gradient(circle, #7252A5 0%, transparent 70%)',
+          }}
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.05, 0.12, 0.05],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        
+        <motion.div
+          className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full opacity-5"
+          style={{ 
+            background: 'radial-gradient(circle, #D4F225 0%, transparent 70%)',
+          }}
+          animate={{
+            scale: [1.1, 1, 1.1],
+            opacity: [0.05, 0.12, 0.05],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3,
+          }}
+        />
 
-          {/* Elementos geométricos conectados */}
-          <motion.div
-            className="absolute top-1/3 right-16 w-6 h-6 rounded-full bg-[#D4F225]/15"
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.15, 0.4, 0.15],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          
-          <motion.div
-            className="absolute bottom-1/3 left-16 w-4 h-4 bg-[#759CCF]/15 rotate-45"
-            animate={{
-              rotate: [45, 225, 45],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
+        {/* Resto del contenido existente */}
+        <motion.div
+          className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7252A5]/10 to-transparent"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: isInView ? 1 : 0 }}
+          transition={{ duration: 3, delay: 1 }}
+        />
+        
+        <motion.div
+          className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#D4F225]/10 to-transparent"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: isInView ? 1 : 0 }}
+          transition={{ duration: 3.5, delay: 1.5 }}
+        />
+      </div>
 
         <motion.div
           className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6"

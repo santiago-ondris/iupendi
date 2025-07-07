@@ -124,21 +124,44 @@ export const expandedContentVariants: Variants = {
   hidden: {
     height: 0,
     opacity: 0,
+    y: -10,
   },
   visible: {
     height: "auto",
     opacity: 1,
+    y: 0,
     transition: {
-      duration: 0.4,
-      ease: "easeInOut",
+      height: {
+        duration: 0.5,
+        ease: [0.04, 0.62, 0.23, 0.98], // Cubic bezier más suave
+      },
+      opacity: {
+        duration: 0.3,
+        delay: 0.15, // Aparece después del expand
+      },
+      y: {
+        duration: 0.4,
+        ease: "easeOut",
+      }
     }
   },
   exit: {
     height: 0,
     opacity: 0,
+    y: -10,
     transition: {
-      duration: 0.3,
-      ease: "easeInOut",
+      height: {
+        duration: 0.4,
+        ease: [0.04, 0.62, 0.23, 0.98],
+        delay: 0.1,
+      },
+      opacity: {
+        duration: 0.2,
+      },
+      y: {
+        duration: 0.3,
+        ease: "easeIn",
+      }
     }
   }
 };
@@ -146,15 +169,16 @@ export const expandedContentVariants: Variants = {
 // Animación del texto de respuesta
 export const answerVariants: Variants = {
   hidden: {
-    y: -10,
+    y: -15,
     opacity: 0,
   },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.3,
-      delay: 0.1,
+      duration: 0.4,
+      delay: 0.2, // Más delay para que sea más suave
+      ease: "easeOut",
     }
   },
   exit: {
@@ -162,6 +186,7 @@ export const answerVariants: Variants = {
     opacity: 0,
     transition: {
       duration: 0.2,
+      ease: "easeIn",
     }
   }
 };

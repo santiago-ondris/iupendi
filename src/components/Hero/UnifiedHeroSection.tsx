@@ -11,7 +11,6 @@ import {
   scrollIndicatorVariants
 } from '@/utils/Hero/heroAnimations';
 import { HeroToServicesTransition } from '../OrganicTransitions';
-import logo3SVG from '@/assets/logo3.svg';
 
 const HeroSection: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -107,95 +106,8 @@ const HeroSection: React.FC = () => {
           ))}
         </div>
         
-        <div className="relative z-10 max-w-6xl mx-auto text-center w-full flex flex-col justify-center min-h-[85vh] -translate-y-10">
-          
-          {/* Logo SVG */}
-          <motion.div
-            className="flex flex-col items-center mb-8 md:mb-12 relative"
-            initial={{ opacity: 0, scale: 0.5, y: -50 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ 
-              duration: 1.2, 
-              delay: 0.2,
-              type: "spring",
-              stiffness: 100 
-            }}
-          >
-            {/* Resplandor de fondo */}
-            <motion.div
-              className="absolute inset-0 w-32 h-32 md:w-40 md:h-40 bg-[#D4F225]/20 rounded-full blur-2xl"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: [0, 1.2, 1], opacity: [0, 0.6, 0.3] }}
-              transition={{ duration: 2, delay: 0.5 }}
-            />
-
-            {/* Contenedor del logo */}
-            <motion.div
-              className="relative z-10 w-24 h-auto md:w-32 md:h-auto"
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ 
-                duration: 1,
-                delay: 0.7,
-                type: "spring",
-                stiffness: 120 
-              }}
-              whileHover={{ 
-                scale: 1.1,
-                rotate: [0, -5, 5, 0],
-                transition: { duration: 0.6 }
-              }}
-            >
-
-              {/* Partículas decorativas alrededor */}
-              {[...Array(6)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-1 h-1 bg-[#D4F225] rounded-full"
-                  style={{
-                    left: `${20 + Math.cos(i * 60 * Math.PI / 180) * 60}%`,
-                    top: `${20 + Math.sin(i * 60 * Math.PI / 180) * 60}%`,
-                  }}
-                  animate={{
-                    scale: [0, 1, 0],
-                    opacity: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    delay: 1.5 + i * 0.2,
-                    repeat: Infinity,
-                    repeatDelay: 4,
-                  }}
-                />
-              ))}
-            </motion.div>
-
-            {/* Texto del logo */}
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-            >
-            </motion.div>
-
-            {/* Línea decorativa */}
-            <motion.div
-              className="w-16 h-0.5 bg-[#D4F225] mt-3"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 1.6 }}
-            />
-
-            {/* Conector hacia el título */}
-            <motion.div
-              className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-px h-4 bg-gradient-to-b from-[#D4F225] to-transparent"
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: 1 }}
-              transition={{ duration: 0.8, delay: 1.8 }}
-            />
-          </motion.div>
-
+        {/* Contenido principal centrado verticalmente */}
+        <div className="relative z-10 max-w-6xl mx-auto text-center w-full flex flex-col justify-center min-h-[45vh] -mt-40">
           {/* Título principal */}
           <motion.div
             className="mb-4 md:mb-6"
@@ -203,7 +115,7 @@ const HeroSection: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-none" style={{ fontFamily: 'Codec Pro, sans-serif' }}>
+            <div className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-none font-test">
               <div className="block mb-2">
                 {titleWords.slice(0, 2).map((word, idx) => (
                   <motion.span key={idx} className="inline-block mr-4 md:mr-6" variants={titleWordVariants}>
@@ -227,14 +139,14 @@ const HeroSection: React.FC = () => {
             </div>
           </motion.div>
 
+          {/* Subtítulo */}
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed font-text"
             variants={subtitleVariants}
             initial="hidden"
             animate="visible"
           >
-            Hacer crecer un negocio es difícil. Nosotros lo hacemos mucho más fácil,
-            más predecible, menos estresante y más divertido.
+            Maria Pilar
           </motion.p>
 
           {/* Formulario de email */}
@@ -267,8 +179,9 @@ const HeroSection: React.FC = () => {
           </motion.form>
         </div>
 
+        {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-18 md:bottom-6 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer"
+          className="absolute bottom-40 md:bottom-32 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer"
           variants={scrollIndicatorVariants}
           initial="hidden"
           animate={["visible", "bounce"]}

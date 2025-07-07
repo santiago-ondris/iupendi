@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { logoVariants, shineVariants } from '@/utils/Brands/brandAnimations';
 
@@ -23,12 +23,25 @@ const brandLogos: BrandLogo[] = [
   { name: 'MATRIX', subtitle: 'Systems', color: 'text-[#D4F225]' }
 ];
 
+// Hook para detectar si es mobile
+function useIsMobile(breakpoint = 640) { // 640px ≈ Tailwind 'sm'
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < breakpoint);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, [breakpoint]);
+  return isMobile;
+}
+
 const SpectacularLogoCarousel: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
   // Triplicamos los logos para el efecto infinito
   const extendedLogos = [...brandLogos, ...brandLogos, ...brandLogos];
-  const logoWidth = 300;
+  const isMobile = useIsMobile();
+  const logoWidth = isMobile ? 125 : 300;
   const totalWidth = brandLogos.length * logoWidth;
 
   return (

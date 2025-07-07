@@ -13,7 +13,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
       icon: 'I',
       iconColor: 'text-[#D4F225]',
       bgColor: 'bg-gray-800',
-      subtitle: 'CONTRATA QUE LO HAGAMOS POR TI',
+      subtitle: 'Maria Pilar',
       title: 'AGENCIA',
       description: 'Servicios de marketing digital gestionados y "hechos para ti" para empresas medianas a grandes que buscan acelerar el "hiper-crecimiento". Y sí, garantizamos resultados y olemos fantástico *guiño*.',
       buttonText: 'Empezar',
@@ -49,7 +49,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
         id="core-services"
         ref={ref}
         className="relative py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden"
-        style={{ marginTop: '-80px', paddingTop: '18px' }} // Overlap con hero
+        style={{ marginTop: '-40px', paddingTop: '28px' }} // Overlap con hero
       >
         {/* Elementos conectores que vienen del hero */}
         <div className="absolute top-0 left-0 w-full overflow-hidden">
@@ -223,7 +223,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
                 animate={{ x: '200%' }}
                 transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}
               />
-              <span className="relative z-10 mr-2">Sigues hacia abajo?</span>
+              <span className="relative z-10 mr-2">¿Seguis bajando?</span>
             </motion.button>
           </motion.div>
         </div>
