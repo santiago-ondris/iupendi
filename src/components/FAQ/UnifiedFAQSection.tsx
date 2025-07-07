@@ -231,20 +231,20 @@ const UnifiedFAQSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <span className="block">TÚ PREGUNTAS,</span>
-              <span className="block">
-                <span className="text-[#7252A5]">NOSOTROS</span>
-                <br className="sm:hidden" />
-                <span className="block sm:inline">
-                  <span className="text-[#D4F225]">RESPONDEMOS</span>
-                  <motion.span
-                    className="inline-block text-[#759CCF] ml-2 sm:ml-4 text-2xl sm:text-4xl md:text-6xl lg:text-7xl"
-                    animate={{ rotate: [0, 15, -15, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                  >
-                    👀
-                  </motion.span>
+                <span className="block">
+                  <span className="text-[#7252A5]">NOSOTROS</span>
+                  <br className="sm:hidden" />
+                  <span className="block">
+                    <span className="text-[#D4F225]">RESPONDEMOS</span>
+                    <motion.span
+                      className="inline-block text-[#759CCF] ml-2 sm:ml-4 text-2xl sm:text-4xl md:text-6xl lg:text-7xl"
+                      animate={{ rotate: [0, 15, -15, 0] }}
+                      transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                    >
+                      👀
+                    </motion.span>
+                  </span>
                 </span>
-              </span>
               
               {/* Elementos decorativos conectores responsivos */}
               <motion.div

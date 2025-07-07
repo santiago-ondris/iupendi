@@ -307,7 +307,7 @@ const UnifiedSuperCTASection: React.FC = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Tu email (no spameamos... tanto 😉)"
+                  placeholder="Mail (sin spam... tanto 😉)"
                   className="w-full px-8 py-5 text-lg bg-white/95 backdrop-blur-sm border-2 border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-[#D4F225]/30 focus:border-[#D4F225] transition-all duration-300 shadow-xl"
                   required
                   whileFocus={{ scale: 1.02, borderColor: '#D4F225' }}

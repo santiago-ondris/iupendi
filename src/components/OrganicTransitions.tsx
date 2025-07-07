@@ -1,23 +1,40 @@
-// src/components/OrganicTransitions.tsx
 import React from 'react';
 import { motion } from 'motion/react';
 
 // 1. Hero → CoreServices
 export const HeroToServicesTransition: React.FC = () => (
   <div className="relative -mb-20 z-10">
-    <svg
-      viewBox="0 0 1440 120"
-      className="w-full h-20 md:h-24 lg:h-28"
-      preserveAspectRatio="none"
-    >
-      <motion.path
-        d="M0,0 C480,80 960,80 1440,0 L1440,120 L0,120 Z"
-        fill="white"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 1.5, delay: 2 }}
-      />
-    </svg>
+    <div className="w-full h-20 md:h-24 lg:h-28 overflow-hidden">
+      {[...Array(8)].map((_, i) => (
+        <motion.div
+          key={`hero-connector-${i}`}
+          className="absolute w-2 h-2 rounded-full opacity-20"
+          style={{
+            backgroundColor: ['#D4F225', '#7252A5', '#759CCF'][i % 3],
+            left: `${15 + i * 10}%`,
+            top: '10%',
+          }}
+          animate={{
+            y: [0, 30, 60, 90],
+            opacity: [0.2, 0.4, 0.3, 0],
+            scale: [1, 1.2, 0.9, 0.7],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            delay: i * 0.5,
+            ease: "easeOut",
+          }}
+        />
+      ))}
+    </div>
+
+    <motion.div
+      className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"
+      initial={{ scaleX: 0 }}
+      animate={{ scaleX: 1 }}
+      transition={{ duration: 1, delay: 2 }}
+    />
   </div>
 );
 
@@ -70,7 +87,7 @@ export const BrandsToDetailedServicesTransition: React.FC = () => (
         initial={{ pathLength: 0 }}
         whileInView={{ pathLength: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 2, delay: 0.3 }}
+        transition={{ duration: 1, delay: 0.3 }}
       />
     </svg>
   </div>

@@ -28,20 +28,20 @@ const SpectacularLogoCarousel: React.FC = () => {
   
   // Triplicamos los logos para el efecto infinito
   const extendedLogos = [...brandLogos, ...brandLogos, ...brandLogos];
-  const logoWidth = 280;
+  const logoWidth = 300;
   const totalWidth = brandLogos.length * logoWidth;
 
   return (
     <div className="relative w-full overflow-hidden">
       {/* Gradientes laterales mejorados */}
       <motion.div
-        className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white via-white/95 to-transparent z-20"
+        className="absolute left-0 top-0 w-8 sm:w-16 md:w-32 h-full bg-gradient-to-r from-white via-white/95 to-transparent z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
       />
       <motion.div
-        className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white via-white/95 to-transparent z-20"
+        className="absolute right-0 top-0 w-8 sm:w-16 md:w-32 h-full bg-gradient-to-l from-white via-white/95 to-transparent z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -109,7 +109,7 @@ const SpectacularLogoCarousel: React.FC = () => {
                 <div className="relative z-10 text-center px-4">
                   {/* Nombre principal */}
                   <motion.div
-                    className={`text-2xl md:text-3xl lg:text-4xl font-black ${logo.color} transition-all duration-300 whitespace-nowrap relative overflow-hidden`}
+                    className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-black ${logo.color} transition-all duration-300 whitespace-nowrap relative overflow-hidden`}
                     style={{ fontFamily: 'Codec Pro, sans-serif' }}
                   >
                     {logo.name}
@@ -126,7 +126,7 @@ const SpectacularLogoCarousel: React.FC = () => {
                   {/* Subtítulo */}
                   {logo.subtitle && (
                     <motion.div
-                      className="text-xs md:text-sm text-gray-500 mt-2 uppercase tracking-wider font-medium"
+                      className="text-xs text-gray-500 mt-2 uppercase tracking-wider font-medium"
                       initial={{ opacity: 0.6 }}
                       whileHover={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}

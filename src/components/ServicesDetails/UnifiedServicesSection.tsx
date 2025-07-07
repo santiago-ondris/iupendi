@@ -11,6 +11,15 @@ import { ServicesToBrandsTransition } from '../OrganicTransitions';
 const UnifiedServicesSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
 
+  const floatingShapes = [
+  { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
+  { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
+  { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
+  { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
+  { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
+  { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
+];
+
   const servicesData = [
     {
       id: 'paid-ads',
@@ -70,15 +79,6 @@ const UnifiedServicesSection: React.FC = () => {
     }
   ];
 
-  // Partículas flotantes que conectan con otras secciones
-  const connectingParticles = Array.from({ length: 12 }, (_, i) => ({
-    id: i,
-    color: ['#D4F225', '#7252A5', '#759CCF', '#F2AE1F'][i % 4],
-    size: Math.random() * 4 + 2,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-  }));
-
   return (
     <>
       <section 
@@ -88,49 +88,35 @@ const UnifiedServicesSection: React.FC = () => {
         style={{ marginTop: '-180px', paddingTop: '4px' }} // Overlap
       >
         
-        {/* Partículas conectoras entre secciones */}
-        <div className="absolute inset-0 overflow-hidden">
-          {connectingParticles.map((particle) => (
-            <motion.div
-              key={particle.id}
-              className="absolute rounded-full"
-              style={{
-                backgroundColor: particle.color,
-                width: particle.size,
-                height: particle.size,
-                left: `${particle.x}%`,
-                top: `${particle.y}%`,
-                opacity: 0.15,
-              }}
-              animate={{
-                y: [0, -50, -100, -150],
-                opacity: [0.15, 0.3, 0.2, 0],
-                scale: [1, 1.2, 0.8, 0.5],
-              }}
-              transition={{
-                duration: 12 + particle.id,
-                repeat: Infinity,
-                delay: particle.id * 2,
-                ease: "easeOut",
-              }}
-            />
-          ))}
-
-          {/* Gradientes conectores */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        {floatingShapes.map((shape, i) => (
           <motion.div
-            className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-gray-50/50 to-transparent"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isInView ? 1 : 0 }}
-            transition={{ duration: 1.5 }}
+            key={i}
+            className={`absolute ${shape.size} ${
+              shape.type === 'circle' 
+                ? `${shape.color} rounded-full` 
+                : `${shape.color} transform rotate-45`
+            }`}
+            style={{
+              left: `${5 + Math.random() * 90}%`,
+              top: `${5 + Math.random() * 90}%`,
+              zIndex: 1,
+            }}
+            animate={{
+              y: [0, -40, 0],
+              x: [0, Math.random() * 30 - 15, 0],
+              rotate: shape.type === 'square' ? [45, 225, 45] : [0, 360, 0],
+              scale: [1, 1.15, 1],
+            }}
+            transition={{
+              duration: 10 + Math.random() * 6,
+              repeat: Infinity,
+              delay: shape.delay,
+              ease: "easeInOut",
+            }}
           />
-
-          <motion.div
-            className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white/50 to-transparent"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isInView ? 1 : 0 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-          />
-        </div>
+        ))}
+      </div>
 
         <motion.div
           className="relative z-10 max-w-7xl mx-auto px-6"

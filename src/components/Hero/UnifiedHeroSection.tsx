@@ -11,6 +11,7 @@ import {
   scrollIndicatorVariants
 } from '@/utils/Hero/heroAnimations';
 import { HeroToServicesTransition } from '../OrganicTransitions';
+import logo3SVG from '@/assets/logo3.svg';
 
 const HeroSection: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -249,7 +250,7 @@ const HeroSection: React.FC = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="✋ Ingresa tu email y te enviamos algo de 'magia'..."
+                placeholder="✋ Ingresá tu email..."
                 className="w-full px-8 py-5 text-base md:text-lg bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-full focus:outline-none focus:ring-4 focus:ring-[#D4F225]/30 focus:border-[#D4F225] placeholder-gray-500 transition-all duration-300 shadow-lg"
                 required
                 whileFocus={{ scale: 1.02 }}
@@ -267,7 +268,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         <motion.div
-          className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer"
+          className="absolute bottom-18 md:bottom-6 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer"
           variants={scrollIndicatorVariants}
           initial="hidden"
           animate={["visible", "bounce"]}
