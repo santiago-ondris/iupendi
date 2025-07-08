@@ -180,7 +180,7 @@ const HeroSection: React.FC = () => {
 
         {/* SCROLL INDICATOR */}
         <motion.div
-          className="absolute bottom-40 md:bottom-32 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer"
+          className="absolute bottom-44 md:bottom-36 left-1/2 transform -translate-x-1/2 z-20 cursor-pointer"
           variants={scrollIndicatorVariants}
           initial="hidden"
           animate={["visible", "bounce"]}
