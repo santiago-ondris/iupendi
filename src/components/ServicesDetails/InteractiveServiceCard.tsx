@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import {
   serviceCardVariants,
   cardContentVariants,
@@ -18,6 +18,7 @@ interface ServiceCardProps {
   features: string[];
   accentColor: string;
   description?: string;
+  cta?: string;
   index: number;
 }
 
@@ -27,6 +28,7 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
   features,
   accentColor,
   description = "Estrategias personalizadas que convierten visitantes en clientes leales",
+  cta,
   index
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -187,10 +189,7 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
             whileHover="hover"
             whileTap="tap"
           >
-            <span className="flex items-center gap-2">
-              <Zap className="w-5 h-5" style={{ color: colorValue }} />
-              Empezar ya mismo
-            </span>
+            <span className="relative z-10 mr-2">{cta || "Empezar ya mismo"}</span>
             <motion.div
               className="flex items-center gap-2"
               whileHover={{ x: 5 }}

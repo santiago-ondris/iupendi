@@ -29,6 +29,7 @@ const UnifiedServicesSection: React.FC = () => {
       title: t('detailedServices.services.paidAds.title'),
       description: t('detailedServices.services.paidAds.description'),
       features: t('detailedServices.services.paidAds.features', { returnObjects: true }),
+      cta: t('detailedServices.services.paidAds.cta'), // ← Nuevo
       accentColor: 'bg-[#D4F225]'
     },
     {
@@ -37,6 +38,7 @@ const UnifiedServicesSection: React.FC = () => {
       title: t('detailedServices.services.socialMedia.title'),
       description: t('detailedServices.services.socialMedia.description'),
       features: t('detailedServices.services.socialMedia.features', { returnObjects: true }),
+      cta: t('detailedServices.services.socialMedia.cta'), // ← Nuevo
       accentColor: 'bg-[#7252A5]'
     },
     {
@@ -45,6 +47,7 @@ const UnifiedServicesSection: React.FC = () => {
       title: t('detailedServices.services.contentCreation.title'),
       description: t('detailedServices.services.contentCreation.description'),
       features: t('detailedServices.services.contentCreation.features', { returnObjects: true }),
+      cta: t('detailedServices.services.contentCreation.cta'), // ← Nuevo
       accentColor: 'bg-[#759CCF]'
     },
     {
@@ -53,6 +56,7 @@ const UnifiedServicesSection: React.FC = () => {
       title: t('detailedServices.services.webDevelopment.title'),
       description: t('detailedServices.services.webDevelopment.description'),
       features: t('detailedServices.services.webDevelopment.features', { returnObjects: true }),
+      cta: t('detailedServices.services.webDevelopment.cta'), // ← Nuevo
       accentColor: 'bg-[#F2AE1F]'
     }
   ];

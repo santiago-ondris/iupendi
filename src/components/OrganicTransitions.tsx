@@ -3,8 +3,8 @@ import { motion } from 'motion/react';
 
 // 1. Hero → CoreServices
 export const HeroToServicesTransition: React.FC = () => (
-  <div className="relative -mb-20 z-10">
-    <div className="w-full h-20 md:h-24 lg:h-28 overflow-hidden">
+  <div className="relative -mb-20 z-0">
+    <div className="w-full h-10 md:h-14 lg:h-18 overflow-hidden">
       {[...Array(8)].map((_, i) => (
         <motion.div
           key={`hero-connector-${i}`}

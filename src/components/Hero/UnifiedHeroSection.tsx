@@ -113,22 +113,22 @@ const HeroSection: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="text-5xl md:text-7xl lg:text-8xl font-black text-[#6E787D] leading-none font-test">
+            <div className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#6E787D] leading-none font-test">
               <div className="block mb-2">
-                {titleWords.slice(0, 2).map((word, idx) => (
-                  <motion.span key={idx} className="inline-block mr-4 md:mr-6" variants={titleWordVariants}>
-                    {word.text}
-                  </motion.span>
-                ))}
+                <motion.span className="inline-block mr-2 sm:mr-4 md:mr-6 whitespace-nowrap" variants={titleWordVariants}>
+                  {titleWords[0]?.text} {titleWords[1]?.text}
+                </motion.span>
+                <br className="sm:hidden" />
+                <motion.span className="inline-block mr-2 sm:mr-4 md:mr-6" variants={titleWordVariants}>
+                  {titleWords[2]?.text}
+                </motion.span>
               </div>
               <div className="block">
-                {titleWords.slice(2, 4).map((word, idx) => (
-                  <motion.span key={idx + 2} className="inline-block mr-4 md:mr-6" variants={titleWordVariants}>
-                    {word.text}
-                  </motion.span>
-                ))}
+                <motion.span className="inline-block mr-2 sm:mr-4 md:mr-6" variants={titleWordVariants}>
+                  {titleWords[3]?.text}
+                </motion.span>
                 {/* PALABRA DESTACADA DINÁMICA */}
-                <motion.span className="inline-block text-[#7252A5] mr-4" variants={highlightWordVariants}>
+                <motion.span className="inline-block text-[#7252A5] mr-2 sm:mr-4" variants={highlightWordVariants}>
                   {titleWords[titleWords.length - 1]?.text}
                 </motion.span>
                 <motion.span className="inline-block text-[#D4F225]" variants={asteriskVariants} animate={["visible", "float"]}>

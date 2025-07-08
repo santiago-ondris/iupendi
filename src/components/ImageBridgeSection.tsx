@@ -10,7 +10,7 @@ const ImageBridgeSection: React.FC = () => {
       ref={ref}
       id="image-bridge"
       className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen overflow-hidden"
-      style={{ marginTop: '-190px', paddingTop: '100px' }} // Overlap con hero
+      style={{ marginTop: '-190px', paddingTop: '100px' }}
     >
       {/* Imagen de fondo */}
       <motion.div
@@ -32,33 +32,7 @@ const ImageBridgeSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/40" />
       </motion.div>
 
-      {/* Elementos flotantes que conectan */}
-      <div className="absolute inset-0">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={`floating-${i}`}
-            className="absolute w-2 h-2 rounded-full opacity-20"
-            style={{
-              backgroundColor: ['#D4F225', '#7252A5', '#759CCF'][i % 3],
-              left: `${15 + i * 10}%`,
-              top: `${20 + Math.random() * 60}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.2, 0.5, 0.2],
-              scale: [1, 1.3, 1],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 2,
-              repeat: Infinity,
-              delay: i * 0.5,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Indicadores de scroll hacia siguiente sección */}
+      {/* SOLO indicador de scroll hacia siguiente sección */}
       <motion.div
         className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
@@ -72,7 +46,8 @@ const ImageBridgeSection: React.FC = () => {
         />
       </motion.div>
 
-      {/* Elementos que fluyen hacia la siguiente sección */}
+      {/* COMENTAR ESTO - Elementos que fluyen hacia la siguiente sección */}
+      {/*
       <div className="absolute bottom-0 left-0 w-full overflow-hidden">
         {[...Array(6)].map((_, i) => (
           <motion.div
@@ -97,6 +72,7 @@ const ImageBridgeSection: React.FC = () => {
           />
         ))}
       </div>
+      */}
     </section>
   );
 };

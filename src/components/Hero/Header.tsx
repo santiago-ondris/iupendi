@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   };
 
   const handlePhoneCall = () => {
-    window.open('tel:+5491112345678', '_self');
+    window.open('tel:+61 433 402 744', '_self');
   };
 
   return (

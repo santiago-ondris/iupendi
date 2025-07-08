@@ -12,7 +12,7 @@
       "clients": "Clientes",
       "faq": "FAQ",
       "contact": "Contacto",
-      "phone": "+54 9 11 1234-5678"
+      "phone": "+61 433 402 744"
     },
     "services": {
       "sectionTitle": "NUESTROS SERVICIOS",
@@ -85,7 +85,14 @@
     "footer": {
       "title": "IUPENDI DIGITAL",
       "subtitle": "Agencia de marketing digital que conecta, crea y convierte",
-      "navigation": "Navegación",
+      "navigation": {
+        "title": "Navegación",
+        "home": "Inicio",
+        "services": "Servicios",
+        "clients": "Clientes", 
+        "faq": "FAQ",
+        "contact": "Contacto"
+      },
       "contact": "Contacto",
       "ctaButton": "Empezar proyecto",
       "copyright": "IUPENDI DIGITAL © 2025. Diseñado con",
@@ -115,7 +122,8 @@
             "Segmentación Inteligente",
             "Creación de Campañas",
             "Optimización y Reporte"
-          ]
+          ],
+          "cta": "Quiero más clics que conviertan"
         },
         "socialMedia": {
           "title": "Social Media Management",
@@ -126,7 +134,8 @@
             "Planificación de Contenido",
             "Creatividad y Producción",
             "Reunión Mensual de Resultados"
-          ]
+          ],
+          "cta": "Conectemos con tu audiencia"
         },
         "contentCreation": {
           "title": "Asesoramiento en Marketing Digital",
@@ -137,7 +146,8 @@
             "Acompañamiento Personalizado",
             "Capacitación y Recursos",
             "Monitoreo y Optimización"
-          ]
+          ],
+          "cta": "Quiero ser independiente"
         },
         "webDevelopment": {
           "title": "Sitio Web (Creación y Desarrollo)",
@@ -148,7 +158,8 @@
             "Desarrollo Web",
             "Optimización y Pruebas",
             "Lanzamiento y Mantenimiento"
-          ]
+          ],
+          "cta": "Mi web tiene que vender"
         }
       }
     }

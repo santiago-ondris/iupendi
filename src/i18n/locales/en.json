@@ -12,7 +12,7 @@
       "clients": "Clients", 
       "faq": "FAQ",
       "contact": "Contact",
-      "phone": "+54 9 11 1234-5678"
+      "phone": "+61 433 402 744"
     },
     "services": {
       "sectionTitle": "OUR SERVICES",
@@ -85,7 +85,14 @@
     "footer": {
       "title": "IUPENDI DIGITAL",
       "subtitle": "Digital marketing agency that connects, creates and converts",
-      "navigation": "Navigation",
+      "navigation": {
+        "title": "Navigation",
+        "home": "Home",
+        "services": "Services",
+        "clients": "Clients",
+        "faq": "FAQ", 
+        "contact": "Contact"
+      },
       "contact": "Contact",
       "ctaButton": "Start project",
       "copyright": "IUPENDI DIGITAL © 2025. Designed with",
@@ -104,7 +111,7 @@
         "roi": "3x",
         "roiLabel": "Average ROI"
       },
-      "cta": "Let’s make it happen!",
+      "cta": "Let's make it happen!",
       "services": {
         "paidAds": {
           "title": "Paid Media",
@@ -115,7 +122,8 @@
             "Smart Targeting",
             "Campaign Creation",
             "Optimization and Reporting"
-          ]
+          ],
+          "cta": "I want clicks that convert"
         },
         "socialMedia": {
           "title": "Social Media Management",
@@ -126,7 +134,8 @@
             "Content Planning",
             "Creativity and Production",
             "Monthly Results Meeting"
-          ]
+          ],
+          "cta": "Let's connect with my audience"
         },
         "contentCreation": {
           "title": "Digital Marketing Consulting",
@@ -137,7 +146,8 @@
             "Personalized Support",
             "Training and Resources",
             "Monitoring and Optimization"
-          ]
+          ],
+          "cta": "I want to be independent"
         },
         "webDevelopment": {
           "title": "Website Development",
@@ -148,7 +158,8 @@
             "Web Development",
             "Optimization and Testing",
             "Launch and Maintenance"
-          ]
+          ],
+          "cta": "My website needs to sell"
         }
       }
     }

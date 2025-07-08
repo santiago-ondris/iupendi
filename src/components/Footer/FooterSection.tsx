@@ -18,11 +18,11 @@ const UnifiedFooterSection: React.FC = () => {
   const { t } = useTranslation();
 
   const navigationLinks = [
-    { name: 'Inicio', href: '#hero', icon: '🏠' },
-    { name: 'Servicios', href: '#core-services', icon: '⚡' },
-    { name: 'Clientes', href: '#brands', icon: '🤝' },
-    { name: 'FAQ', href: '#faq', icon: '❓' },
-    { name: 'Contacto', href: '#super-cta', icon: '💬' },
+    { name: t('footer.navigation.home'), href: '#hero', icon: '🏠' },
+    { name: t('footer.navigation.services'), href: '#core-services', icon: '⚡' },
+    { name: t('footer.navigation.clients'), href: '#brands', icon: '🤝' },
+    { name: t('footer.navigation.faq'), href: '#faq', icon: '❓' },
+    { name: t('footer.navigation.contact'), href: '#super-cta', icon: '💬' },
   ];
 
   const socialLinks = [
@@ -33,7 +33,7 @@ const UnifiedFooterSection: React.FC = () => {
 
   const contactInfo = [
     { Icon: Mail, text: 'hola@iupendigital.com', href: 'mailto:hola@iupendigital.com' },
-    { Icon: Phone, text: '+54 9 11 1234-5678', href: 'tel:+5491112345678' },
+    { Icon: Phone, text: '+61 433 402 744', href: 'tel:+61433402744' },
     { Icon: MapPin, text: 'Sidney, y en todo el mundo', href: '#' },
   ];
 
@@ -305,7 +305,7 @@ const UnifiedFooterSection: React.FC = () => {
               className="text-xl font-bold mb-6 text-gray-900"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
             >
-              {t('footer.navigation')}
+              {t('footer.navigation.title')}
             </h4>
             <div className="grid grid-cols-2 gap-4">
               {navigationLinks.map((link, index) => (

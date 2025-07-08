@@ -29,7 +29,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
   buttonText,
-  rating,
   type
 }) => {
   return (
@@ -118,7 +117,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
               <Star
                 key={i}
                 className={`w-5 h-5 ${
-                  i < Math.floor(rating) ? 'text-[#F2AE1F] fill-current' : 'text-gray-500'
+                  i < 5 ? 'text-[#F2AE1F] fill-current' : 'text-gray-500'
                 }`}
               />
             ))}
