@@ -178,5 +178,21 @@
           "cta": "Mi web tiene que vender"
         }
       }
+    },
+    "notFound": {
+      "title": "¡UPS!",
+      "subtitle": "Esta página decidió tomarse unas vacaciones",
+      "description": "(Pero nosotros seguimos trabajando)",
+      "message": "No te preocupes, esto no afecta nuestro querido ROI",
+      "buttons": {
+        "goHome": "Llevame al inicio",
+        "goBack": "Volver atrás"
+      },
+      "links": {
+        "helpText": "¿O necesitas algo específico?",
+        "services": "Ver servicios",
+        "contact": "Contactanos"
+      },
+      "disclaimer": "* Si seguís perdido, deberias contactarnos..."
     }
   }

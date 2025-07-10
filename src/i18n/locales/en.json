@@ -178,5 +178,21 @@
           "cta": "My website needs to sell"
         }
       }
+    },
+    "notFound": {
+      "title": "OOPS!",
+      "subtitle": "This page decided to take a vacation",
+      "description": "(But we're still working)",
+      "message": "Don't worry, this doesn't affect our dear ROI",
+      "buttons": {
+        "goHome": "Take me home",
+        "goBack": "Go back"
+      },
+      "links": {
+        "helpText": "Or do you need something specific?",
+        "services": "View services",
+        "contact": "Contact us"
+      },
+      "disclaimer": "* If you're still lost, you should contact us..."
     }
   }

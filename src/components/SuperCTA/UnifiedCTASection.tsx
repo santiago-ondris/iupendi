@@ -205,7 +205,7 @@ const UnifiedSuperCTASection: React.FC = () => {
               </motion.span>
             </motion.h2>
 
-            <motion.p
+            <motion.div
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 font-medium mb-3 sm:mb-4 px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: isInView ? 1 : 0 }}
@@ -227,7 +227,7 @@ const UnifiedSuperCTASection: React.FC = () => {
                 />
                 <span className="relative z-10">{t('superCta.subtitleHighlight')}</span>
               </motion.span>
-            </motion.p>
+            </motion.div>
             
             <motion.div
               className="flex items-center justify-center gap-2 relative z-10"
