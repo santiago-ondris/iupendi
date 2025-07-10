@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import FAQCardLight from './FAQCardLight';
+import CalendlyCTASection from './CalendlyCTASection';
 import { useInView } from '@/utils/useInView';
 import {
   faqSectionVariants,
   faqHeaderVariants,
-  ctaVariants
 } from '@/utils/FAQ/faqAnimations';
 import { FAQToCTATransition } from '@/components/Transitions/EnhancedTransitions';
 import { useTranslation } from 'react-i18next';
@@ -325,64 +325,7 @@ const UnifiedFAQSection: React.FC = () => {
             ))}
           </motion.div>
 
-          {/* CTA integrado con conexiones */}
-          <motion.div
-            className="mt-16 sm:mt-20 text-center relative"
-            variants={ctaVariants}
-          >
-            {/* Línea conectora desde las FAQs */}
-            <motion.div
-              className="absolute -top-8 sm:-top-10 left-1/2 transform -translate-x-1/2 w-px h-6 sm:h-8 bg-gradient-to-b from-gray-300 to-transparent"
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: isInView ? 1 : 0 }}
-              transition={{ duration: 0.8, delay: 2.5 }}
-            />
-
-            <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl relative overflow-hidden mx-4 sm:mx-0">
-              {/* Fondo animado */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#7252A5]/5 via-transparent to-[#D4F225]/5"
-                animate={{ x: ['-100%', '100%'] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              />
-              
-              <motion.h3
-                className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3 sm:mb-4 relative z-10"
-                style={{ fontFamily: 'Codec Pro, sans-serif' }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isInView ? 1 : 0 }}
-                transition={{ duration: 0.8, delay: 2.7 }}
-              >
-                {t('faq.ctaTitle')}
-              </motion.h3>
-              
-              <motion.p
-                className="text-gray-600 mb-6 sm:mb-8 text-base sm:text-lg relative z-10 px-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isInView ? 1 : 0 }}
-                transition={{ duration: 0.8, delay: 2.9 }}
-              >
-                {t('faq.ctaSubtitle')}
-              </motion.p>
-              
-              <motion.button
-                className="bg-gradient-to-r from-[#7252A5] to-[#6341a0] hover:from-[#6341a0] hover:to-[#5a3899] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 relative z-10 overflow-hidden"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-                transition={{ duration: 0.8, delay: 3.1 }}
-              >
-                {/* Efecto de brillo */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
-                  initial={{ x: '-100%' }}
-                  animate={{ x: '200%' }}
-                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                />
-                <span className="relative z-10">{t('faq.ctaButton')}</span>
-              </motion.button>
-            </div>
+          <CalendlyCTASection isInView={isInView} />
 
             {/* Línea conectora hacia la siguiente sección */}
             <motion.div
@@ -392,7 +335,6 @@ const UnifiedFAQSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 3.3 }}
             />
           </motion.div>
-        </motion.div>
 
         {/* Elementos que fluyen hacia CTA */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden">

@@ -71,6 +71,22 @@
         }
       }
     },
+    "calendlyCta": {
+      "badge": "Sin vueltas",
+      "titlePart1": "¿Seguís con",
+      "titleHighlight": "dudas",
+      "titlePart2": "?",
+      "subtitle": "Reservá",
+      "subtitleHighlight": "30 minutos gratis",
+      "subtitlePart2": "y charlamos",
+      "description": "No hay formularios, no hay esperas. Solo una meet.",
+      "features": {
+        "time": "30 min gratis",
+        "booking": "Agendás al toque", 
+        "strategy": "Sacate las dudas"
+      },
+      "disclaimer": "* Sin letra chica, sin compromisos raros. Solo una charla sobre tu proyecto 🚀"
+    },
     "superCta": {
       "note": "(No te juzgamos, es normal)",
       "emailPlaceholder": "Mail (sin spam... tanto 😉)",
@@ -94,7 +110,7 @@
         "contact": "Contacto"
       },
       "contact": "Contacto",
-      "ctaButton": "Empezar proyecto",
+      "ctaButton": "Ir a WhatsApp",
       "copyright": "IUPENDI DIGITAL © 2025. Diseñado con",
       "location": "en Córdoba"
     },

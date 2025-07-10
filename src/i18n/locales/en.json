@@ -71,6 +71,22 @@
         }
       }
     },
+    "calendlyCta": {
+      "badge": "No BS",
+      "titlePart1": "Still have",
+      "titleHighlight": "doubts",
+      "titlePart2": "?",
+      "subtitle": "Book",
+      "subtitleHighlight": "30 free minutes",
+      "subtitlePart2": "and let's talk about your project",
+      "description": "No forms, no waiting. Just a talk.",
+      "features": {
+        "time": "30 min free",
+        "booking": "Book instantly",
+        "strategy": "Remove doubts"
+      },
+      "disclaimer": "* No fine print, no weird commitments. Just an chat about your project 🚀"
+    },
     "superCta": {
       "subtitle": "Come on, we know you want to",
       "note": "(We don't judge, it's normal)",
@@ -94,7 +110,7 @@
         "contact": "Contact"
       },
       "contact": "Contact",
-      "ctaButton": "Start project",
+      "ctaButton": "Go to WhatsApp",
       "copyright": "IUPENDI DIGITAL © 2025. Designed with",
       "location": "in Córdoba"
     },
