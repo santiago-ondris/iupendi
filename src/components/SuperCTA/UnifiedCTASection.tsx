@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { useInView } from '@/utils/useInView';
-import { CTAToFooterTransition } from '../OrganicTransitions';
+import { CTAToFooterTransition } from '@/components/Transitions/EnhancedTransitions';
 import { useTranslation } from 'react-i18next';
 
 const UnifiedSuperCTASection: React.FC = () => {

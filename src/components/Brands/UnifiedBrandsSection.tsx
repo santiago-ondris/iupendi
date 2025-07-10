@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import SpectacularLogoCarousel from './SpectacularLogoCarousel';
 import { useInView } from '@/utils/useInView';
-import { BrandsToDetailedServicesTransition } from '../OrganicTransitions';
+import { BrandsToDetailedServicesTransition } from '@/components/Transitions/EnhancedTransitions';
 import { useTranslation } from 'react-i18next';
 
 

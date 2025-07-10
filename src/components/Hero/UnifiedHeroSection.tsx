@@ -11,7 +11,7 @@ import {
   formVariants,
   scrollIndicatorVariants
 } from '@/utils/Hero/heroAnimations';
-import { HeroToServicesTransition } from '../OrganicTransitions';
+import { HeroToServicesTransition } from '@/components/Transitions/EnhancedTransitions';
 
 const HeroSection: React.FC = () => {
   const { t } = useTranslation(); 

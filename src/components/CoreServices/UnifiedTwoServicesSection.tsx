@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import ServiceCard from './ServiceCard';
 import { useInView } from '@/utils/useInView';
-import { ServicesToBrandsTransition } from '../OrganicTransitions';
+import { ServicesToBrandsTransition } from '@/components/Transitions/EnhancedTransitions';
 
 const UnifiedCoreServicesSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });

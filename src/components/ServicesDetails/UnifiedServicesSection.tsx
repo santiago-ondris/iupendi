@@ -7,7 +7,7 @@ import {
   sectionContainerVariants,
   headerVariants,
 } from '@/utils/ServiceDetails/servicesAnimations';
-import { ServicesToBrandsTransition } from '../OrganicTransitions';
+import { ServicesToBrandsTransition } from '@/components/Transitions/EnhancedTransitions';
 
 const UnifiedServicesSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.1 });

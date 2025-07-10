@@ -7,7 +7,7 @@ import {
   faqHeaderVariants,
   ctaVariants
 } from '@/utils/FAQ/faqAnimations';
-import { FAQToCTATransition } from '../OrganicTransitions';
+import { FAQToCTATransition } from '@/components/Transitions/EnhancedTransitions';
 import { useTranslation } from 'react-i18next';
 
 const UnifiedFAQSection: React.FC = () => {
