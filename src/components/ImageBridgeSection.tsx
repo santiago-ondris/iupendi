@@ -23,7 +23,7 @@ const ImageBridgeSection: React.FC = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <img
-          src="/public/teamimg2.png" 
+          src="/teamimg2.png" 
           alt="Equipo Iupendi Digital trabajando"
           className="w-full h-full object-cover object-center"
         />

@@ -172,7 +172,7 @@ const UnifiedFooterSection: React.FC = () => {
             className="mb-8 relative md:flex md:justify-center"
             transition={{ duration: 0.6 }}>
               <img
-                src="/public/logo4.svg"
+                src="/logo4.svg"
                 alt="Iupendi Digital"
                 className=" 
                   object-contain

@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               >
                 <motion.div className="relative" transition={{ duration: 0.6 }}>
                   <img
-                    src="/public/logo4.svg"
+                    src="/logo4.svg"
                     alt="Iupendi Digital"
                     className="h-16 md:h-22 transition-all duration-300 opacity-90 hover:opacity-100"
                   />
