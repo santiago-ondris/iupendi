@@ -105,7 +105,7 @@ const UnifiedCoreServicesSection: React.FC = () => {
 
             {/* TÍTULO */}
             <motion.h2 
-              className="text-5xl md:text-7xl font-black text-[#6E787D] mb-6 tracking-wider relative"
+              className="text-5xl md:text-7xl font-black text-[#292929] mb-6 tracking-wider relative"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.9 }}

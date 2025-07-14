@@ -34,7 +34,7 @@ const UnifiedFooterSection: React.FC = () => {
   const contactInfo = [
     { Icon: Mail, text: 'hola@iupendigital.com', href: 'mailto:hola@iupendigital.com' },
     { Icon: Phone, text: '+61 433 402 744', href: 'tel:+61433402744' },
-    { Icon: MapPin, text: 'Sidney, y en todo el mundo', href: '#' },
+    { Icon: MapPin, text: t('footer.navigation.world'), href: '#' },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -168,14 +168,18 @@ const UnifiedFooterSection: React.FC = () => {
               transition={{ duration: 0.6, delay: 1 }}
             />
 
-            <motion.h3
-              className="text-4xl md:text-5xl font-black text-gray-900 mb-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              {t('footer.title')}
-            </motion.h3>
+            <motion.div
+            className="mb-8 relative md:flex md:justify-center"
+            transition={{ duration: 0.6 }}>
+              <img
+                src="/src/assets/logo4.svg"
+                alt="Iupendi Digital"
+                className=" 
+                  object-contain
+                  transition-all duration-300 opacity-90 hover:opacity-100
+                "
+              />
+            </motion.div>
 
             <motion.p
               className="text-xl text-gray-600 mt-4 max-w-2xl mx-auto"

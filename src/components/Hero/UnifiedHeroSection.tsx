@@ -105,7 +105,7 @@ const HeroSection: React.FC = () => {
         </div>
         
         {/* Contenido principal */}
-        <div className="relative z-10 max-w-6xl mx-auto text-center w-full flex flex-col justify-center min-h-[45vh] -mt-53">
+        <div className="relative z-10 max-w-6xl mx-auto text-center w-full flex flex-col justify-center min-h-[45vh] -mt-72">
           {/* TÍTULO */}
           <motion.div
             className="mb-4 md:mb-6"
@@ -113,7 +113,7 @@ const HeroSection: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#6E787D] leading-none font-test">
+            <div className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-[#292929] leading-none">
               <div className="block mb-2">
                 <motion.span className="inline-block mr-2 sm:mr-4 md:mr-6 whitespace-nowrap" variants={titleWordVariants}>
                   {titleWords[0]?.text} {titleWords[1]?.text}
@@ -140,7 +140,7 @@ const HeroSection: React.FC = () => {
 
           {/* SUBTÍTULO */}
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed font-text"
+            className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 max-w-4xl mx-auto leading-relaxed"
             variants={subtitleVariants}
             initial="hidden"
             animate="visible"

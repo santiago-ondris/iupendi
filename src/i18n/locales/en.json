@@ -34,12 +34,12 @@
       }
     },
     "brands": {
-      "trusting": "They trust us"
+      "trusting": "Our clients"
     },
     "faq": {
       "badge": "Frequently Asked Questions",
       "title": "YOU ASK, WE ANSWER",
-      "subtitle": "The answers you need to make the best decision for your business",
+      "subtitle": "The answers you need to make the best decision",
       "ctaTitle": "Have a specific question?",
       "ctaSubtitle": "We are ready to resolve all your doubts",
       "ctaButton": "Talk to us now!",
@@ -107,7 +107,8 @@
         "services": "Services",
         "clients": "Clients",
         "faq": "FAQ", 
-        "contact": "Contact"
+        "contact": "Contact",
+        "world": "Sydney, and around the world"
       },
       "contact": "Contact",
       "ctaButton": "Go to WhatsApp",
@@ -116,9 +117,9 @@
     },
     "detailedServices": {
       "sectionTitle": "SERVICES THAT CONVERT",
-      "badge": "Premium Services",
+      "badge": "Iupendi Services",
       "statsTitle": "Results that speak for themselves",
-      "subtitle": "We're not just another agency. We're the team that transforms your vision into measurable results and exponential growth",
+      "subtitle": "We are the team that transforms your essence into strategy, your story into brand, and your ideas into results. We are Iupendi",
       "stats": {
         "projects": "500+",
         "projectsLabel": "Successful projects",
@@ -139,7 +140,7 @@
             "Campaign Creation",
             "Optimization and Reporting"
           ],
-          "cta": "I want clicks that convert"
+          "cta": "Advertise with purpose"
         },
         "socialMedia": {
           "title": "Social Media Management",
@@ -163,7 +164,7 @@
             "Training and Resources",
             "Monitoring and Optimization"
           ],
-          "cta": "I want to be independent"
+          "cta": "I am ready to learn"
         },
         "webDevelopment": {
           "title": "Website Development",
@@ -175,7 +176,7 @@
             "Optimization and Testing",
             "Launch and Maintenance"
           ],
-          "cta": "My website needs to sell"
+          "cta": "I need a clear and functional website"
         }
       }
     },

@@ -34,12 +34,12 @@
       }
     },
     "brands": {
-      "trusting": "Confian en nosotros"
+      "trusting": "Nuestros clientes."
     },
     "faq": {
       "badge": "Preguntas Frecuentes",
       "title": "VOS PREGUNTAS, NOSOTROS RESPONDEMOS",
-      "subtitle": "Las respuestas que necesitas para tomar la mejor decisión para tu negocio",
+      "subtitle": "Las respuestas que necesitas para tomar la mejor decisión",
       "ctaTitle": "¿Tenés una pregunta específica?",
       "ctaSubtitle": "Estamos para resolver todas tus dudas",
       "ctaButton": "Hablanos de una vez!",
@@ -107,7 +107,8 @@
         "services": "Servicios",
         "clients": "Clientes", 
         "faq": "FAQ",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "world": "Sidney, y en todo el mundo"
       },
       "contact": "Contacto",
       "ctaButton": "Ir a WhatsApp",
@@ -116,9 +117,9 @@
     },
     "detailedServices": {
       "sectionTitle": "SERVICIOS QUE CONVIERTEN",
-      "badge": "Servicios Premium",
+      "badge": "Servicios Iupendi",
       "statsTitle": "Resultados que hablan por nosotros",
-      "subtitle": "No somos otra agencia más. Somos el equipo que transforma tu visión en resultados medibles y crecimiento exponencial",
+      "subtitle": "Somos el equipo que transforma tu esencia en estrategia, tu historia en marca, y tus ideas en resultados. Somos Iupendi",
       "stats": {
         "projects": "500+",
         "projectsLabel": "Proyectos exitosos",
@@ -131,7 +132,7 @@
       "services": {
         "paidAds": {
           "title": "Paid Media",
-          "description": "Estrategias de Publicidad Digital que Convierten, No Solo Atraen Clics.",
+          "description": "Estrategias de publicidad digital que convierten, no solo atraen clics.",
           "features": [
             "Configuración de Cuentas",
             "Estrategia y Planificación",
@@ -139,7 +140,7 @@
             "Creación de Campañas",
             "Optimización y Reporte"
           ],
-          "cta": "Quiero más clics que conviertan"
+          "cta": "Publicitá con propósito"
         },
         "socialMedia": {
           "title": "Social Media Management",
@@ -163,7 +164,7 @@
             "Capacitación y Recursos",
             "Monitoreo y Optimización"
           ],
-          "cta": "Quiero ser independiente"
+          "cta": "Estoy listo para aprender"
         },
         "webDevelopment": {
           "title": "Sitio Web (Creación y Desarrollo)",
@@ -175,7 +176,7 @@
             "Optimización y Pruebas",
             "Lanzamiento y Mantenimiento"
           ],
-          "cta": "Mi web tiene que vender"
+          "cta": "Necesito una web clara y funcional"
         }
       }
     },

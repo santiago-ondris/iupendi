@@ -301,7 +301,7 @@ const UnifiedSuperCTASection: React.FC = () => {
               
               <motion.button
                 type="submit"
-                className="bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-black px-10 py-5 rounded-full font-black text-lg flex items-center justify-center gap-3 transition-all duration-300 min-w-[200px] shadow-xl hover:shadow-2xl relative overflow-hidden"
+                className="bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-black px-10 py-5 rounded-full font-black text-lg flex items-center justify-center gap-3 transition-all duration-300 min-w-[200px] shadow-xl hover:shadow-2xl relative overflow-hidden mb-7"
                 whileHover={{ 
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(212, 242, 37, 0.4)"

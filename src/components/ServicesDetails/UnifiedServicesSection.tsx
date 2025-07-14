@@ -114,7 +114,7 @@ const UnifiedServicesSection: React.FC = () => {
           >
             {/* Badge superior */}
             <motion.div
-              className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-3 mb-8 relative overflow-hidden"
+              className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-3 mb-8 mt-6 relative overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -357,37 +357,6 @@ const UnifiedServicesSection: React.FC = () => {
                 />
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            className="text-center mt-20 relative"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
-          >
-            {/* Línea conectora */}
-            <motion.div
-              className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-px h-8 bg-gradient-to-b from-gray-300 to-transparent"
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: isInView ? 1 : 0 }}
-              transition={{ duration: 0.8, delay: 2.2 }}
-            />
-            
-            <motion.button
-              className="bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-gray-900 font-black px-12 py-5 rounded-full text-lg shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
-              whileHover={{ scale: 1.05, y: -5 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {/* Efecto de brillo */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
-                initial={{ x: '-100%' }}
-                animate={{ x: '200%' }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-              />
-              <span className="relative z-10">{t('detailedServices.cta')}</span>
-            </motion.button>
           </motion.div>
 
           {/* Elementos que fluyen */}
