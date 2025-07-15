@@ -1,10 +1,10 @@
 {
     "hero": {
-      "title": "NO HACEMOS MAGIA. HACEMOS MARKETING",
-      "subtitle": "En un mundo lleno de ruido, ser auténtico es un acto de valentía",
+      "title": "COMO ANABOLICOS... PERO PARA TU MARCA",
+      "subtitle": "Lo tuyo tiene potencial. Lo nuestro es hacerlo explotar.",
       "emailPlaceholder": "✋ Ingresá tu email...",
       "cta": "Animate",
-      "scrollText": "No te quedes arriba"
+      "scrollText": "¿Querés ver cómo lo hacemos?"
     },
     "navigation": {
       "home": "Inicio",
@@ -16,19 +16,19 @@
     },
     "services": {
       "sectionTitle": "NUESTROS SERVICIOS",
-      "subtitle": "Te acompañamos en todo, o te enseñamos a hacerlo. Vos elegís.",
-      "cta": "¿Seguís bajando?",
+      "subtitle": "¿Querés que lo hagamos por vos o aprender a hacerlo? Vos decidís.",
+      "cta": "Si esto te copó, el resto te termina de convencer ↓",
       "agency": {
         "subtitle": "APRENDE DE NOSOTROS.",
         "title": "AGENCIA",
-        "description": "Servicios de marketing digital gestionados para empresas en movimiento. Delegá con tranquilidad, nos ocupamos de tu crecimiento como si fuera propio.",
+        "description": "📈 Nos encargamos de todo: campañas, contenido, redes y estrategia. Vos enfocáte en tu negocio, nosotros lo hacemos crecer.",
         "button": "Empezá ahora",
         "rating": "{{rating}} estrellas de {{count}} reviews"
       },
       "courses": {
         "subtitle": "APRENDE CON NOSOTROS.",
         "title": "CURSOS",
-        "description": "Capacitate para manejar y hacer crecer tu marca vos mismo. Nuestros programas te enseñan cómo escalar tu negocio de coaching o consultoría de manera rápida y efectiva.",
+        "description": "🎓 Aprendé a manejar tu marca, atraer clientes y escalar tu negocio. Te enseñamos lo que hacemos todos los días, sin vueltas.",
         "button": "Empezá ahora",
         "rating": "{{rating}} estrellas de {{count}} reviews"
       }
@@ -38,35 +38,35 @@
     },
     "faq": {
       "badge": "Preguntas Frecuentes",
-      "title": "VOS PREGUNTAS, NOSOTROS RESPONDEMOS",
-      "subtitle": "Las respuestas que necesitas para tomar la mejor decisión",
+      "title": "VOS TENES LAS PREGUNTAS, NOSOTROS LAS RESPUESTAS",
+      "subtitle": "👉 Todo lo que querías saber (y nadie te explicó bien)",
       "ctaTitle": "¿Tenés una pregunta específica?",
       "ctaSubtitle": "Estamos para resolver todas tus dudas",
       "ctaButton": "Hablanos de una vez!",
       "questions": {
         "resultsTime": {
           "question": "¿Cuánto tiempo tardamos en ver resultados?",
-          "answer": "Los primeros resultados los puedes ver en las primeras 2-4 semanas, pero los resultados más significativos y sostenibles los verás entre los 3-6 meses. Todo depende de tu industria, competencia y el estado actual de tu presencia digital.",
+          "answer": "Los primeros resultados se empiezan a ver entre las semanas 2 y 4. Los resultados más sólidos (como más ventas, leads o visibilidad constante) suelen verse entre los 3 y 6 meses. Igual, todo depende de tu rubro, la competencia y el punto de partida.",
           "highlight": "⚡"
         },
         "investment": {
           "question": "¿Cuál es la inversión necesaria para empezar?",
-          "answer": "Nuestros planes se adaptan a diferentes presupuestos, desde startups hasta empresas consolidadas. La inversión inicial incluye estrategia, implementación y gestión mensual. Te damos una propuesta personalizada después de conocer tus objetivos específicos.",
+          "answer": "Trabajamos con planes que se adaptan a distintos presupuestos, desde emprendedores hasta empresas grandes. El precio depende de lo que necesites (estrategia, ejecución, pauta). Te pasamos una propuesta personalizada después de entender tus objetivos.",
           "highlight": "💰"
         },
         "whatMakesDifferent": {
           "question": "¿Qué nos hace diferentes de otras agencias?",
-          "answer": "No somos una agencia más. Nos involucramos de verdad en tu negocio, conocemos a tu audiencia como si fuera nuestra, y creamos estrategias que realmente funcionan. Además, siempre te mantenemos informado con reportes claros y honestos.",
+          "answer": "👉 Te enseñamos a pescar. No queremos que dependas de nosotros. Te explicamos todo para que tomes mejores decisiones, con o sin Iupendi. Nos metemos en tu marca posta: hablamos como tu audiencia, pensamos con vos y exprimimos la creatividad con estrategia para lograr resultados reales (y medibles). Somos muy apasionados… o como nos dicen algunos, intensos. Pero te conviene 😉.",
           "highlight": "🚀"
         },
         "servicesIncluded": {
           "question": "¿Qué incluyen exactamente sus servicios?",
-          "answer": "Dependiendo del plan, incluimos estrategia digital completa, gestión de redes sociales, campañas publicitarias, creación de contenido, desarrollo web, SEO, email marketing y análisis de resultados. Todo lo que necesitas para dominar el mundo digital.",
+          "answer": "👉 Depende del plan que elijas, pero podemos encargarnos de todo. Desde la estrategia hasta la ejecución, para que tengas una marca que se vea, se entienda y venda. Algunos de los servicios que ofrecemos: Estrategia digital personalizada, Gestión de redes sociales y creación de contenido, Campañas publicitarias (Meta, Google y más), Desarrollo web, Email marketing y automatizaciones, Reportes claros y reuniones para ajustar y escalar. 💬 ¿Querés algo puntual? También armamos packs a medida.",
           "highlight": "📦"
         },
         "supportCommunication": {
           "question": "¿Cómo funciona la comunicación y el soporte?",
-          "answer": "Tendrás acceso directo a tu account manager dedicado, reportes mensuales detallados, reuniones de seguimiento regulares y un canal de comunicación directo para resolver cualquier duda. Creemos en la transparencia total.",
+          "answer": "👉 Siempre vas a hablar con personas reales, no con bots ni tickets eternos. Tenés un equipo asignado, reuniones regulares, seguimiento constante y reportes claros. Te respondemos rápido, sin vueltas y con buena onda. 💬 Estamos encima (sí, intensos otra vez 😅), pero porque nos importa.",
           "highlight": "💬"
         }
       }
@@ -119,14 +119,14 @@
       "sectionTitle": "SERVICIOS QUE CONVIERTEN",
       "badge": "Servicios Iupendi",
       "statsTitle": "Resultados que hablan por nosotros",
-      "subtitle": "Somos el equipo que transforma tu esencia en estrategia, tu historia en marca, y tus ideas en resultados. Somos Iupendi",
+      "subtitle": "👉 Estrategia, contenido y campañas que dan resultado. Sin humo.",
       "stats": {
-        "projects": "500+",
-        "projectsLabel": "Proyectos exitosos",
+        "projects": "+100",
+        "projectsLabel": "Proyectos trabajados",
         "satisfaction": "98%",
-        "satisfactionLabel": "Clientes satisfechos",
+        "satisfactionLabel": "Clientes felices (y nos siguen eligiendo)",
         "roi": "3x",
-        "roiLabel": "ROI promedio"
+        "roiLabel": "Average ROI on Managed Ads"
       },
       "cta": "Despeguemos tu proyecto",
       "services": {
