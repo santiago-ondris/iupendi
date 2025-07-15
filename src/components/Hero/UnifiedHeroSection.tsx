@@ -187,17 +187,36 @@ const HeroSection: React.FC = () => {
                 ))}
               </div>
 
-              {/* Línea inferior */}
               <div className="block whitespace-nowrap">
-                {titleWords.slice(2, titleWords.length - 1).map((w, i) => (
-                  <motion.span key={i} className="inline-block mr-2 sm:mr-4 md:mr-6" variants={titleWordVariants}>
+                {/* Palabras normales */}
+                {titleWords.slice(2, titleWords.length - 2).map((w, i) => (
+                  <motion.span
+                    key={i}
+                    className="inline-block mr-2 sm:mr-4 md:mr-6"
+                    variants={titleWordVariants}
+                  >
                     {w.text}
                   </motion.span>
                 ))}
-                <motion.span className="inline-block text-[#7252A5] mr-2 sm:mr-4 mt-4" variants={highlightWordVariants} animate={["visible", "float"]}>
-                  {titleWords[titleWords.length - 1].text}
-                </motion.span>
-                <motion.span className="inline-block text-[#7252A5]" variants={asteriskVariants} animate={["visible", "float"]}>
+
+                {/* Palabras highlight (últimas 2) */}
+                {titleWords.slice(-2).map((w, i) => (
+                  <motion.span
+                    key={`highlight-${i}`}
+                    className="inline-block text-[#7252A5] mr-2 sm:mr-4 mt-4"
+                    variants={highlightWordVariants}
+                    animate={["visible", "float"]}
+                  >
+                    {w.text}
+                  </motion.span>
+                ))}
+
+                {/* Emoji */}
+                <motion.span
+                  className="inline-block text-[#7252A5]"
+                  variants={asteriskVariants}
+                  animate={["visible", "float"]}
+                >
                   💡
                 </motion.span>
               </div>
