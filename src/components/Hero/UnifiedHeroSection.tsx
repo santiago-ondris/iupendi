@@ -47,13 +47,13 @@ const HeroSection: React.FC = () => {
   // ];
 
   const blobShapes = [
-    { type: 'blob1', color: '#D4F225', size: 'w-32 h-32', delay: 0, stroke: 2 },
-    { type: 'blob2', color: '#7252A5', size: 'w-24 h-24', delay: 1, stroke: 1.5 },
-    { type: 'blob3', color: '#759CCF', size: 'w-40 h-40', delay: 2, stroke: 2.5 },
-    { type: 'blob4', color: '#F2AE1F', size: 'w-20 h-20', delay: 0.5, stroke: 1 },
-    { type: 'blob5', color: '#6E787D', size: 'w-28 h-28', delay: 0.8, stroke: 1.8 },
-    { type: 'blob6', color: '#D4F225', size: 'w-16 h-16', delay: 2.2, stroke: 1.2 },
-    { type: 'blob4', color: '#F2AE1F', size: 'w-40 h-40', delay: 2.2, stroke: 1.2 },
+    { type: 'blob1', color: '#f2ae1f', size: 'w-32 h-32', delay: 0, stroke: 2 },
+    { type: 'blob2', color: '#6e787d', size: 'w-24 h-24', delay: 1, stroke: 1.5 },
+    { type: 'blob3', color: '#d4f225', size: 'w-40 h-40', delay: 2, stroke: 2.5 },
+    { type: 'blob4', color: '#759ccf', size: 'w-20 h-20', delay: 0.5, stroke: 1 },
+    { type: 'blob5', color: '#7252a5', size: 'w-28 h-28', delay: 0.8, stroke: 1.8 },
+    { type: 'blob6', color: '#e7e8cf', size: 'w-16 h-16', delay: 2.2, stroke: 1.2 },
+    { type: 'blob4', color: '#f2ae1f', size: 'w-40 h-40', delay: 2.2, stroke: 1.2 },
   ];
 
   // const crystalShapes = [
@@ -177,10 +177,10 @@ const HeroSection: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <div className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-[#292929] leading-none">
+            <div className="text-[1.6rem] sm:text-4xl md:text-6xl lg:text-7xl font-black text-[#292929] leading-none">
               {/* Línea superior */}
-              <div className="block mb-2">
-                {titleWords.slice(0, 3).map((w, i) => (
+              <div className="block mb-2 whitespace-nowrap">
+                {titleWords.slice(0, 2).map((w, i) => (
                   <motion.span key={i} className="inline-block mr-2 sm:mr-4 md:mr-6" variants={titleWordVariants}>
                     {w.text}
                   </motion.span>
@@ -188,17 +188,17 @@ const HeroSection: React.FC = () => {
               </div>
 
               {/* Línea inferior */}
-              <div className="block">
-                {titleWords.slice(3, titleWords.length - 1).map((w, i) => (
+              <div className="block whitespace-nowrap">
+                {titleWords.slice(2, titleWords.length - 1).map((w, i) => (
                   <motion.span key={i} className="inline-block mr-2 sm:mr-4 md:mr-6" variants={titleWordVariants}>
                     {w.text}
                   </motion.span>
                 ))}
-                <motion.span className="inline-block text-[#7252A5] mr-2 sm:mr-4" variants={highlightWordVariants}>
+                <motion.span className="inline-block text-[#7252A5] mr-2 sm:mr-4 mt-4" variants={highlightWordVariants} animate={["visible", "float"]}>
                   {titleWords[titleWords.length - 1].text}
                 </motion.span>
-                <motion.span className="inline-block text-[#D4F225]" variants={asteriskVariants} animate={["visible", "float"]}>
-                  ✱
+                <motion.span className="inline-block text-[#7252A5]" variants={asteriskVariants} animate={["visible", "float"]}>
+                  💡
                 </motion.span>
               </div>
             </div>
