@@ -1,38 +1,31 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles } from 'lucide-react';
 import {
   serviceCardVariants,
   cardContentVariants,
-  iconVariants,
   titleVariants,
   featureVariants,
-  ctaVariants,
-  decorativeVariants
+  ctaVariants
 } from '@/utils/ServiceDetails/servicesAnimations';
 
 interface ServiceCardProps {
   id: string;
-  icon: string;
   title: string;
-  features: string[];
+  subtitle: string;
+  bullets: string[];
+  cta: string;
   accentColor: string;
-  description?: string;
-  cta?: string;
   index: number;
 }
 
 const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
-  icon,
   title,
-  features,
-  accentColor,
-  description = "Estrategias personalizadas que convierten visitantes en clientes leales",
+  subtitle,
+  bullets,
   cta,
-  index
+  accentColor,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
 
   // Extraer el color base para las animaciones
   const colorClass = accentColor.split(' ')[0]; // bg-[#D4F225]
@@ -40,7 +33,7 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <motion.div
-      className="relative group perspective-1000"
+      className="relative group"
       variants={serviceCardVariants}
       whileHover="hover"
       onHoverStart={() => setIsHovered(true)}
@@ -48,39 +41,27 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
     >
       {/* Card principal */}
       <motion.div
-        className="relative bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100 overflow-hidden cursor-pointer min-h-[420px] flex flex-col justify-between"
-        onClick={() => setIsExpanded(!isExpanded)}
+        className="relative bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100 overflow-hidden cursor-pointer min-h-[480px] flex flex-col"
         style={{
           boxShadow: isHovered 
             ? `0 25px 50px rgba(0,0,0,0.15), 0 0 0 1px ${colorValue}20`
             : '0 10px 30px rgba(0,0,0,0.1)'
         }}
       >
-        {/* Elementos decorativos de fondo */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Gradiente sutil */}
-          <motion.div
-            className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-5"
-            style={{ backgroundColor: colorValue }}
-            variants={decorativeVariants}
-            initial="hidden"
-            animate={["visible", "float"]}
-            custom={index}
-          />
-          
-          {/* Partículas flotantes */}
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 rounded-full opacity-20"
-              style={{ backgroundColor: colorValue }}
-              variants={decorativeVariants}
-              initial="hidden"
-              animate={isHovered ? ["visible", "float"] : "visible"}
-              custom={i}
-            />
-          ))}
-        </div>
+        {/* Borde de color en esquina superior derecha */}
+        <motion.div
+          className="absolute top-0 right-0 w-12 h-12 rounded-bl-3xl"
+          style={{ 
+            background: `linear-gradient(135deg, ${colorValue} 0%, ${colorValue}80 100%)` 
+          }}
+          animate={{
+            scale: isHovered ? 1.05 : 1,
+            boxShadow: isHovered 
+              ? `0 0 20px ${colorValue}40`
+              : `0 0 0px ${colorValue}00`
+          }}
+          transition={{ duration: 0.3 }}
+        />
 
         {/* Contenido de la card */}
         <motion.div
@@ -88,125 +69,171 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
           initial="hidden"
           animate="visible"
           whileHover="hover"
-          className="relative z-10"
+          className="relative z-10 flex flex-col h-full"
         >
-          {/* Header con icono y título */}
-          <div className="mb-6">
+          {/* Título principal con punto de color */}
+          <motion.div
+            className="flex items-center gap-3 mb-4 mt-2"
+            variants={titleVariants}
+          >
+            {/* Punto de color junto al título */}
             <motion.div
-              className="flex items-center gap-4 mb-4"
-              variants={titleVariants}
-            >
-              {/* Icono animado */}
-              <motion.div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center relative overflow-hidden"
-                style={{ backgroundColor: `${colorValue}15` }}
-                variants={iconVariants}
-              >
-                <motion.span
-                  className="text-2xl font-black"
-                  style={{ 
-                    fontFamily: 'Codec Pro, sans-serif',
-                    color: colorValue
-                  }}
-                >
-                  {icon}
-                </motion.span>
-                
-                {/* Efecto de brillo en hover */}
-                <motion.div
-                  className="absolute inset-0 bg-white/20 -skew-x-12"
-                  initial={{ x: '-100%' }}
-                  animate={isHovered ? { x: '200%' } : { x: '-100%' }}
-                  transition={{ duration: 0.6 }}
-                />
-              </motion.div>
-
-              {/* Badge de "Destacado" en algunas cards */}
-              {index === 0 && (
-                <motion.div
-                  className="flex items-center gap-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold"
-                  initial={{ scale: 0, rotate: -10 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 0.5, type: "spring" }}
-                >
-                  <Sparkles className="w-3 h-3" />
-                  Más popular
-                </motion.div>
-              )}
-            </motion.div>
-
-            <motion.h3
+              className="w-4 h-4 rounded-full flex-shrink-0"
+              style={{ backgroundColor: colorValue }}
+              animate={{
+                scale: isHovered ? [1, 1.2, 1] : 1,
+                boxShadow: isHovered 
+                  ? `0 0 15px ${colorValue}60, 0 0 30px ${colorValue}30`
+                  : `0 0 0px ${colorValue}00`
+              }}
+              transition={{ duration: 0.3 }}
+            />
+            
+            <h3
               className="text-2xl md:text-3xl font-black text-gray-900 leading-tight"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
-              variants={titleVariants}
             >
               {title}
-            </motion.h3>
+            </h3>
+          </motion.div>
 
-            <motion.p
-              className="text-gray-600 mt-3 leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            >
-              {description}
-            </motion.p>
-          </div>
+          {/* Subtítulo descriptivo */}
+          <motion.p
+            className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            {subtitle}
+          </motion.p>
 
-          {/* Lista de características */}
-          <div className="mb-8">
+          {/* Bullets */}
+          <motion.div 
+            className="mb-8 flex-1"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
             <div className="space-y-3">
-              {features.map((feature, i) => (
+              {bullets.map((bullet, i) => (
                 <motion.div
                   key={i}
                   className="flex items-start gap-3"
                   variants={featureVariants}
                   custom={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 + i * 0.1 }}
                 >
                   <motion.div
                     className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
                     style={{ backgroundColor: colorValue }}
-                    whileHover={{ scale: 1.5 }}
+                    whileHover={{ scale: 1.3 }}
                   />
-                  <span className="text-gray-700 leading-relaxed">
-                    {feature}
+                  <span className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    {bullet}
                   </span>
                 </motion.div>
               ))}
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Footer con CTA */}
-        <motion.div
-          className="relative z-10"
-          variants={ctaVariants}
-        >
-          <motion.button
-            className="w-full flex items-center justify-between p-4 rounded-2xl font-bold text-gray-900 transition-all duration-300"
-            style={{ backgroundColor: `${colorValue}20` }}
+          {/* CTA Button */}
+          <motion.div
+            className="mt-auto"
             variants={ctaVariants}
-            whileHover="hover"
-            whileTap="tap"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
           >
-            <span className="relative z-10 mr-2">{cta || "Empezar ya mismo"}</span>
-            <motion.div
-              className="flex items-center gap-2"
-              whileHover={{ x: 5 }}
+            <motion.button
+              className="w-full flex items-center justify-between p-4 rounded-2xl font-bold text-gray-900 transition-all duration-300 relative overflow-hidden"
+              style={{ backgroundColor: `${colorValue}15` }}
+              variants={ctaVariants}
+              whileHover={{
+                backgroundColor: `${colorValue}25`,
+                scale: 1.02
+              }}
+              whileTap={{ scale: 0.98 }}
             >
-              <ArrowRight className="w-5 h-5" style={{ color: colorValue }} />
-            </motion.div>
-          </motion.button>
+              {/* Efecto de brillo en hover */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12"
+                initial={{ x: '-100%' }}
+                animate={isHovered ? { x: '200%' } : { x: '-100%' }}
+                transition={{ duration: 0.6 }}
+              />
+              
+              <span className="relative z-10 text-left flex-1">
+                {cta}
+              </span>
+              
+              <motion.div
+                className="relative z-10 ml-2"
+                animate={{ x: isHovered ? 5 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div 
+                  className="w-6 h-6 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: colorValue }}
+                >
+                  <svg 
+                    className="w-3 h-3 text-white" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M9 5l7 7-7 7" 
+                    />
+                  </svg>
+                </div>
+              </motion.div>
+            </motion.button>
+          </motion.div>
         </motion.div>
 
-        {/* Indicador de expansión */}
-        <motion.div
-          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center text-gray-600"
-          whileHover={{ scale: 1.1 }}
-          animate={{ rotate: isExpanded ? 180 : 0 }}
-        >
-          <span className="text-sm">⌄</span>
-        </motion.div>
+        {/* Efectos decorativos de fondo */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Gradiente sutil */}
+          <motion.div
+            className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-5"
+            style={{ backgroundColor: colorValue }}
+            animate={{
+              scale: isHovered ? [1, 1.2, 1] : 1,
+              rotate: [0, 180, 360]
+            }}
+            transition={{ 
+              scale: { duration: 0.6 },
+              rotate: { duration: 20, repeat: Infinity, ease: "linear" }
+            }}
+          />
+          
+          {/* Partículas sutiles */}
+          {[...Array(3)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 rounded-full opacity-20"
+              style={{ 
+                backgroundColor: colorValue,
+                left: `${20 + i * 30}%`,
+                top: `${30 + i * 20}%`
+              }}
+              animate={{
+                y: [0, -10, 0],
+                opacity: isHovered ? [0.2, 0.4, 0.2] : 0.2
+              }}
+              transition={{
+                duration: 2 + i,
+                repeat: Infinity,
+                delay: i * 0.5
+              }}
+            />
+          ))}
+        </div>
       </motion.div>
     </motion.div>
   );

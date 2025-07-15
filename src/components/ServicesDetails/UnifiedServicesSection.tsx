@@ -25,38 +25,34 @@ const UnifiedServicesSection: React.FC = () => {
   const servicesData = [
     {
       id: 'paidAds',
-      icon: '🎯',
       title: t('detailedServices.services.paidAds.title'),
-      description: t('detailedServices.services.paidAds.description'),
-      features: t('detailedServices.services.paidAds.features', { returnObjects: true }),
-      cta: t('detailedServices.services.paidAds.cta'), // ← Nuevo
+      subtitle: t('detailedServices.services.paidAds.subtitle'),
+      bullets: t('detailedServices.services.paidAds.bullets', { returnObjects: true }) as string[],
+      cta: t('detailedServices.services.paidAds.cta'),
       accentColor: 'bg-[#D4F225]'
     },
     {
       id: 'socialMedia',
-      icon: '📱',
       title: t('detailedServices.services.socialMedia.title'),
-      description: t('detailedServices.services.socialMedia.description'),
-      features: t('detailedServices.services.socialMedia.features', { returnObjects: true }),
-      cta: t('detailedServices.services.socialMedia.cta'), // ← Nuevo
+      subtitle: t('detailedServices.services.socialMedia.subtitle'),
+      bullets: t('detailedServices.services.socialMedia.bullets', { returnObjects: true }) as string[],
+      cta: t('detailedServices.services.socialMedia.cta'),
       accentColor: 'bg-[#7252A5]'
     },
     {
-      id: 'contentCreation',
-      icon: '🎬',
-      title: t('detailedServices.services.contentCreation.title'),
-      description: t('detailedServices.services.contentCreation.description'),
-      features: t('detailedServices.services.contentCreation.features', { returnObjects: true }),
-      cta: t('detailedServices.services.contentCreation.cta'), // ← Nuevo
+      id: 'consulting',
+      title: t('detailedServices.services.consulting.title'),
+      subtitle: t('detailedServices.services.consulting.subtitle'),
+      bullets: t('detailedServices.services.consulting.bullets', { returnObjects: true }) as string[],
+      cta: t('detailedServices.services.consulting.cta'),
       accentColor: 'bg-[#759CCF]'
     },
     {
       id: 'webDevelopment',
-      icon: '⚡',
       title: t('detailedServices.services.webDevelopment.title'),
-      description: t('detailedServices.services.webDevelopment.description'),
-      features: t('detailedServices.services.webDevelopment.features', { returnObjects: true }),
-      cta: t('detailedServices.services.webDevelopment.cta'), // ← Nuevo
+      subtitle: t('detailedServices.services.webDevelopment.subtitle'),
+      bullets: t('detailedServices.services.webDevelopment.bullets', { returnObjects: true }) as string[],
+      cta: t('detailedServices.services.webDevelopment.cta'),
       accentColor: 'bg-[#F2AE1F]'
     }
   ];
@@ -332,31 +328,31 @@ const UnifiedServicesSection: React.FC = () => {
               transition={{ duration: 1, delay: 1.7 }}
             />
 
-            {servicesData.map((service, index) => (
-              <motion.div
-                key={service.id}
-                variants={headerVariants}
-                custom={index}
-                className="relative"
-              >
-                {/* Conectores */}
-                <motion.div
-                  className={`absolute ${
-                    index === 0 ? 'bottom-1/2 right-0' :
-                    index === 1 ? 'bottom-1/2 left-0' :
-                    index === 2 ? 'top-1/2 right-0' :
-                    'top-1/2 left-0'
-                  } w-4 h-px bg-gradient-to-r from-gray-200 to-transparent hidden md:block`}
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: isInView ? 1 : 0 }}
-                  transition={{ duration: 0.6, delay: 2 + index * 0.1 }}
-                />
-                <InteractiveServiceCard 
-                  {...{ ...service, features: Array.isArray(service.features) ? service.features : [] }} 
-                  index={index} 
-                />
-              </motion.div>
-            ))}
+{servicesData.map((service, index) => (
+  <motion.div
+    key={service.id}
+    variants={headerVariants}
+    custom={index}
+    className="relative"
+  >
+    {/* Conectores */}
+    <motion.div
+      className={`absolute ${
+        index === 0 ? 'bottom-1/2 right-0' :
+        index === 1 ? 'bottom-1/2 left-0' :
+        index === 2 ? 'top-1/2 right-0' :
+        'top-1/2 left-0'
+      } w-4 h-px bg-gradient-to-r from-gray-200 to-transparent hidden md:block`}
+      initial={{ scaleX: 0 }}
+      animate={{ scaleX: isInView ? 1 : 0 }}
+      transition={{ duration: 0.6, delay: 2 + index * 0.1 }}
+    />
+    <InteractiveServiceCard 
+      {...service}
+      index={index} 
+    />
+  </motion.div>
+))}
           </motion.div>
 
           {/* Elementos que fluyen */}

@@ -4,7 +4,8 @@
       "subtitle": "Yours has potential. Ours is to make it explode.",
       "emailPlaceholder": "✋ Enter your email...",
       "cta": "Let's do it",
-      "scrollText": "Do you want to see how we do it?"
+      "scrollText": "Do you want to see how we do it?",
+      "subtitleHighlight": "Warning: Overselling. May lead to overselling addiction."
     },
     "navigation": {
       "home": "Home",
@@ -128,55 +129,53 @@
         "roi": "3x",
         "roiLabel": "Average ROI"
       },
-      "cta": "Let's make it happen!",
       "services": {
         "paidAds": {
           "title": "Paid Media",
-          "description": "Digital Advertising Strategies that Convert, Not Just Attract Clicks.",
-          "features": [
-            "Account Setup",
-            "Strategy and Planning",
-            "Smart Targeting",
-            "Campaign Creation",
-            "Optimization and Reporting"
+          "subtitle": "📊 Advertising that's not measured in likes, but in sales. Campaigns designed to convert, not just look good.",
+          "bullets": [
+            "We set up and optimize your advertising accounts",
+            "We define strategy and audiences that matter",
+            "We create campaigns focused on results",
+            "We analyze and adjust to scale"
           ],
-          "cta": "Advertise with purpose"
+          "cta": "👉 Campaigns that sell"
         },
         "socialMedia": {
           "title": "Social Media Management",
-          "description": "It's not just about posting, it's about connecting.",
-          "features": [
-            "Social Media Strategy and Manual",
-            "Market Analysis",
-            "Content Planning",
-            "Creativity and Production",
-            "Monthly Results Meeting"
+          "subtitle": "👉 It's not just about posting. Each piece of content has a purpose. We make your brand connect, be understood, and have real presence.",
+          "bullets": [
+            "We build your strategy and social media manual",
+            "We analyze your audience and competition",
+            "We plan content that makes sense (and delivers results)",
+            "We produce and design what gets published",
+            "We measure and adjust in monthly meetings"
           ],
-          "cta": "Let's connect with my audience"
+          "cta": "👉 Social media that works for you"
         },
-        "contentCreation": {
+        "consulting": {
           "title": "Digital Marketing Consulting",
-          "description": "We give you the plan, strategy and support. You execute it.",
-          "features": [
-            "Market and Brand Analysis",
-            "Digital Strategy Definition",
-            "Personalized Support",
-            "Training and Resources",
-            "Monitoring and Optimization"
+          "subtitle": "👉 Want to do it yourself, but with someone to guide you? We give you the plan, support you, and show you the way.",
+          "bullets": [
+            "We create a custom strategy for your brand",
+            "One-on-one sessions to review progress and doubts",
+            "We help you implement (and not give up)",
+            "Monthly review and adjustments to keep growing",
+            "Ideal if you want to learn and do it right from day one"
           ],
-          "cta": "I am ready to learn"
+          "cta": "👉 Guide me to do it right"
         },
         "webDevelopment": {
-          "title": "Website Development",
-          "description": "Your website doesn't just have to look good, it has to sell.",
-          "features": [
-            "Analysis and Strategy",
-            "Wireframing and UI/UX Design",
-            "Web Development",
-            "Optimization and Testing",
-            "Launch and Maintenance"
+          "title": "Website (Creation and Development)",
+          "subtitle": "👉 Your website doesn't just have to look good, it has to sell.",
+          "bullets": [
+            "We design a clear experience coherent with your brand",
+            "We think about structure and navigation to convert",
+            "We handle development, optimization, and mobile",
+            "We integrate key tools (forms, WhatsApp, tracking, etc.)",
+            "We deliver a website ready to sell"
           ],
-          "cta": "I need a clear and functional website"
+          "cta": "👉 I want a website that sells"
         }
       }
     },

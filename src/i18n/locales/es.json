@@ -4,7 +4,8 @@
       "subtitle": "Lo tuyo tiene potencial. Lo nuestro es hacerlo explotar.",
       "emailPlaceholder": "✋ Ingresá tu email...",
       "cta": "Animate",
-      "scrollText": "¿Querés ver cómo lo hacemos?"
+      "scrollText": "¿Querés ver cómo lo hacemos?",
+      "subtitleHighlight": "Advertencia: Exceso de ventas. Puede generar adicción a vender más."
     },
     "navigation": {
       "home": "Inicio",
@@ -128,55 +129,53 @@
         "roi": "3x",
         "roiLabel": "Average ROI on Managed Ads"
       },
-      "cta": "Despeguemos tu proyecto",
       "services": {
         "paidAds": {
           "title": "Paid Media",
-          "description": "Estrategias de publicidad digital que convierten, no solo atraen clics.",
-          "features": [
-            "Configuración de Cuentas",
-            "Estrategia y Planificación",
-            "Segmentación Inteligente",
-            "Creación de Campañas",
-            "Optimización y Reporte"
+          "subtitle": "📊 Publicidad que no se mide en likes, sino en ventas. Campañas pensadas para convertir, no solo para verse bien.",
+          "bullets": [
+            "Configuramos y optimizamos tus cuentas publicitarias",
+            "Definimos la estrategia y los públicos que importan",
+            "Creamos campañas con foco en resultados",
+            "Analizamos y ajustamos para escalar"
           ],
-          "cta": "Publicitá con propósito"
+          "cta": "👉 Campañas que venden"
         },
         "socialMedia": {
           "title": "Social Media Management",
-          "description": "No se trata solo de publicar, se trata de conectar.",
-          "features": [
-            "Estrategia y Manual de Uso de Redes",
-            "Análisis de Mercado",
-            "Planificación de Contenido",
-            "Creatividad y Producción",
-            "Reunión Mensual de Resultados"
+          "subtitle": "👉 No se trata solo de postear. Cada contenido tiene un objetivo. Hacemos que tu marca conecte, se entienda y tenga presencia real.",
+          "bullets": [
+            "Armamos tu estrategia y manual de uso de redes",
+            "Analizamos a tu audiencia y la competencia",
+            "Planificamos contenido que tenga sentido (y resultado)",
+            "Producimos y diseñamos lo que se publica",
+            "Medimos y ajustamos en reuniones mensuales"
           ],
-          "cta": "Conectemos con tu audiencia"
+          "cta": "👉 Redes que trabajan por vos"
         },
-        "contentCreation": {
+        "consulting": {
           "title": "Asesoramiento en Marketing Digital",
-          "description": "Te damos el plan, la estrategia y el acompañamiento. Vos lo ejecutás.",
-          "features": [
-            "Análisis de Mercado y Marca",
-            "Definición de Estrategia Digital",
-            "Acompañamiento Personalizado",
-            "Capacitación y Recursos",
-            "Monitoreo y Optimización"
+          "subtitle": "👉 ¿Querés hacerlo vos, pero con alguien que te guíe? Te damos el plan, te acompañamos y te marcamos el camino.",
+          "bullets": [
+            "Te armamos una estrategia a medida para tu marca",
+            "Sesiones uno a uno para revisar avances y dudas",
+            "Te ayudamos a implementar (y a no colgarte)",
+            "Revisión mensual y ajustes para que sigas creciendo",
+            "Ideal si querés aprender y hacerlo bien desde el día uno"
           ],
-          "cta": "Estoy listo para aprender"
+          "cta": "👉 Acompañarme a hacerlo bien"
         },
         "webDevelopment": {
           "title": "Sitio Web (Creación y Desarrollo)",
-          "description": "Tu web no solo tiene que verse bien, tiene que vender.",
-          "features": [
-            "Análisis y Estrategia",
-            "Wireframing y Diseño UI/UX",
-            "Desarrollo Web",
-            "Optimización y Pruebas",
-            "Lanzamiento y Mantenimiento"
+          "subtitle": "👉 Tu web no solo tiene que verse bien, tiene que vender.",
+          "bullets": [
+            "Diseñamos una experiencia clara y coherente con tu marca",
+            "Pensamos en la estructura y navegación para convertir",
+            "Nos encargamos del desarrollo, optimización y mobile",
+            "Integramos herramientas clave (formulario, WhatsApp, seguimiento, etc.)",
+            "Te entregamos una web lista para salir a vender"
           ],
-          "cta": "Necesito una web clara y funcional"
+          "cta": "👉 Quiero una web que venda"
         }
       }
     },
