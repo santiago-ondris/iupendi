@@ -1,10 +1,11 @@
 {
     "hero": {
-      "title": "DON´T DO MAGIC. DO MARKETING",
-      "subtitle": "In a world full of noise, being authentic is an act of courage.",
+      "title": "LIKE ANABOLICS... BUT FOR YOUR BRAND",
+      "subtitle": "Yours has potential. Ours is to make it explode.",
       "emailPlaceholder": "✋ Enter your email...",
       "cta": "Let's do it",
-      "scrollText": "Don't stay up"
+      "scrollText": "Do you want to see how we do it?",
+      "subtitleHighlight": "Warning: Overselling. May lead to overselling addiction."
     },
     "navigation": {
       "home": "Home",
@@ -16,19 +17,19 @@
     },
     "services": {
       "sectionTitle": "OUR SERVICES",
-      "subtitle": "We'll help you with everything, or we'll teach you how to do it. The choice is yours.",
-      "cta": "Keep scrolling?",
+      "subtitle": "Do you want us to do it for you or learn how to do it? It's up to you.",
+      "cta": "If this appeals to you, the rest will convince you ↓",
       "agency": {
         "subtitle": "LEARN FROM US",
         "title": "AGENCY",
-        "description": "Managed digital marketing services for businesses on the move. Delegate with confidence; we take care of your growth as if it were our own.",
+        "description": "📈 We take care of everything: campaigns, content, social media, and strategy. You focus on your business, we'll help it grow.",
         "button": "Get Started",
         "rating": "{{rating}} stars from {{count}} reviews"
       },
       "courses": {
         "subtitle": "LEARN WITH US.",
         "title": "COURSES", 
-        "description": "Train yourself to manage and grow your brand. Our programs teach you how to scale your coaching or consulting business quickly and effectively.",
+        "description": "🎓 Learn how to manage your brand, attract customers, and scale your business. We'll teach you what we do every day, no strings attached.",
         "button": "Get Started",
         "rating": "{{rating}} stars from {{count}} reviews"
       }
@@ -38,35 +39,35 @@
     },
     "faq": {
       "badge": "Frequently Asked Questions",
-      "title": "YOU ASK, WE ANSWER",
-      "subtitle": "The answers you need to make the best decision",
+      "title": "YOU HAVE THE QUESTIONS, WE HAVE THE ANSWERS.",
+      "subtitle": "👉 Everything you wanted to know (and no one explained well)",
       "ctaTitle": "Have a specific question?",
       "ctaSubtitle": "We are ready to resolve all your doubts",
       "ctaButton": "Talk to us now!",
       "questions": {
         "resultsTime": {
           "question": "How long does it take to see results?",
-          "answer": "You can see the first results in the first 2-4 weeks, but the most significant and sustainable results you will see between 3-6 months. It all depends on your industry, competition and the current state of your digital presence.",
+          "answer": "The first results begin to appear between weeks 2 and 4. More solid results (such as increased sales, leads, or consistent visibility) typically appear between 3 and 6 months. Still, it all depends on your industry, your competition, and your starting point.",
           "highlight": "⚡"
         },
         "investment": {
           "question": "What is the investment required to get started?",
-          "answer": "Our plans adapt to different budgets, from startups to established companies. The initial investment includes strategy, implementation and monthly management. We give you a personalized proposal after knowing your specific objectives.",
+          "answer": "We work with plans tailored to different budgets, from entrepreneurs to large companies. The price depends on your needs (strategy, execution, schedule). We provide you with a personalized proposal after understanding your goals.",
           "highlight": "💰"
         },
         "whatMakesDifferent": {
           "question": "What makes us different from other agencies?",
-          "answer": "We're not just another agency. We really get involved in your business, we know your audience as if it were ours, and we create strategies that really work. We also always keep you informed with clear and honest reports.",
+          "answer": "👉 We teach you how to fish. We don't want you to depend on us. We explain everything so you can make better decisions, with or without Iupendi. We truly immerse ourselves in your brand: we speak like your audience, think with you, and harness creativity with strategy to achieve real (and measurable) results. We're very passionate... or as some people say, intense. But it's in your best interest 😉.",
           "highlight": "🚀"
         },
         "servicesIncluded": {
           "question": "What exactly do your services include?",
-          "answer": "Depending on the plan, we include complete digital strategy, social media management, advertising campaigns, content creation, web development, SEO, email marketing and results analysis. Everything you need to dominate the digital world.",
+          "answer": "👉 It depends on the plan you choose, but we can handle everything. From strategy to execution, so you have a brand that's seen, understood, and sells. Some of the services we offer: Personalized digital strategy, Social media management and content creation, Advertising campaigns (Meta, Google, and more), Web development, Email marketing and automation, Clear reports, and meetings to adjust and scale. 💬 Want something specific? We also create custom packages.",
           "highlight": "📦"
         },
         "supportCommunication": {
           "question": "How does communication and support work?",
-          "answer": "You will have direct access to your dedicated account manager, detailed monthly reports, regular follow-up meetings and a direct communication channel to resolve any questions. We believe in total transparency.",
+          "answer": "👉 You'll always speak with real people, not bots or endless tickets. You have an assigned team, regular meetings, constant follow-up, and clear reports. We respond quickly, straightforwardly, and with a good vibe. 💬 We're on top of things (yes, intense again 😅), but because we care.",
           "highlight": "💬"
         }
       }
@@ -119,64 +120,62 @@
       "sectionTitle": "SERVICES THAT CONVERT",
       "badge": "Iupendi Services",
       "statsTitle": "Results that speak for themselves",
-      "subtitle": "We are the team that transforms your essence into strategy, your story into brand, and your ideas into results. We are Iupendi",
+      "subtitle": "👉 Strategy, content, and campaigns that deliver. No smoke and mirrors.",
       "stats": {
-        "projects": "500+",
-        "projectsLabel": "Successful projects",
+        "projects": "100+",
+        "projectsLabel": "Projects worked",
         "satisfaction": "98%",
-        "satisfactionLabel": "Satisfied clients",
+        "satisfactionLabel": "Happy customers (and they keep choosing us)",
         "roi": "3x",
         "roiLabel": "Average ROI"
       },
-      "cta": "Let's make it happen!",
       "services": {
         "paidAds": {
           "title": "Paid Media",
-          "description": "Digital Advertising Strategies that Convert, Not Just Attract Clicks.",
-          "features": [
-            "Account Setup",
-            "Strategy and Planning",
-            "Smart Targeting",
-            "Campaign Creation",
-            "Optimization and Reporting"
+          "subtitle": "📊 Advertising that's not measured in likes, but in sales. Campaigns designed to convert, not just look good.",
+          "bullets": [
+            "We set up and optimize your advertising accounts",
+            "We define strategy and audiences that matter",
+            "We create campaigns focused on results",
+            "We analyze and adjust to scale"
           ],
-          "cta": "Advertise with purpose"
+          "cta": "👉 Campaigns that sell"
         },
         "socialMedia": {
           "title": "Social Media Management",
-          "description": "It's not just about posting, it's about connecting.",
-          "features": [
-            "Social Media Strategy and Manual",
-            "Market Analysis",
-            "Content Planning",
-            "Creativity and Production",
-            "Monthly Results Meeting"
+          "subtitle": "👉 It's not just about posting. Each piece of content has a purpose. We make your brand connect, be understood, and have real presence.",
+          "bullets": [
+            "We build your strategy and social media manual",
+            "We analyze your audience and competition",
+            "We plan content that makes sense (and delivers results)",
+            "We produce and design what gets published",
+            "We measure and adjust in monthly meetings"
           ],
-          "cta": "Let's connect with my audience"
+          "cta": "👉 Social media that works for you"
         },
-        "contentCreation": {
+        "consulting": {
           "title": "Digital Marketing Consulting",
-          "description": "We give you the plan, strategy and support. You execute it.",
-          "features": [
-            "Market and Brand Analysis",
-            "Digital Strategy Definition",
-            "Personalized Support",
-            "Training and Resources",
-            "Monitoring and Optimization"
+          "subtitle": "👉 Want to do it yourself, but with someone to guide you? We give you the plan, support you, and show you the way.",
+          "bullets": [
+            "We create a custom strategy for your brand",
+            "One-on-one sessions to review progress and doubts",
+            "We help you implement (and not give up)",
+            "Monthly review and adjustments to keep growing",
+            "Ideal if you want to learn and do it right from day one"
           ],
-          "cta": "I am ready to learn"
+          "cta": "👉 Guide me to do it right"
         },
         "webDevelopment": {
-          "title": "Website Development",
-          "description": "Your website doesn't just have to look good, it has to sell.",
-          "features": [
-            "Analysis and Strategy",
-            "Wireframing and UI/UX Design",
-            "Web Development",
-            "Optimization and Testing",
-            "Launch and Maintenance"
+          "title": "Website (Creation and Development)",
+          "subtitle": "👉 Your website doesn't just have to look good, it has to sell.",
+          "bullets": [
+            "We design a clear experience coherent with your brand",
+            "We think about structure and navigation to convert",
+            "We handle development, optimization, and mobile",
+            "We integrate key tools (forms, WhatsApp, tracking, etc.)",
+            "We deliver a website ready to sell"
           ],
-          "cta": "I need a clear and functional website"
+          "cta": "👉 I want a website that sells"
         }
       }
     },

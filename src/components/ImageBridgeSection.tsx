@@ -45,34 +45,6 @@ const ImageBridgeSection: React.FC = () => {
           transition={{ duration: 2, repeat: Infinity }}
         />
       </motion.div>
-
-      {/* COMENTAR ESTO - Elementos que fluyen hacia la siguiente sección */}
-      {/*
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={`flow-to-services-${i}`}
-            className="absolute w-2 h-2 rounded-full opacity-25"
-            style={{
-              backgroundColor: ['#D4F225', '#7252A5', '#759CCF'][i % 3],
-              left: `${20 + i * 15}%`,
-              top: '90%',
-            }}
-            animate={{
-              y: [0, 40, 80, 120],
-              opacity: [0.25, 0.5, 0.3, 0],
-              scale: [1, 1.2, 0.9, 0.7],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              delay: i * 0.8,
-              ease: "easeOut",
-            }}
-          />
-        ))}
-      </div>
-      */}
     </section>
   );
 };

@@ -254,7 +254,7 @@ const UnifiedFAQSection: React.FC = () => {
                       animate={{ rotate: [0, 15, -15, 0] }}
                       transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                     >
-                      👀
+                      🤔​
                     </motion.span>
                   </span>
                 </span>

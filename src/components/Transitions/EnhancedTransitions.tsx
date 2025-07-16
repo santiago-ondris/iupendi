@@ -30,7 +30,7 @@ export const HeroToServicesTransition: React.FC = () => {
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-[#D4F225]/40 rounded-full"
+            className="absolute w-2 h-2 rounded-full"
             style={{
               left: `${30 + i * 20}%`,
               bottom: '50%',
