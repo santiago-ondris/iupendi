@@ -8,6 +8,7 @@ import {
   buttonVariants,
   ratingVariants
 } from '../../utils/Cards/cardAnimations';
+import { useNavigate } from 'react-router-dom';
 
 interface ServiceCardProps {
   id: string;
@@ -31,6 +32,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   buttonText,
   type
 }) => {
+  const navigate = useNavigate();
   return (
     <motion.div
       className={`relative ${bgColor} rounded-3xl p-8 md:p-12 text-white flex flex-col justify-between overflow-hidden`}
@@ -102,6 +104,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           aria-label={buttonText}
+          onClick={() => navigate('/onboarding')}
         >
           {buttonText}
         </motion.button>

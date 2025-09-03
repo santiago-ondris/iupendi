@@ -32,7 +32,7 @@ const UnifiedFooterSection: React.FC = () => {
   ];
 
   const contactInfo = [
-    { Icon: Mail, text: 'hola@iupendigital.com', href: 'mailto:hola@iupendigital.com' },
+    { Icon: Mail, text: 'infoiupendi@gmail.com', href: 'mailto:infoiupendi@gmail.com' },
     { Icon: Phone, text: '+61 433 402 744', href: 'tel:+61433402744' },
     { Icon: MapPin, text: t('footer.navigation.world'), href: '#' },
   ];
@@ -172,7 +172,7 @@ const UnifiedFooterSection: React.FC = () => {
             className="mb-8 relative md:flex md:justify-center"
             transition={{ duration: 0.6 }}>
               <img
-                src="/logo4.svg"
+                src="/logo4.svg" //svg del
                 alt="Iupendi Digital"
                 className=" 
                   object-contain
