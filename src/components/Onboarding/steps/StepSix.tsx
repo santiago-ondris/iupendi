@@ -19,13 +19,17 @@ const StepSix: React.FC<StepProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (field: string, value: string | boolean) => {
-    const updatedData = { ...personalData, [field]: value };
+    let processedValue = value;
     
-    // Si marca "no tengo empresa", limpiar el campo company
+    if (field === 'phone' && typeof value === 'string') {
+      processedValue = formatPhoneNumber(value);
+    }
+    
+    const updatedData = { ...personalData, [field]: processedValue };
+    
     if (field === 'hasNoCompany' && value === true) {
       updatedData.company = '';
     }
-    // Si escribe algo en company, desmarcar "no tengo empresa"
     if (field === 'company' && typeof value === 'string' && value.trim() !== '') {
       updatedData.hasNoCompany = false;
     }
@@ -34,11 +38,27 @@ const StepSix: React.FC<StepProps> = ({
     onUpdate({ stepSix: updatedData });
   };
 
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const formatPhoneNumber = (value: string) => {
+    return value.replace(/[^0-9\s\-\(\)\+]/g, '');
+  };
   // Validación de campos obligatorios
   const requiredFields = ['firstName', 'lastName', 'email', 'phone'];
-  const isFormValid = requiredFields.every(field => 
-    personalData[field as keyof typeof personalData]?.toString().trim() !== ''
-  );
+  const isFormValid = requiredFields.every(field => {
+    const value = personalData[field as keyof typeof personalData]?.toString().trim();
+    if (field === 'email') {
+      return value !== '' && isValidEmail(value);
+    }
+    if (field === 'phone') {
+      return value !== '' && value.length >= 8; // Mínimo 8 dígitos
+    }
+    return value !== '';
+  });
+
 
   const handleSubmit = async () => {
     if (!isFormValid) return;
@@ -184,6 +204,11 @@ const StepSix: React.FC<StepProps> = ({
                   : 'border-gray-200 focus:border-[#7252A5] focus:ring-2 focus:ring-[#7252A5]/20'
               } bg-white focus:outline-none`}
             />
+            {personalData.email.trim() && !isValidEmail(personalData.email) && (
+              <p className="text-red-500 text-sm mt-1 ml-10">
+                Por favor ingresá un email válido
+              </p>
+            )}
           </div>
         </motion.div>
 
@@ -210,6 +235,11 @@ const StepSix: React.FC<StepProps> = ({
                   : 'border-gray-200 focus:border-[#7252A5] focus:ring-2 focus:ring-[#7252A5]/20'
               } bg-white focus:outline-none`}
             />
+            {personalData.phone.trim() && personalData.phone.length < 8 && (
+              <p className="text-red-500 text-sm mt-1 ml-10">
+                El teléfono debe tener al menos 8 dígitos
+              </p>
+            )}
           </div>
         </motion.div>
 

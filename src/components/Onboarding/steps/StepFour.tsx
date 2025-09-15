@@ -159,7 +159,7 @@ const StepFour: React.FC<StepProps> = ({
               {/* Badge "Popular" */}
               {isPopular && (
                 <motion.div
-                  className="absolute -top-2 -right-2 bg-[#D4F225] text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md"
+                  className="absolute -top-1 -right-2 bg-[#D4F225] text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md"
                   initial={{ scale: 0, rotate: -10 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
@@ -202,7 +202,7 @@ const StepFour: React.FC<StepProps> = ({
 
                   {/* Indicador de selección */}
                   <motion.div
-                    className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                    className={`w-6 h-6 mt-4 rounded-full border-2 flex items-center justify-center ${
                       isSelected 
                         ? 'border-[#F2AE1F] bg-[#F2AE1F]' 
                         : 'border-gray-300 group-hover:border-[#F2AE1F]/50'

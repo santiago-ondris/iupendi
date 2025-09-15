@@ -190,14 +190,20 @@ const OnboardingContainer: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Logo */}
-        <motion.div className="relative" transition={{ duration: 0.6 }}>
-          <img
-            src="/logo4.svg"
-            alt="Iupendi Digital"
-            className="h-16 md:h-22 transition-all duration-300 opacity-90 hover:opacity-100"
-          />
-        </motion.div>
+      {/* Logo clickeable */}
+      <motion.button 
+        className="relative" 
+        transition={{ duration: 0.6 }}
+        onClick={() => navigate('/')}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <img
+          src="/logo4.svg"
+          alt="Iupendi Digital"
+          className="h-16 md:h-22 transition-all duration-300 opacity-90 hover:opacity-100 cursor-pointer"
+        />
+      </motion.button>
 
         {/* Botón cerrar */}
         <motion.button

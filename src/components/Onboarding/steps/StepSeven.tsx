@@ -12,7 +12,6 @@ const StepSeven: React.FC<StepSevenProps> = ({
 }) => {
   const [hasScheduled, setHasScheduled] = useState(data.stepSeven?.hasScheduled || false);
 
-  // Cargar script de Calendly (IGUAL que CalendlyCTASection)
   useEffect(() => {
     // Solo cargar si no existe ya
     const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
@@ -127,7 +126,6 @@ const StepSeven: React.FC<StepSevenProps> = ({
         ))}
       </motion.div>
 
-      {/* Calendly embebido - IGUAL que CalendlyCTASection */}
       <motion.div
         className="flex-1 relative mb-6"
         initial={{ opacity: 0, scale: 0.95 }}
