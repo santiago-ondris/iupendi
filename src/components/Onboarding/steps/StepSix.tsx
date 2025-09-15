@@ -47,20 +47,18 @@ const StepSix: React.FC<StepProps> = ({
     
     // Simular envío (aquí iría la lógica real)
     setTimeout(() => {
-      console.log('Datos completos del onboarding:', {
+      console.log('Datos del formulario enviados:', {
         ...data,
-        stepFive: data.stepFive,
         stepSix: personalData
       });
       
       // Aquí podrías:
       // 1. Enviar a una API
       // 2. Guardar en localStorage
-      // 3. Redirigir a una página de éxito
-      // 4. Mostrar un modal de confirmación
+      // 3. Tracking/Analytics
       
       setIsSubmitting(false);
-      onNext(); // Esto podría ser una redirección o modal de éxito
+      onNext();
     }, 2000);
   };
 
@@ -96,7 +94,7 @@ const StepSix: React.FC<StepProps> = ({
         >
           <Calendar className="w-4 h-4 text-gray-500" />
           <p className="text-sm text-gray-600 font-medium">
-            Completá tus datos y serás dirigido a un calendario en la próxima página
+            Al enviar serás dirigido para agendar tu reunión
           </p>
         </motion.div>
       </motion.div>
@@ -321,11 +319,11 @@ const StepSix: React.FC<StepProps> = ({
           {isSubmitting ? (
             <>
               <div className="w-5 h-5 border-2 border-gray-600 border-t-transparent rounded-full animate-spin" />
-              Enviando...
+              Preparando calendario...
             </>
           ) : (
             <>
-              Reservar Mi Sesión de Estrategia
+              Continuar al Calendario
               <ArrowRight className="w-5 h-5" />
             </>
           )}

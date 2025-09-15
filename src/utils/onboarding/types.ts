@@ -34,6 +34,7 @@ export interface OnboardingData {
   monthlyBudget: BudgetRange | null;
   stepFive?: DigitalChannels;
   stepSix?: PersonalData;
+  stepSeven?: CalendlyData;
 }
 
 // Información de cada paso
@@ -43,6 +44,7 @@ export interface StepInfo {
   subtitle?: string;
   isRequired: boolean;
   isCompleted: boolean;
+  isCalendly?: boolean;
 }
 
 // Props para los componentes de pasos
@@ -118,4 +120,18 @@ export interface PersonalData {
   phone: string;
   company?: string;
   hasNoCompany?: boolean;
+}
+
+// Datos del paso de Calendly (Step 7)
+export interface CalendlyData {
+  hasScheduled: boolean;
+  scheduledAt?: string;
+  meetingType?: 'strategy' | 'consultation';
+  notes?: string;
+}
+
+// Props específicas para el componente StepSeven
+export interface StepSevenProps extends StepProps {
+  userPersonalData?: PersonalData; // Para mostrar datos del usuario en el calendly
+  onCalendlyScheduled?: (data: CalendlyData) => void;
 }

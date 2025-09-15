@@ -9,6 +9,7 @@ import StepThree from './steps/StepThree';
 import StepFour from './steps/StepFour';
 import StepFive from './steps/StepFive';
 import StepSix from './steps/StepSix';
+import StepSeven from './steps/StepSeven';
 import type { OnboardingData, StepInfo } from '@/utils/onboarding/types';
 
 const OnboardingContainer: React.FC = () => {
@@ -21,6 +22,7 @@ const OnboardingContainer: React.FC = () => {
     monthlyBudget: null,
     stepFive: undefined,
     stepSix: undefined,
+    stepSeven: undefined,
   });
 
   // Configuración de pasos
@@ -67,6 +69,14 @@ const OnboardingContainer: React.FC = () => {
       isRequired: true,
       isCompleted: !!(data.stepSix && data.stepSix.firstName && data.stepSix.lastName && data.stepSix.email && data.stepSix.phone),
     },
+    {
+      id: 7,
+      title: 'Agendar Reunión',
+      subtitle: 'Sesión de estrategia',
+      isRequired: false, 
+      isCompleted: !!(data.stepSeven && data.stepSeven.hasScheduled),
+      isCalendly: true, // Marcar como paso especial
+    },
   ];
 
   // Actualizar datos del formulario
@@ -79,11 +89,11 @@ const OnboardingContainer: React.FC = () => {
     if (currentStep < steps.length) {
       setCurrentStep(prev => prev + 1);
     } else {
-      // Último paso - procesar datos
-      console.log('Datos finales:', data);
-      // TODO: Aquí enviaremos los datos cuando implementemos el backend
+      // Último paso completado - redirigir al home
+      console.log('Onboarding completado exitosamente:', data);
+      navigate('/');
     }
-  }, [currentStep, steps.length, data]);
+  }, [currentStep, steps.length, data, navigate]);
 
   // Navegar al paso anterior
   const handlePrev = useCallback(() => {
@@ -133,6 +143,11 @@ const OnboardingContainer: React.FC = () => {
         return <StepFive {...stepProps} />;
       case 6:
         return <StepSix {...stepProps} />;  
+      case 7:
+        return <StepSeven 
+          {...stepProps} 
+          userPersonalData={data.stepSix}
+        />;  
       default:
         return <StepOne {...stepProps} />;
     }
@@ -260,7 +275,7 @@ const OnboardingContainer: React.FC = () => {
 
           {/* Contador de pasos */}
           <span className="text-sm text-gray-500 font-medium">
-            {currentStep} de {steps.length}
+            {currentStep} de 7
           </span>
 
           {/* El botón Siguiente se renderiza dentro de cada componente Step */}
