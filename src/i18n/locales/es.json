@@ -73,20 +73,23 @@
       }
     },
     "calendlyCta": {
-      "badge": "Sin vueltas",
-      "titlePart1": "¿Seguís con",
-      "titleHighlight": "dudas",
-      "titlePart2": "?",
-      "subtitle": "Reservá",
-      "subtitleHighlight": "30 minutos gratis",
-      "subtitlePart2": "y charlamos",
-      "description": "No hay formularios, no hay esperas. Solo una meet.",
+      "badge": "¡ASEGURÁ TU MEET!",
+      "titlePart1": "¿Querés una",
+      "titleHighlight": "charla estratégica",
+      "titlePart2": "GRATIS de 30 minutos?",
+      "subtitle": "Completá este formulario y conseguí tu",
+      "subtitleHighlight": "análisis personalizado",
+      "subtitlePart2": "YA",
+      "description": "No pierdas más tiempo - te damos una estrategia concreta para TU negocio",
       "features": {
-        "time": "30 min gratis",
-        "booking": "Agendás al toque", 
-        "strategy": "Sacate las dudas"
+        "time": "30 minutos intensivos",
+        "booking": "Directo al grano", 
+        "strategy": "Plan de acción concreto"
       },
-      "disclaimer": "* Sin letra chica, sin compromisos raros. Solo una charla sobre tu proyecto 🚀"
+      "esperando": "Sabes que te estamos esperando...",
+      "calenTitle": "Agendá tu reunión gratis",
+      "ready": "Quiero la reunion",
+      "disclaimer": "⚡ Sin compromisos - Solo estrategia pura"
     },
     "superCta": {
       "note": "(No te juzgamos, es normal)",

@@ -73,20 +73,23 @@
       }
     },
     "calendlyCta": {
-      "badge": "No BS",
-      "titlePart1": "Still have",
-      "titleHighlight": "doubts",
-      "titlePart2": "?",
-      "subtitle": "Book",
-      "subtitleHighlight": "30 free minutes",
-      "subtitlePart2": "and let's talk about your project",
-      "description": "No forms, no waiting. Just a talk.",
+      "badge": "SECURE YOUR MEET!",
+      "titlePart1": "Want a",
+      "titleHighlight": "strategic chat",
+      "titlePart2": "FREE for 30 minutes?",
+      "subtitle": "Complete this form and get your",
+      "subtitleHighlight": "personalized analysis",
+      "subtitlePart2": "NOW",
+      "description": "Don't waste more time - we give you a concrete strategy for YOUR business",
       "features": {
-        "time": "30 min free",
-        "booking": "Book instantly",
-        "strategy": "Remove doubts"
+        "time": "30 intensive minutes",
+        "booking": "Straight to the point",
+        "strategy": "Concrete action plan"
       },
-      "disclaimer": "* No fine print, no weird commitments. Just an chat about your project 🚀"
+      "esperando": "You know we're waiting for you...",
+      "calenTitle": "Schedule your free meeting",
+      "ready": "I'm ready",
+      "disclaimer": "⚡ No commitments - Just pure strategy"
     },
     "superCta": {
       "subtitle": "Come on, we know you want to",

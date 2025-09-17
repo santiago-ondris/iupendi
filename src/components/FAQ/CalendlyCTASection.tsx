@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Zap, Clock, Target, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface CalendlyCTASectionProps {
   isInView: boolean;
@@ -9,6 +10,7 @@ interface CalendlyCTASectionProps {
 
 const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleStartOnboarding = () => {
     navigate('/onboarding');
@@ -48,7 +50,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
             transition={{ duration: 0.8, delay: 3.4, type: "spring" }}
           >
             <Zap className="w-4 h-4" />
-            ¡ASEGURÁ TU MEET!
+            {t('calendlyCta.badge')}
           </motion.div>
 
           {/* Título principal súper directo */}
@@ -59,14 +61,14 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
             transition={{ duration: 0.8, delay: 3.6 }}
           >
-            ¿Querés una{' '}
+            {t('calendlyCta.titlePart1')}{' '}
             <motion.span
               className="relative inline-block"
               initial={{ opacity: 0 }}
               animate={{ opacity: isInView ? 1 : 0 }}
               transition={{ duration: 0.8, delay: 4 }}
             >
-              <span className="text-[#D4F225] relative z-10">charla estratégica</span>
+              <span className="text-[#D4F225] relative z-10">{t('calendlyCta.titleHighlight')}</span>
               <motion.div
                 className="absolute inset-0 bg-[#D4F225]/20 rounded-lg transform -skew-x-12"
                 initial={{ scaleX: 0 }}
@@ -74,8 +76,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
                 transition={{ duration: 0.8, delay: 4 }}
               />
             </motion.span>
-            <br />
-            <span className="text-[#7252A5]">GRATIS</span> de 30 minutos?
+            {t('calendlyCta.titlePart2')}
           </motion.h3>
           
           {/* Subtítulo directo y agresivo */}
@@ -85,8 +86,9 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 3.8 }}
           >
-            Completá este formulario y conseguí tu{' '}
-            <span className="text-[#F2AE1F] font-black">análisis personalizado</span> YA
+            {t('calendlyCta.subtitle')}{' '}
+            <span className="text-[#F2AE1F] font-black">{t('calendlyCta.subtitleHighlight')}</span>{' '}
+            {t('calendlyCta.subtitlePart2')}
           </motion.p>
 
           <motion.p
@@ -95,7 +97,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
             animate={{ opacity: isInView ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 4 }}
           >
-            No pierdas más tiempo - te damos una estrategia concreta para TU negocio
+            {t('calendlyCta.description')}
           </motion.p>
         </div>
 
@@ -109,21 +111,21 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
           {[
             { 
               icon: Clock, 
-              text: "30 minutos intensivos", 
+              text: t('calendlyCta.features.time'),
               color: "#D4F225",
-              description: "Directo al grano"
+              description: t('calendlyCta.features.booking')
             },
             { 
               icon: Target, 
-              text: "Estrategia personalizada", 
+              text: t('calendlyCta.features.strategy'),
               color: "#7252A5",
-              description: "Para TU industria"
+              description: t('calendlyCta.features.booking')
             },
             { 
               icon: Zap, 
-              text: "Plan de acción concreto", 
+              text: t('calendlyCta.features.strategy'),
               color: "#759CCF",
-              description: "Que podés implementar"
+              description: t('calendlyCta.features.booking')
             }
           ].map((item, index) => (
             <motion.div
@@ -168,7 +170,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
                 animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
                 transition={{ duration: 0.6, delay: 4.8 }}
               >
-                ¡No te quedes afuera!
+                {t('calendlyCta.calenTitle')}
               </motion.h4>
 
               <motion.p
@@ -177,7 +179,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
                 animate={{ opacity: isInView ? 1 : 0 }}
                 transition={{ duration: 0.6, delay: 5 }}
               >
-                Sólo te toma <strong>3 minutos</strong> completar el formulario
+                {t('calendlyCta.esperando')}
               </motion.p>
 
               {/* Botón principal súper llamativo */}
@@ -198,7 +200,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 />
                 
-                <span className="relative z-10">¡QUIERO MI CHARLA GRATIS!</span>
+                <span className="relative z-10">{t('calendlyCta.ready')}</span>
                 <ChevronRight className="w-6 h-6 relative z-10 group-hover:translate-x-1 transition-transform" />
               </motion.button>
 
@@ -209,7 +211,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
                 animate={{ opacity: isInView ? 1 : 0 }}
                 transition={{ duration: 0.6, delay: 5.4 }}
               >
-                ⚡ Sin compromisos - Solo estrategia pura
+                {t('calendlyCta.disclaimer')}
               </motion.p>
             </div>
           </div>
@@ -244,7 +246,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
           animate={{ opacity: isInView ? 1 : 0 }}
           transition={{ duration: 0.8, delay: 5.6 }}
         >
-          🔒 Tus datos están seguros - Solo los usamos para preparar tu charla personalizada
+          {t('superCta.disclaimer')}
         </motion.p>
       </div>
 
