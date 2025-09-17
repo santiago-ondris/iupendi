@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Package, Wrench, ArrowRight } from 'lucide-react';
 import type { StepProps, BusinessType } from '@/utils/onboarding/types';
+import { useTranslation } from 'react-i18next';
 
 const StepOne: React.FC<StepProps> = ({
   data,
@@ -12,22 +13,23 @@ const StepOne: React.FC<StepProps> = ({
   const handleSelection = (businessType: BusinessType) => {
     onUpdate({ businessType });
   };
+  const { t } = useTranslation();
 
   const options = [
     {
       id: 'product',
       value: 'product' as BusinessType,
-      label: 'Producto',
+      label: t('onboarding.stepOne.options.product.label'),
       icon: Package,
-      description: 'Vendes productos físicos o digitales',
+      description: t('onboarding.stepOne.options.product.description'),
       color: '#7252A5'
     },
     {
       id: 'service',
       value: 'service' as BusinessType,
-      label: 'Servicio',
+      label: t('onboarding.stepOne.options.service.label'),
       icon: Wrench,
-      description: 'Ofreces servicios o consultoría',
+      description: t('onboarding.stepOne.options.service.description'),
       color: '#D4F225'
     }
   ];
@@ -47,13 +49,12 @@ const StepOne: React.FC<StepProps> = ({
           className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3"
           style={{ fontFamily: 'Codec Pro, sans-serif' }}
         >
-          Perfecto, {' '}
-          <span className="text-[#7252A5]">empecemos</span>
+          {t('onboarding.stepOne.title')}
         </h2>
         
         {/* Subtítulo */}
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-md mx-auto">
-          Para encontrar la mejor estrategia para vos, necesitamos saber qué ofrecés
+          {t('onboarding.stepOne.subtitle')}
         </p>
       </motion.div>
 
@@ -68,10 +69,10 @@ const StepOne: React.FC<StepProps> = ({
           className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
           style={{ fontFamily: 'Codec Pro, sans-serif' }}
         >
-          Primero, ¿qué vendés?
+          {t('onboarding.stepOne.question')}
         </h3>
         <p className="text-sm text-gray-500">
-          (Seleccioná la opción que mejor te represente)
+          {t('onboarding.stepOne.helpText')}
         </p>
       </motion.div>
 
@@ -215,7 +216,7 @@ const StepOne: React.FC<StepProps> = ({
           whileHover={data.businessType ? { scale: 1.05 } : {}}
           whileTap={data.businessType ? { scale: 0.95 } : {}}
         >
-          {isLastStep ? 'Finalizar' : 'Continuar'}
+          {isLastStep ? t('onboarding.common.finish') : t('onboarding.common.continue')}
           <ArrowRight className="w-4 h-4" />
         </motion.button>
       </motion.div>

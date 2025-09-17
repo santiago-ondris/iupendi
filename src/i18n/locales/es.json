@@ -197,5 +197,58 @@
         "contact": "Contactanos"
       },
       "disclaimer": "* Si seguís perdido, deberias contactarnos..."
+    },
+    "onboarding": {
+      "stepOne": {
+        "title": "Perfecto, empecemos",
+        "subtitle": "Para encontrar la mejor estrategia para vos, necesitamos saber qué ofrecés",
+        "question": "Primero, ¿qué vendés?",
+        "helpText": "(Seleccioná la opción que mejor te represente)",
+        "options": {
+          "product": {
+            "label": "Producto",
+            "description": "Vendes productos físicos o digitales"
+          },
+          "service": {
+            "label": "Servicio",
+            "description": "Ofreces servicios o consultoría"
+          }
+        }
+      },
+      "stepTwo": {
+        "title": "¡Genial! Ahora ubicanos geográficamente",
+        "subtitle": "Esto nos ayuda a entender mejor tu mercado y adaptar nuestras estrategias",
+        "question": "¿En qué país está basado tu negocio?",
+        "selectPlaceholder": "Selecciona tu país",
+        "selectedLabel": "País seleccionado", 
+        "clickToChoose": "Haz clic para elegir",
+        "searchPlaceholder": "Buscar país...",
+        "popularLabel": "Popular",
+        "popularCountries": "O elige uno de los más populares:",
+        "helpMessage": "🌍 Esto nos ayuda a personalizar las estrategias por región"
+      },
+      "stepThree": {
+        "title": "¿Qué tipo de marketing estás usando actualmente?",
+        "subtitle": "Seleccioná todas las opciones que apliquen",
+        "channelSelected": "canal seleccionado",
+        "channelsSelected": "canales seleccionados",
+        "digitalChannels": "Canales Digitales",
+        "traditionalChannels": "Canales Tradicionales",
+        "helpMessage": "📊 Seleccioná todas las que estés usando actualmente",
+        "options": {
+          "facebookAds": { "description": "Meta, Instagram, WhatsApp" },
+          "googleAds": { "description": "Search, Display, YouTube" },
+          "seo": { "description": "Posicionamiento orgánico" },
+          "television": { "description": "TV abierta y cable" },
+          "radio": { "description": "AM/FM y streaming" },
+          "newspaper": { "description": "Diarios y revistas" },
+          "other": { "description": "Influencers, eventos, etc." },
+          "none": { "description": "No hago marketing aún" }
+        }
+      },
+      "common": {
+        "continue": "Continuar",
+        "finish": "Finalizar"
+      }
     }
   }

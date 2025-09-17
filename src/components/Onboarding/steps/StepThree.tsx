@@ -12,6 +12,7 @@ import {
   ArrowRight 
 } from 'lucide-react';
 import type { StepProps, MarketingType } from '@/utils/onboarding/types';
+import { useTranslation } from 'react-i18next';
 
 const StepThree: React.FC<StepProps> = ({
   data,
@@ -31,6 +32,7 @@ const StepThree: React.FC<StepProps> = ({
       onUpdate({ currentMarketing: [...currentMarketing, marketingType] });
     }
   };
+  const { t } = useTranslation();
 
   const marketingOptions = [
     {
@@ -38,7 +40,7 @@ const StepThree: React.FC<StepProps> = ({
       value: 'facebook-ads' as MarketingType,
       label: 'Facebook Ads',
       icon: Facebook,
-      description: 'Meta, Instagram, WhatsApp',
+      description: t('onboarding.stepThree.options.facebookAds.description'),
       color: '#1877F2',
       category: 'digital'
     },
@@ -47,7 +49,7 @@ const StepThree: React.FC<StepProps> = ({
       value: 'google-ads' as MarketingType,
       label: 'Google Ads',
       icon: Search,
-      description: 'Search, Display, YouTube',
+      description: t('onboarding.stepThree.options.googleAds.description'),
       color: '#4285F4',
       category: 'digital'
     },
@@ -56,7 +58,7 @@ const StepThree: React.FC<StepProps> = ({
       value: 'seo' as MarketingType,
       label: 'SEO',
       icon: TrendingUp,
-      description: 'Posicionamiento orgánico',
+      description: t('onboarding.stepThree.options.seo.description'),
       color: '#7252A5',
       category: 'digital'
     },
@@ -65,7 +67,7 @@ const StepThree: React.FC<StepProps> = ({
       value: 'television' as MarketingType,
       label: 'Televisión',
       icon: Tv,
-      description: 'TV abierta y cable',
+      description: t('onboarding.stepThree.options.television.description'),
       color: '#F2AE1F',
       category: 'traditional'
     },
@@ -74,7 +76,7 @@ const StepThree: React.FC<StepProps> = ({
       value: 'radio' as MarketingType,
       label: 'Radio',
       icon: Radio,
-      description: 'AM/FM y streaming',
+      description: t('onboarding.stepThree.options.radio.description'),
       color: '#759CCF',
       category: 'traditional'
     },
@@ -83,7 +85,7 @@ const StepThree: React.FC<StepProps> = ({
       value: 'newspaper' as MarketingType,
       label: 'Prensa Escrita',
       icon: Newspaper,
-      description: 'Diarios y revistas',
+      description: t('onboarding.stepThree.options.newspaper.description'),
       color: '#6E787D',
       category: 'traditional'
     },
@@ -92,7 +94,7 @@ const StepThree: React.FC<StepProps> = ({
       value: 'other' as MarketingType,
       label: 'Otros',
       icon: MoreHorizontal,
-      description: 'Influencers, eventos, etc.',
+      description: t('onboarding.stepThree.options.other.description'),
       color: '#D4F225',
       category: 'other'
     },
@@ -101,7 +103,7 @@ const StepThree: React.FC<StepProps> = ({
       value: 'none' as MarketingType,
       label: 'Ninguno',
       icon: X,
-      description: 'No hago marketing aún',
+      description: t('onboarding.stepThree.options.none.description'),
       color: '#EF4444',
       category: 'none'
     }
@@ -146,13 +148,11 @@ const StepThree: React.FC<StepProps> = ({
           className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3"
           style={{ fontFamily: 'Codec Pro, sans-serif' }}
         >
-          ¿Qué tipo de <span className="text-[#7252A5]">marketing</span>{' '}
-          <br className="sm:hidden" />
-          estás usando actualmente?
+          {t('onboarding.stepThree.title')}
         </h2>
         
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto">
-          Seleccioná todas las opciones que apliquen
+{          t('onboarding.stepThree.subtitle')}
         </p>
 
         {/* Contador de selecciones */}
@@ -165,7 +165,7 @@ const StepThree: React.FC<StepProps> = ({
           >
             <div className="w-2 h-2 bg-[#7252A5] rounded-full" />
             <span className="text-sm font-medium text-[#7252A5]">
-              {selectedCount} {selectedCount === 1 ? 'canal seleccionado' : 'canales seleccionados'}
+              {selectedCount} {selectedCount === 1 ? t('onboarding.stepThree.channelSelected') : t('onboarding.stepThree.channelsSelected')}
             </span>
           </motion.div>
         )}
@@ -180,7 +180,7 @@ const StepThree: React.FC<StepProps> = ({
       >
         <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
           <div className="w-3 h-3 bg-[#D4F225] rounded-full" />
-          Canales Digitales
+          {t('onboarding.stepThree.digitalChannels')}
         </h3>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -251,7 +251,7 @@ const StepThree: React.FC<StepProps> = ({
       >
         <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
           <div className="w-3 h-3 bg-[#F2AE1F] rounded-full" />
-          Canales Tradicionales
+          {t('onboarding.stepThree.traditionalChannels')}
         </h3>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -386,7 +386,7 @@ const StepThree: React.FC<StepProps> = ({
         transition={{ duration: 0.6, delay: 0.8 }}
       >
         <p className="text-xs text-gray-500">
-          📊 Seleccioná todas las que estés usando actualmente
+{          t('onboarding.stepThree.helpMessage')}
         </p>
       </motion.div>
     </div>

@@ -77,7 +77,7 @@ export interface SelectOption {
 // Configuración de países con sus nombres completos
 export const COUNTRIES: Record<Country, string> = {
   'AR': 'Argentina',
-  'US': 'Estados Unidos',
+  'US': 'USA',
   'ES': 'España',
   'MX': 'México',
   'CO': 'Colombia',

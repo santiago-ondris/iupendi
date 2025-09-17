@@ -197,5 +197,58 @@
         "contact": "Contact us"
       },
       "disclaimer": "* If you're still lost, you should contact us..."
+    },
+    "onboarding": {
+      "stepOne": {
+        "title": "Perfect, let's start",
+        "subtitle": "To find the best strategy for you, we need to know what you offer",
+        "question": "First, what do you sell?",
+        "helpText": "(Select the option that best represents you)",
+        "options": {
+          "product": {
+            "label": "Product",
+            "description": "You sell physical or digital products"
+          },
+          "service": {
+            "label": "Service",
+            "description": "You offer services or consulting"
+          }
+        }
+      },
+      "stepTwo": {
+        "title": "Great! Now locate us geographically",
+        "subtitle": "This helps us better understand your market and adapt our strategies",
+        "question": "Which country is your business based in?",
+        "selectPlaceholder": "Select your country",
+        "selectedLabel": "Selected country",
+        "clickToChoose": "Click to choose", 
+        "searchPlaceholder": "Search country...",
+        "popularLabel": "Popular",
+        "popularCountries": "Or choose one of the most popular:",
+        "helpMessage": "🌍 This helps us personalize strategies by region"
+      },
+      "stepThree": {
+        "title": "What type of marketing are you currently using?",
+        "subtitle": "Select all options that apply",
+        "channelSelected": "channel selected",
+        "channelsSelected": "channels selected",
+        "digitalChannels": "Digital Channels",
+        "traditionalChannels": "Traditional Channels", 
+        "helpMessage": "📊 Select all that you are currently using",
+        "options": {
+          "facebookAds": { "description": "Meta, Instagram, WhatsApp" },
+          "googleAds": { "description": "Search, Display, YouTube" },
+          "seo": { "description": "Organic positioning" },
+          "television": { "description": "Open TV and cable" },
+          "radio": { "description": "AM/FM and streaming" },
+          "newspaper": { "description": "Newspapers and magazines" },
+          "other": { "description": "Influencers, events, etc." },
+          "none": { "description": "I don't do marketing yet" }
+        }
+      },
+      "common": {
+        "continue": "Continue",
+        "finish": "Finish"
+      }
     }
   }

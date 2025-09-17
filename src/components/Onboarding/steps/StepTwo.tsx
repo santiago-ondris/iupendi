@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Search, MapPin, ArrowRight, ChevronDown } from 'lucide-react';
 import type { StepProps, Country } from '@/utils/onboarding/types';
 import { COUNTRIES } from '@/utils/onboarding/types';
+import { useTranslation } from 'react-i18next';
 
 const StepTwo: React.FC<StepProps> = ({
   data,
@@ -13,10 +14,8 @@ const StepTwo: React.FC<StepProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Países destacados (más comunes para la agencia)
   const featuredCountries: Country[] = ['AR', 'US', 'ES', 'MX', 'CO', 'CL'];
 
-  // Filtrar países por búsqueda
   const filteredCountries = Object.entries(COUNTRIES).filter(([_, name]) =>
     name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -26,6 +25,8 @@ const StepTwo: React.FC<StepProps> = ({
     setIsDropdownOpen(false);
     setSearchTerm('');
   };
+
+  const { t } = useTranslation();
 
   const selectedCountryName = data.country ? COUNTRIES[data.country] : null;
 
@@ -44,13 +45,12 @@ const StepTwo: React.FC<StepProps> = ({
           className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3"
           style={{ fontFamily: 'Codec Pro, sans-serif' }}
         >
-          ¡Genial! Ahora ubicanos{' '}
-          <span className="text-[#D4F225]">geográficamente</span>
+{          t('onboarding.stepTwo.title')}
         </h2>
         
         {/* Subtítulo */}
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto">
-          Esto nos ayuda a entender mejor tu mercado y adaptar nuestras estrategias
+{          t('onboarding.stepTwo.subtitle')}
         </p>
       </motion.div>
 
@@ -65,7 +65,7 @@ const StepTwo: React.FC<StepProps> = ({
           className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
           style={{ fontFamily: 'Codec Pro, sans-serif' }}
         >
-          ¿En qué país está basado tu negocio?
+{          t('onboarding.stepTwo.question')}
         </h3>
       </motion.div>
 
@@ -94,10 +94,10 @@ const StepTwo: React.FC<StepProps> = ({
             </div>
             <div>
               <p className="font-semibold text-gray-900">
-                {selectedCountryName || 'Selecciona tu país'}
+                {selectedCountryName || t('onboarding.stepTwo.selectPlaceholder')}
               </p>
               <p className="text-sm text-gray-500">
-                {selectedCountryName ? 'País seleccionado' : 'Haz clic para elegir'}
+                {selectedCountryName ? t('onboarding.stepTwo.selectedLabel') : t('onboarding.stepTwo.clickToChoose')}
               </p>
             </div>
           </div>
@@ -124,7 +124,7 @@ const StepTwo: React.FC<StepProps> = ({
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Buscar país..."
+                  placeholder={t('onboarding.stepTwo.searchPlaceholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-[#D4F225] transition-colors"
@@ -155,7 +155,7 @@ const StepTwo: React.FC<StepProps> = ({
                     <span className="font-medium text-gray-900">{countryName}</span>
                     {isFeatured && (
                       <span className="ml-auto text-xs text-[#7252A5] font-medium">
-                        Popular
+                        {t('onboarding.stepTwo.popularLabel')}
                       </span>
                     )}
                   </motion.button>
@@ -175,7 +175,7 @@ const StepTwo: React.FC<StepProps> = ({
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <p className="text-sm text-gray-600 mb-3 text-center">
-            O elige uno de los más populares:
+            {t('onboarding.stepTwo.popularCountries')}
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {featuredCountries.map((countryCode) => (
@@ -237,7 +237,7 @@ const StepTwo: React.FC<StepProps> = ({
         transition={{ duration: 0.6, delay: 1 }}
       >
         <p className="text-xs text-gray-500">
-          🌍 Esto nos ayuda a personalizar las estrategias por región
+{          t('onboarding.stepTwo.helpMessage')}
         </p>
       </motion.div>
     </div>
