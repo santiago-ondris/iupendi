@@ -11,6 +11,7 @@ import StepFive from './steps/StepFive';
 import StepSix from './steps/StepSix';
 import StepSeven from './steps/StepSeven';
 import type { OnboardingData, StepInfo } from '@/utils/onboarding/types';
+import { useTranslation } from 'react-i18next';
 
 const OnboardingContainer: React.FC = () => {
   const navigate = useNavigate();
@@ -25,57 +26,58 @@ const OnboardingContainer: React.FC = () => {
     stepSeven: undefined,
   });
 
-  // Configuración de pasos
+  const { t } = useTranslation();
+
   const steps: StepInfo[] = [
     {
       id: 1,
-      title: '¿Qué vendes?',
-      subtitle: 'Productos o servicios',
+      title: t('onboarding.steps.step1.title'),
+      subtitle: t('onboarding.steps.step1.subtitle'),
       isRequired: true,
       isCompleted: data.businessType !== null,
     },
     {
       id: 2,
-      title: 'Ubicación',
-      subtitle: 'País de tu negocio',
+      title: t('onboarding.steps.step2.title'),
+      subtitle: t('onboarding.steps.step2.subtitle'),
       isRequired: true,
       isCompleted: data.country !== null,
     },
     {
       id: 3,
-      title: 'Marketing Actual',
-      subtitle: 'Canales que usas',
+      title: t('onboarding.steps.step3.title'),
+      subtitle: t('onboarding.steps.step3.subtitle'),
       isRequired: true,
       isCompleted: data.currentMarketing.length > 0,
     },
     {
       id: 4,
-      title: 'Presupuesto',
-      subtitle: 'Inversión mensual',
+      title: t('onboarding.steps.step4.title'),
+      subtitle: t('onboarding.steps.step4.subtitle'),
       isRequired: true,
       isCompleted: data.monthlyBudget !== null,
     },
     {
       id: 5,
-      title: 'Canales Digitales',
-      subtitle: 'Tus redes y sitio web',
+      title: t('onboarding.steps.step5.title'),
+      subtitle: t('onboarding.steps.step5.subtitle'),
       isRequired: true,
       isCompleted: !!(data.stepFive && Object.values(data.stepFive).some(v => v?.trim())),
     },
     {
       id: 6,
-      title: 'Datos Personales',
-      subtitle: 'Información de contacto',
+      title: t('onboarding.steps.step6.title'),
+      subtitle: t('onboarding.steps.step6.subtitle'),
       isRequired: true,
       isCompleted: !!(data.stepSix && data.stepSix.firstName && data.stepSix.lastName && data.stepSix.email && data.stepSix.phone),
     },
     {
       id: 7,
-      title: 'Agendar Reunión',
-      subtitle: 'Sesión de estrategia',
+      title: t('onboarding.steps.step7.title'),
+      subtitle: t('onboarding.steps.step7.subtitle'),
       isRequired: false, 
       isCompleted: !!(data.stepSeven && data.stepSeven.hasScheduled),
-      isCalendly: true, // Marcar como paso especial
+      isCalendly: true,
     },
   ];
 
@@ -276,12 +278,12 @@ const OnboardingContainer: React.FC = () => {
             whileTap={currentStep !== 1 ? { scale: 0.95 } : {}}
           >
             <ArrowLeft className="w-4 h-4" />
-            Anterior
+            {t('onboarding.navigation.previous')}
           </motion.button>
 
           {/* Contador de pasos */}
           <span className="text-sm text-gray-500 font-medium">
-            {currentStep} de 7
+          {t('onboarding.navigation.stepCounter', { current: currentStep, total: 7 })}
           </span>
 
           {/* El botón Siguiente se renderiza dentro de cada componente Step */}

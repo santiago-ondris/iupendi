@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { User, Mail, Phone, Building, Check, ArrowRight, Calendar } from 'lucide-react';
 import type { StepProps } from '@/utils/onboarding/types';
+import { useTranslation } from 'react-i18next';
 
 const StepSix: React.FC<StepProps> = ({
   data,
@@ -15,6 +16,8 @@ const StepSix: React.FC<StepProps> = ({
     company: data.stepSix?.company || '',
     hasNoCompany: data.stepSix?.hasNoCompany || false
   });
+
+  const { t } = useTranslation();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -72,7 +75,7 @@ const StepSix: React.FC<StepProps> = ({
         stepSix: personalData
       });
       
-      // Aquí podrías:
+      // Aquí:
       // 1. Enviar a una API
       // 2. Guardar en localStorage
       // 3. Tracking/Analytics
@@ -96,13 +99,11 @@ const StepSix: React.FC<StepProps> = ({
           className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3"
           style={{ fontFamily: 'Codec Pro, sans-serif' }}
         >
-          <span className="text-[#D4F225]">¡BOOM!</span> 👊 Parece que podemos{' '}
-          <span className="text-[#7252A5]">AYUDARTE DRAMÁTICAMENTE</span>
+{          t('onboarding.stepSix.title')}
         </h2>
         
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mb-4">
-          a hacer crecer tu negocio usando algunas de nuestras estrategias probadas de marketing. 
-          ¡Simplemente ingresá tus datos abajo!
+        {t('onboarding.stepSix.subtitle')}
         </p>
 
         {/* Disclaimer */}
@@ -114,7 +115,7 @@ const StepSix: React.FC<StepProps> = ({
         >
           <Calendar className="w-4 h-4 text-gray-500" />
           <p className="text-sm text-gray-600 font-medium">
-            Al enviar serás dirigido para agendar tu reunión
+          {t('onboarding.stepSix.calendarNote')}
           </p>
         </motion.div>
       </motion.div>
@@ -136,7 +137,7 @@ const StepSix: React.FC<StepProps> = ({
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Nombre *
+            {t('onboarding.stepSix.firstName')}
             </label>
             <div className="relative">
               <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -144,7 +145,7 @@ const StepSix: React.FC<StepProps> = ({
                 type="text"
                 value={personalData.firstName}
                 onChange={(e) => handleInputChange('firstName', e.target.value)}
-                placeholder="Tu nombre"
+                placeholder={t('onboarding.stepSix.placeholders.firstName')}
                 className={`w-full pl-10 pr-4 py-3 rounded-xl border-2 transition-all duration-200 ${
                   personalData.firstName.trim() 
                     ? 'border-[#7252A5] bg-[#7252A5]/5' 
@@ -162,7 +163,7 @@ const StepSix: React.FC<StepProps> = ({
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <label className="block text-sm font-semibold text-gray-700 mb-2">
-              Apellido *
+            {t('onboarding.stepSix.lastName')}
             </label>
             <div className="relative">
               <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -170,7 +171,7 @@ const StepSix: React.FC<StepProps> = ({
                 type="text"
                 value={personalData.lastName}
                 onChange={(e) => handleInputChange('lastName', e.target.value)}
-                placeholder="Tu apellido"
+                placeholder={t('onboarding.stepSix.placeholders.lastName')}
                 className={`w-full pl-10 pr-4 py-3 rounded-xl border-2 transition-all duration-200 ${
                   personalData.lastName.trim() 
                     ? 'border-[#7252A5] bg-[#7252A5]/5' 
@@ -189,7 +190,7 @@ const StepSix: React.FC<StepProps> = ({
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Email *
+          {t('onboarding.stepSix.email')}
           </label>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -197,7 +198,7 @@ const StepSix: React.FC<StepProps> = ({
               type="email"
               value={personalData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
-              placeholder="tu@email.com"
+              placeholder={t('onboarding.stepSix.placeholders.email')}
               className={`w-full pl-10 pr-4 py-3 rounded-xl border-2 transition-all duration-200 ${
                 personalData.email.trim() 
                   ? 'border-[#7252A5] bg-[#7252A5]/5' 
@@ -206,7 +207,7 @@ const StepSix: React.FC<StepProps> = ({
             />
             {personalData.email.trim() && !isValidEmail(personalData.email) && (
               <p className="text-red-500 text-sm mt-1 ml-10">
-                Por favor ingresá un email válido
+                {t('onboarding.stepSix.validation.email')}
               </p>
             )}
           </div>
@@ -220,7 +221,7 @@ const StepSix: React.FC<StepProps> = ({
           transition={{ duration: 0.5, delay: 0.7 }}
         >
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Teléfono *
+          {t('onboarding.stepSix.phone')}
           </label>
           <div className="relative">
             <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -228,7 +229,7 @@ const StepSix: React.FC<StepProps> = ({
               type="tel"
               value={personalData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
-              placeholder="Tu celular"
+              placeholder={t('onboarding.stepSix.placeholders.phone')}
               className={`w-full pl-10 pr-4 py-3 rounded-xl border-2 transition-all duration-200 ${
                 personalData.phone.trim() 
                   ? 'border-[#7252A5] bg-[#7252A5]/5' 
@@ -237,7 +238,7 @@ const StepSix: React.FC<StepProps> = ({
             />
             {personalData.phone.trim() && personalData.phone.length < 8 && (
               <p className="text-red-500 text-sm mt-1 ml-10">
-                El teléfono debe tener al menos 8 dígitos
+                {t('onboarding.stepSix.validation.phone')}
               </p>
             )}
           </div>
@@ -251,7 +252,7 @@ const StepSix: React.FC<StepProps> = ({
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <label className="block text-sm font-semibold text-gray-700 mb-2">
-            Nombre de la Empresa
+          {t('onboarding.stepSix.company')}
           </label>
           <div className="relative">
             <Building className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -259,7 +260,7 @@ const StepSix: React.FC<StepProps> = ({
               type="text"
               value={personalData.company}
               onChange={(e) => handleInputChange('company', e.target.value)}
-              placeholder="Nombre de tu empresa"
+              placeholder={t('onboarding.stepSix.placeholders.company')}
               disabled={personalData.hasNoCompany}
               className={`w-full pl-10 pr-4 py-3 rounded-xl border-2 transition-all duration-200 ${
                 personalData.hasNoCompany 
@@ -302,7 +303,7 @@ const StepSix: React.FC<StepProps> = ({
               </div>
             </div>
             <span className="text-sm text-gray-600 font-medium">
-              NO TENGO UNA EMPRESA
+            {t('onboarding.stepSix.noCompany')}
             </span>
           </motion.label>
         </motion.div>
@@ -319,7 +320,7 @@ const StepSix: React.FC<StepProps> = ({
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-full">
             <Check className="w-4 h-4 text-green-500" />
             <span className="text-sm font-medium text-green-700">
-              ¡Todo listo! Podés finalizar
+              {t('onboarding.stepSix.readyMessage')}
             </span>
           </div>
         </motion.div>
@@ -349,11 +350,11 @@ const StepSix: React.FC<StepProps> = ({
           {isSubmitting ? (
             <>
               <div className="w-5 h-5 border-2 border-gray-600 border-t-transparent rounded-full animate-spin" />
-              Preparando calendario...
+              {t('onboarding.stepSix.loading')}
             </>
           ) : (
             <>
-              Continuar al Calendario
+              {t('onboarding.stepSix.submitButton')}
               <ArrowRight className="w-5 h-5" />
             </>
           )}
@@ -368,7 +369,7 @@ const StepSix: React.FC<StepProps> = ({
         transition={{ duration: 0.6, delay: 1 }}
       >
         <p className="text-xs text-gray-500">
-          🔒 Tus datos están seguros - solo los usamos para contactarte
+          {t('onboarding.stepSix.privacyNote')}
         </p>
       </motion.div>
     </div>

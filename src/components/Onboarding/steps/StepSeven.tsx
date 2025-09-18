@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { Calendar, Zap, Clock, ArrowRight, CheckCircle } from 'lucide-react';
 import type { StepSevenProps } from '@/utils/onboarding/types';
+import { useTranslation } from 'react-i18next';
 
 const StepSeven: React.FC<StepSevenProps> = ({
   data,
@@ -11,6 +12,8 @@ const StepSeven: React.FC<StepSevenProps> = ({
   onCalendlyScheduled
 }) => {
   const [hasScheduled, setHasScheduled] = useState(data.stepSeven?.hasScheduled || false);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Solo cargar si no existe ya
@@ -77,7 +80,7 @@ const StepSeven: React.FC<StepSevenProps> = ({
           />
           <Zap className="w-5 h-5 relative z-10" />
           <span className="font-bold text-sm tracking-wider uppercase relative z-10">
-            ¡ÚLTIMO PASO!
+            {t('onboarding.stepSeven.badge')}
           </span>
         </motion.div>
 
@@ -85,15 +88,11 @@ const StepSeven: React.FC<StepSevenProps> = ({
           className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3"
           style={{ fontFamily: 'Codec Pro, sans-serif' }}
         >
-          ¡Perfecto {userPersonalData?.firstName}! 🎉 
-          <span className="text-[#7252A5]"> Ahora programemos</span>
-          <br />
-          <span className="text-[#D4F225]">tu sesión estratégica</span>
+          {t('onboarding.stepSeven.title', { name: userPersonalData?.firstName })}
         </h2>
         
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-          Reservá tu sesión de estrategia <strong>100% gratuita</strong> de 30 minutos 
-          y veamos cómo podemos hacer explotar tu negocio 🚀
+          {t('onboarding.stepSeven.subtitle')}
         </p>
       </motion.div>
 
@@ -105,9 +104,9 @@ const StepSeven: React.FC<StepSevenProps> = ({
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         {[
-          { icon: Clock, text: "30 minutos", color: "#D4F225" },
-          { icon: Calendar, text: "100% gratis", color: "#7252A5" },
-          { icon: ArrowRight, text: "Estrategia personalizada", color: "#759CCF" }
+          { icon: Clock, text: t('onboarding.stepSeven.features.duration'), color: "#D4F225" },
+          { icon: Calendar, text: t('onboarding.stepSeven.features.free'), color: "#7252A5" },
+          { icon: ArrowRight, text: t('onboarding.stepSeven.features.strategy'), color: "#759CCF" }
         ].map((item, index) => (
           <motion.div
             key={index}
@@ -158,10 +157,10 @@ const StepSeven: React.FC<StepSevenProps> = ({
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
               </motion.div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                ¡Reunión programada con éxito! 🎉
+                {t('onboarding.stepSeven.successTitle')}
               </h3>
               <p className="text-gray-600 mb-4">
-                Te enviaremos toda la información por email
+                {t('onboarding.stepSeven.successMessage')}
               </p>
               <motion.button
                 onClick={handleFinishOnboarding}
@@ -169,7 +168,7 @@ const StepSeven: React.FC<StepSevenProps> = ({
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Finalizar proceso
+                {t('onboarding.stepSeven.finishButton')}
                 <ArrowRight className="w-4 h-4" />
               </motion.button>
             </div>
@@ -199,12 +198,12 @@ const StepSeven: React.FC<StepSevenProps> = ({
         >
           {hasScheduled ? (
             <>
-              Finalizar proceso
+              {t('onboarding.stepSeven.finishButton')}
               <CheckCircle className="w-4 h-4" />
             </>
           ) : (
             <>
-              Programá tu reunión arriba
+              {t('onboarding.stepSeven.schedulePrompt')}
               <Calendar className="w-4 h-4" />
             </>
           )}
@@ -219,7 +218,7 @@ const StepSeven: React.FC<StepSevenProps> = ({
         transition={{ duration: 0.6, delay: 1 }}
       >
         <p className="text-xs text-gray-500">
-          📧 Recibirás un email de confirmación con todos los detalles
+          {t('onboarding.stepSeven.emailNote')}
         </p>
       </motion.div>
     </div>

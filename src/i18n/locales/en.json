@@ -199,6 +199,7 @@
       "disclaimer": "* If you're still lost, you should contact us..."
     },
     "onboarding": {
+      "pageTitle": "Start your project - IupenDigital",
       "stepOne": {
         "title": "Perfect, let's start",
         "subtitle": "To find the best strategy for you, we need to know what you offer",
@@ -246,9 +247,107 @@
           "none": { "description": "I don't do marketing yet" }
         }
       },
+      "stepFour": {
+        "title": "What's your monthly marketing budget?",
+        "subtitle": "This helps us recommend the best strategies within your range",
+        "monthlyUSD": "USD monthly",
+        "popularLabel": "Popular",
+        "adjustmentNote": "💡 Don't worry, we can adjust based on results",
+        "helpMessage": "🎯 Indicative ranges - we can create a personalized plan",
+        "options": {
+          "under5k": { "label": "Under $5k", "description": "Perfect to get started" },
+          "5k10k": { "label": "$5k - $10k", "description": "Steady growth" },
+          "10k20k": { "label": "$10k - $20k", "description": "Serious scaling" },
+          "20k35k": { "label": "$20k - $35k", "description": "High performance" },
+          "35k50k": { "label": "$35k - $50k", "description": "Market dominance" },
+          "50kPlus": { "label": "Over $50k", "description": "No limits" }
+        }
+      },
+      "stepFive": {
+        "title": "Almost done! 🎉",
+        "subtitle": "Tell us about your current digital channels",
+        "optionalNote": "All fields are optional - add the ones you have",
+        "question": "What are your digital channels?",
+        "helpText": "This helps us analyze your current presence",
+        "canContinue": "Perfect! You can continue now",
+        "helpMessage": "🔗 Complete at least one channel to continue",
+        "fields": {
+          "instagram": {
+            "placeholder": "username",
+            "description": "Your Instagram profile or page"
+          },
+          "facebook": {
+            "placeholder": "facebook.com/yourpage",
+            "description": "Your Facebook page or profile"
+          },
+          "website": {
+            "placeholder": "https://yoursite.com",
+            "description": "Your website or landing page"
+          },
+          "other": {
+            "placeholder": "TikTok @username, LinkedIn, etc.",
+            "description": "Any other digital channel, if you don't have any, write \"None\""
+          }
+        }
+      },
+      "stepSix": {
+        "title": "BOOM! 💊 It looks like we can help you DRAMATICALLY",
+        "subtitle": "grow your business using some of our proven marketing strategies. Just enter your details below!",
+        "calendarNote": "Upon submission you will be directed to schedule your meeting",
+        "firstName": "First Name *",
+        "lastName": "Last Name *",
+        "email": "Email *",
+        "phone": "Phone *",
+        "company": "Company Name",
+        "noCompany": "I DON'T HAVE A COMPANY",
+        "placeholders": {
+          "firstName": "Your first name",
+          "lastName": "Your last name",
+          "email": "your@email.com",
+          "phone": "Your phone",
+          "company": "Your company name"
+        },
+        "validation": {
+          "email": "Please enter a valid email",
+          "phone": "Phone must have at least 8 digits"
+        },
+        "readyMessage": "All set! You can finish now",
+        "loading": "Preparing calendar...",
+        "submitButton": "Continue to Calendar",
+        "privacyNote": "🔒 Your data is safe - we only use it to contact you"
+      },
+      "stepSeven": {
+        "badge": "LAST STEP!",
+        "title": "Perfect {{name}}! 🎉 Now let's schedule your strategic session",
+        "subtitle": "Book your 100% free 30-minute strategy session and let's see how we can explode your business 🚀",
+        "features": {
+          "duration": "30 minutes",
+          "free": "100% free",
+          "strategy": "Personalized strategy"
+        },
+        "successTitle": "Meeting scheduled successfully! 🎉",
+        "successMessage": "We'll send you all the information via email",
+        "finishButton": "Finish process",
+        "schedulePrompt": "Schedule your meeting above",
+        "emailNote": "📧 You'll receive a confirmation email with all the details"
+      },
+      "steps": {
+        "step1": { "title": "What do you sell?", "subtitle": "Products or services" },
+        "step2": { "title": "Location", "subtitle": "Your business country" },
+        "step3": { "title": "Current Marketing", "subtitle": "Channels you use" },
+        "step4": { "title": "Budget", "subtitle": "Monthly investment" },
+        "step5": { "title": "Digital Channels", "subtitle": "Your social media and website" },
+        "step6": { "title": "Personal Data", "subtitle": "Contact information" },
+        "step7": { "title": "Schedule Meeting", "subtitle": "Strategy session" }
+      },
+      "navigation": {
+        "previous": "Previous", 
+        "stepCounter": "{{current}} of {{total}}"
+      },
       "common": {
         "continue": "Continue",
-        "finish": "Finish"
+        "finish": "Finish",
+        "siteTitle": "Iupendi Digital - Marketing that connects and converts"
       }
     }
   }

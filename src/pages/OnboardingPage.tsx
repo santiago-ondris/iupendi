@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import OnboardingContainer from '@/components/Onboarding/OnboardingContainer';
+import { useTranslation } from 'react-i18next';
 
 const OnboardingPage: React.FC = () => {
-  // Cambiar el título de la página
-  useEffect(() => {
-    document.title = 'Empezá tu proyecto - Iupendi Digital';
-    
-    // Restaurar título original al desmontar
-    return () => {
-      document.title = 'Iupendi Digital - Marketing que conecta y convierte';
-    };
-  }, []);
+  const { t } = useTranslation();
 
-  // Scroll to top al entrar a la página
+  useEffect(() => {
+    document.title = t('onboarding.pageTitle');
+    
+    return () => {
+      document.title = t('onboarding.common.siteTitle');
+    };
+  }, [t]);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);

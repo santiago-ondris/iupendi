@@ -373,7 +373,7 @@ const StepThree: React.FC<StepProps> = ({
           whileHover={selectedCount > 0 ? { scale: 1.05 } : {}}
           whileTap={selectedCount > 0 ? { scale: 0.95 } : {}}
         >
-          {isLastStep ? 'Finalizar' : 'Continuar'}
+          {isLastStep ? t('onboarding.common.finish') : t('onboarding.common.continue')}
           <ArrowRight className="w-4 h-4" />
         </motion.button>
       </motion.div>

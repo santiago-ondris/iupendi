@@ -199,6 +199,7 @@
       "disclaimer": "* Si seguís perdido, deberias contactarnos..."
     },
     "onboarding": {
+      "pageTitle": "Empezá tu proyecto - IupenDigital",
       "stepOne": {
         "title": "Perfecto, empecemos",
         "subtitle": "Para encontrar la mejor estrategia para vos, necesitamos saber qué ofrecés",
@@ -246,9 +247,107 @@
           "none": { "description": "No hago marketing aún" }
         }
       },
+      "stepFour": {
+        "title": "¿Cuál es tu presupuesto mensual de marketing?",
+        "subtitle": "Esto nos ayuda a recomendarte las mejores estrategias dentro de tu rango",
+        "monthlyUSD": "USD mensuales",
+        "popularLabel": "Popular",
+        "adjustmentNote": "💡 No te preocupes, podemos ajustar según los resultados",
+        "helpMessage": "🎯 Rangos orientativos - podemos crear un plan personalizado",
+        "options": {
+          "under5k": { "label": "Menos de $5k", "description": "Perfecto para empezar" },
+          "5k10k": { "label": "$5k - $10k", "description": "Crecimiento constante" },
+          "10k20k": { "label": "$10k - $20k", "description": "Escalamiento serio" },
+          "20k35k": { "label": "$20k - $35k", "description": "Alto rendimiento" },
+          "35k50k": { "label": "$35k - $50k", "description": "Dominancia de mercado" },
+          "50kPlus": { "label": "Más de $50k", "description": "Sin límites" }
+        }
+      },
+      "stepFive": {
+        "title": "¡Casi terminamos! 🎉",
+        "subtitle": "Contanos sobre tus canales digitales actuales",
+        "optionalNote": "Todos los campos son opcionales - agregá los que tengas",
+        "question": "¿Cuáles son tus canales digitales?",
+        "helpText": "Esto nos ayuda a analizar tu presencia actual",
+        "canContinue": "¡Perfecto! Ya podés continuar",
+        "helpMessage": "🔗 Completá al menos un canal para continuar",
+        "fields": {
+          "instagram": {
+            "placeholder": "usuario",
+            "description": "Tu perfil o página de Instagram"
+          },
+          "facebook": {
+            "placeholder": "facebook.com/tupagina",
+            "description": "Tu página o perfil de Facebook"
+          },
+          "website": {
+            "placeholder": "https://tusitio.com",
+            "description": "Tu página web o landing"
+          },
+          "other": {
+            "placeholder": "TikTok @usuario, LinkedIn, etc.",
+            "description": "Cualquier otro canal digital, si no tenes, escribí \"No tengo\""
+          }
+        }
+      },
+      "stepSix": {
+        "title": "¡BOOM! 💊 Parece que podemos AYUDARTE DRAMÁTICAMENTE",
+        "subtitle": "a hacer crecer tu negocio usando algunas de nuestras estrategias probadas de marketing. ¡Simplemente ingresá tus datos abajo!",
+        "calendarNote": "Al enviar serás dirigido para agendar tu reunión",
+        "firstName": "Nombre *",
+        "lastName": "Apellido *",
+        "email": "Email *",
+        "phone": "Teléfono *",
+        "company": "Nombre de la Empresa",
+        "noCompany": "NO TENGO UNA EMPRESA",
+        "placeholders": {
+          "firstName": "Tu nombre",
+          "lastName": "Tu apellido",
+          "email": "tu@email.com",
+          "phone": "Tu celular",
+          "company": "Nombre de tu empresa"
+        },
+        "validation": {
+          "email": "Por favor ingresá un email válido",
+          "phone": "El teléfono debe tener al menos 8 dígitos"
+        },
+        "readyMessage": "¡Todo listo! Podés finalizar",
+        "loading": "Preparando calendario...",
+        "submitButton": "Continuar al Calendario",
+        "privacyNote": "🔒 Tus datos están seguros - solo los usamos para contactarte"
+      },
+      "stepSeven": {
+        "badge": "¡ÚLTIMO PASO!",
+        "title": "¡Perfecto {{name}}! 🎉 Ahora programemos tu sesión estratégica",
+        "subtitle": "Reservá tu sesión de estrategia 100% gratuita de 30 minutos y veamos cómo podemos hacer explotar tu negocio 🚀",
+        "features": {
+          "duration": "30 minutos",
+          "free": "100% gratis",
+          "strategy": "Estrategia personalizada"
+        },
+        "successTitle": "¡Reunión programada con éxito! 🎉",
+        "successMessage": "Te enviaremos toda la información por email",
+        "finishButton": "Finalizar proceso",
+        "schedulePrompt": "Programá tu reunión arriba",
+        "emailNote": "📧 Recibirás un email de confirmación con todos los detalles"
+      },
+      "steps": {
+        "step1": { "title": "¿Qué vendes?", "subtitle": "Productos o servicios" },
+        "step2": { "title": "Ubicación", "subtitle": "País de tu negocio" },
+        "step3": { "title": "Marketing Actual", "subtitle": "Canales que usas" },
+        "step4": { "title": "Presupuesto", "subtitle": "Inversión mensual" },
+        "step5": { "title": "Canales Digitales", "subtitle": "Tus redes y sitio web" },
+        "step6": { "title": "Datos Personales", "subtitle": "Información de contacto" },
+        "step7": { "title": "Agendar Reunión", "subtitle": "Sesión de estrategia" }
+      },
+      "navigation": {
+        "previous": "Anterior",
+        "stepCounter": "{{current}} de {{total}}"
+      },
       "common": {
         "continue": "Continuar",
-        "finish": "Finalizar"
+        "finish": "Finalizar",
+        "siteTitle": "Iupendi Digital - Marketing que conecta y convierte"
       }
     }
   }

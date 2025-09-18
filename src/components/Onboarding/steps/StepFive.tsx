@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Instagram, Facebook, Globe, Hash, ArrowRight } from 'lucide-react';
 import type { StepProps } from '@/utils/onboarding/types';
+import { useTranslation } from 'react-i18next';
 
 const StepFive: React.FC<StepProps> = ({
   data,
@@ -16,6 +17,8 @@ const StepFive: React.FC<StepProps> = ({
     other: data.stepFive?.other || ''
   });
 
+  const { t } = useTranslation();
+
   const handleChannelChange = (channel: string, value: string) => {
     const updatedChannels = { ...channels, [channel]: value };
     setChannels(updatedChannels);
@@ -29,8 +32,8 @@ const StepFive: React.FC<StepProps> = ({
       id: 'instagram',
       label: 'Instagram',
       icon: Instagram,
-      placeholder: 'usuario',
-      description: 'Tu perfil o página de Instagram',
+      placeholder: t('onboarding.stepFive.fields.instagram.placeholder'),
+      description: t('onboarding.stepFive.fields.instagram.description'),
       color: '#E4405F',
       prefix: '@'
     },
@@ -38,8 +41,8 @@ const StepFive: React.FC<StepProps> = ({
       id: 'facebook',
       label: 'Facebook',
       icon: Facebook,
-      placeholder: 'facebook.com/tupagina',
-      description: 'Tu página o perfil de Facebook',
+      placeholder: t('onboarding.stepFive.fields.facebook.placeholder'),
+      description: t('onboarding.stepFive.fields.facebook.description'),
       color: '#1877F2',
       prefix: ''
     },
@@ -47,8 +50,8 @@ const StepFive: React.FC<StepProps> = ({
       id: 'website',
       label: 'Sitio Web',
       icon: Globe,
-      placeholder: 'https://tusitio.com',
-      description: 'Tu página web o landing',
+      placeholder: t('onboarding.stepFive.fields.website.placeholder'),
+      description: t('onboarding.stepFive.fields.website.description'),
       color: '#7252A5',
       prefix: ''
     },
@@ -56,8 +59,8 @@ const StepFive: React.FC<StepProps> = ({
       id: 'other',
       label: 'Otro Canal',
       icon: Hash,
-      placeholder: 'TikTok @usuario, LinkedIn, etc.',
-      description: 'Cualquier otro canal digital, si no tenes, escribí "No tengo"',
+      placeholder: t('onboarding.stepFive.fields.other.placeholder'),
+      description: t('onboarding.stepFive.fields.other.description'),
       color: '#D4F225',
       prefix: ''
     }
@@ -77,11 +80,11 @@ const StepFive: React.FC<StepProps> = ({
           className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3"
           style={{ fontFamily: 'Codec Pro, sans-serif' }}
         >
-          ¡Casi terminamos! 🎉
+          {t('onboarding.stepFive.title')}
         </h2>
         
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg mx-auto mb-4">
-          Contanos sobre tus canales digitales actuales
+        {t('onboarding.stepFive.subtitle')}
         </p>
 
         {/* Subtitle con aclaración */}
@@ -93,7 +96,7 @@ const StepFive: React.FC<StepProps> = ({
         >
           <div className="w-2 h-2 bg-blue-500 rounded-full" />
           <p className="text-sm text-blue-700 font-medium">
-            Todos los campos son opcionales - agregá los que tengas
+          {t('onboarding.stepFive.optionalNote')}
           </p>
         </motion.div>
       </motion.div>
@@ -109,10 +112,10 @@ const StepFive: React.FC<StepProps> = ({
           className="text-xl sm:text-2xl font-bold text-gray-900 mb-2"
           style={{ fontFamily: 'Codec Pro, sans-serif' }}
         >
-          ¿Cuáles son tus canales digitales?
+          {t('onboarding.stepFive.question')}
         </h3>
         <p className="text-sm text-gray-500">
-          Esto nos ayuda a analizar tu presencia actual
+        {t('onboarding.stepFive.helpText')}
         </p>
       </motion.div>
 
@@ -223,7 +226,7 @@ const StepFive: React.FC<StepProps> = ({
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200 rounded-full">
             <div className="w-2 h-2 bg-green-500 rounded-full" />
             <span className="text-sm font-medium text-green-700">
-              ¡Perfecto! Ya podés continuar
+            {t('onboarding.stepFive.canContinue')}
             </span>
           </div>
         </motion.div>
@@ -253,7 +256,7 @@ const StepFive: React.FC<StepProps> = ({
           whileHover={hasAtLeastOneChannel ? { scale: 1.05 } : {}}
           whileTap={hasAtLeastOneChannel ? { scale: 0.95 } : {}}
         >
-          {isLastStep ? 'Finalizar' : 'Continuar'}
+          {isLastStep ? t('onboarding.common.finish') : t('onboarding.common.continue')}
           <ArrowRight className="w-4 h-4" />
         </motion.button>
       </motion.div>
@@ -266,7 +269,7 @@ const StepFive: React.FC<StepProps> = ({
         transition={{ duration: 0.6, delay: 0.8 }}
       >
         <p className="text-xs text-gray-500">
-          🔗 Completá al menos un canal para continuar
+        {t('onboarding.stepFive.helpMessage')}
         </p>
       </motion.div>
     </div>

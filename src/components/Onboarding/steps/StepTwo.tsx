@@ -224,7 +224,7 @@ const StepTwo: React.FC<StepProps> = ({
           whileHover={data.country ? { scale: 1.05 } : {}}
           whileTap={data.country ? { scale: 0.95 } : {}}
         >
-          {isLastStep ? 'Finalizar' : 'Continuar'}
+          {isLastStep ? t('onboarding.common.finish') : t('onboarding.common.continue')}
           <ArrowRight className="w-4 h-4" />
         </motion.button>
       </motion.div>
