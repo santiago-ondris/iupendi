@@ -28,24 +28,6 @@ const HeroSection: React.FC = () => {
     }
   };
 
-  // const floatingShapes = [
-  //   { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
-  //   { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
-  //   { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
-  //   { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
-  //   { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
-  //   { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
-  // ];
-
-  // const techShapes = [
-  //   { type: 'hexagon', color: '#D4F225', size: 'w-24 h-24', delay: 0, opacity: 0.08 },
-  //   { type: 'diamond', color: '#7252A5', size: 'w-20 h-20', delay: 1, opacity: 0.06 },
-  //   { type: 'triangle', color: '#759CCF', size: 'w-32 h-32', delay: 2, opacity: 0.10 },
-  //   { type: 'octagon', color: '#F2AE1F', size: 'w-16 h-16', delay: 0.5, opacity: 0.07 },
-  //   { type: 'rhombus', color: '#6E787D', size: 'w-28 h-28', delay: 0.8, opacity: 0.05 },
-  //   { type: 'pentagon', color: '#D4F225', size: 'w-18 h-18', delay: 2.2, opacity: 0.09 },
-  // ];
-
   const blobShapes = [
     { type: 'blob1', color: '#f2ae1f', size: 'w-32 h-32', delay: 0, stroke: 2 },
     { type: 'blob2', color: '#6e787d', size: 'w-24 h-24', delay: 1, stroke: 1.5 },
@@ -55,17 +37,6 @@ const HeroSection: React.FC = () => {
     { type: 'blob6', color: '#e7e8cf', size: 'w-16 h-16', delay: 2.2, stroke: 1.2 },
     { type: 'blob4', color: '#f2ae1f', size: 'w-40 h-40', delay: 2.2, stroke: 1.2 },
   ];
-
-  // const crystalShapes = [
-  //   { type: 'fragment1', color: '#D4F225', size: 'w-28 h-28', delay: 0, intensity: 0.8 },
-  //   { type: 'fragment2', color: '#7252A5', size: 'w-22 h-22', delay: 1, intensity: 0.6 },
-  //   { type: 'fragment3', color: '#759CCF', size: 'w-36 h-36', delay: 2, intensity: 0.9 },
-  //   { type: 'fragment4', color: '#F2AE1F', size: 'w-18 h-18', delay: 0.5, intensity: 0.7 },
-  //   { type: 'fragment5', color: '#6E787D', size: 'w-24 h-24', delay: 0.8, intensity: 0.5 },
-  //   { type: 'fragment6', color: '#D4F225', size: 'w-20 h-20', delay: 2.2, intensity: 0.6 },
-  //   { type: 'fragment6', color: '#759CCF', size: 'w-36 h-36', delay: 2, intensity: 0.9 },
-  //   { type: 'fragment3', color: '#7252A5', size: 'w-40 h-40', delay: 0.8, intensity: 0.9 },
-  // ];
 
   const titleWords = t('hero.title').split(' ').map((word, _idx) => ({
     text: word,
@@ -164,61 +135,90 @@ const HeroSection: React.FC = () => {
         </div>
         
         {/* Contenido principal */}
-        <div   className="
-            relative z-10 max-w-6xl mx-auto text-center w-full 
+        <div className="
+            relative z-10 max-w-7xl mx-auto text-center w-full 
             flex flex-col justify-center min-h-[45vh] 
-            -mt-65        /* móvil */
-            md:-mt-50     /* md y arriba: desktop */ "
+            -mt-65 md:-mt-50"
         >
-          {/* TÍTULO */}
+          {/* TÍTULO - OPTIMIZADO */}
           <motion.div
             className="mb-4 md:mb-6"
             variants={titleContainerVariants}
             initial="hidden"
             animate="visible"
           >
-            <div className="text-[1.6rem] sm:text-4xl md:text-6xl lg:text-7xl font-black text-[#292929] leading-none">
-              {/* Línea superior */}
-              <div className="block mb-2 whitespace-nowrap">
-                {titleWords.slice(0, 2).map((w, i) => (
-                  <motion.span key={i} className="inline-block mr-2 sm:mr-4 md:mr-6" variants={titleWordVariants}>
-                    {w.text}
-                  </motion.span>
-                ))}
+            <div className="
+              text-[2.5rem] leading-[0.9] tracking-tighter
+              sm:text-[3rem] sm:leading-[0.9] sm:tracking-tighter
+              md:text-[5rem] md:leading-[0.85] md:tracking-tighter
+              lg:text-[6.5rem] lg:leading-[0.85] lg:tracking-tighter
+              xl:text-[7.5rem] xl:leading-[0.85] xl:tracking-tighter
+              font-black text-[#292929]
+            ">
+              {/* Mobile: cada palabra en su línea si es necesario */}
+              <div className="block md:hidden space-y-1">
+                {/* "COMO ANABOLICOS" */}
+                <motion.div variants={titleWordVariants}>
+                  {titleWords[0].text} {titleWords[1].text}
+                </motion.div>
+                
+                {/* "PERO PARA TU" */}
+                <motion.div variants={titleWordVariants}>
+                  {titleWords[2].text} {titleWords[3].text} {titleWords[4].text}
+                </motion.div>
+                
+                {/* "MARCA 💡" */}
+                <motion.div className="text-[#7252A5]" variants={highlightWordVariants} animate={["visible", "float"]}>
+                  {titleWords[5].text} 💡
+                </motion.div>
               </div>
 
-              <div className="block whitespace-nowrap">
-                {/* Palabras normales */}
-                {titleWords.slice(2, titleWords.length - 2).map((w, i) => (
-                  <motion.span
-                    key={i}
-                    className="inline-block mr-2 sm:mr-4 md:mr-6"
-                    variants={titleWordVariants}
-                  >
-                    {w.text}
-                  </motion.span>
-                ))}
+              {/* Desktop: 2 líneas compactas */}
+              <div className="hidden md:block">
+                {/* Primera línea */}
+                <div className="whitespace-nowrap">
+                  {titleWords.slice(0, 2).map((w, i) => (
+                    <motion.span 
+                      key={i} 
+                      className="inline-block mr-3 lg:mr-4"
+                      variants={titleWordVariants}
+                    >
+                      {w.text}
+                    </motion.span>
+                  ))}
+                </div>
 
-                {/* Palabras highlight (últimas 2) */}
-                {titleWords.slice(-2).map((w, i) => (
+                {/* Segunda línea */}
+                <div className="whitespace-nowrap">
+                  {titleWords.slice(2, titleWords.length - 2).map((w, i) => (
+                    <motion.span
+                      key={i}
+                      className="inline-block mr-3 lg:mr-4"
+                      variants={titleWordVariants}
+                    >
+                      {w.text}
+                    </motion.span>
+                  ))}
+                  
+                  {titleWords.slice(-2).map((w, i) => (
+                    <motion.span
+                      key={`highlight-${i}`}
+                      className="inline-block text-[#7252A5] mr-2 lg:mr-3"
+                      variants={highlightWordVariants}
+                      animate={["visible", "float"]}
+                    >
+                      {w.text}
+                    </motion.span>
+                  ))}
+
                   <motion.span
-                    key={`highlight-${i}`}
-                    className="inline-block text-[#7252A5] mr-2 sm:mr-4 mt-4"
-                    variants={highlightWordVariants}
+                    className="inline-block text-[#7252A5]"
+                    variants={asteriskVariants}
                     animate={["visible", "float"]}
                   >
-                    {w.text}
+                    💡
                   </motion.span>
-                ))}
-
-                {/* Emoji */}
-                <motion.span
-                  className="inline-block text-[#7252A5]"
-                  variants={asteriskVariants}
-                  animate={["visible", "float"]}
-                >
-                  💡
-                </motion.span>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -241,7 +241,6 @@ const HeroSection: React.FC = () => {
                 boxShadow: '0 8px 25px rgba(0,0,0,0.1)'
               }}
             >
-              {/* Línea superior de "peligro" */}
               <motion.div
                 className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#F2AE1F] via-red-500 to-[#F2AE1F]"
                 animate={{
@@ -254,7 +253,6 @@ const HeroSection: React.FC = () => {
                 }}
               />
 
-              {/* Emoji warning simple */}
               <motion.span
                 className="text-xl"
                 animate={{
@@ -269,20 +267,15 @@ const HeroSection: React.FC = () => {
                 ⚠️
               </motion.span>
 
-              <span className="text-xs      
-                sm:text-sm     
-                md:text-base   
-                lg:text-lg    
-                font-semibold text-gray-800">
-              <span className="hidden sm:inline">
-                {t('hero.subtitleHighlight')}
+              <span className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-800">
+                <span className="hidden sm:inline">
+                  {t('hero.subtitleHighlight')}
+                </span>
+                <span className="sm:hidden">
+                  {t('hero.subtitleHighlight')}
+                </span>
               </span>
-              <span className="sm:hidden">
-                {t('hero.subtitleHighlight')}
-              </span>
-            </span>
 
-              {/* Punto pulsante al final */}
               <motion.div
                 className="w-2 h-2 bg-[#F2AE1F] rounded-full"
                 animate={{
@@ -300,11 +293,14 @@ const HeroSection: React.FC = () => {
 
           {/* SUBTÍTULO ORIGINAL */}
           <motion.p
-            className="text-xs sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-4 sm:mb-6 max-w-md sm:max-w-4xl mx-auto leading-relaxed"
+            className="text-xs sm:text-lg md:text-xl lg:text-2xl 
+            text-gray-800 font-semibold tracking-wide 
+            bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text
+            mb-4 sm:mb-6 max-w-md sm:max-w-4xl mx-auto leading-relaxed"
             variants={subtitleVariants}
             initial="hidden"
             animate="visible"
-            transition={{ delay: 0.3 }} // Retraso ligeramente ajustado
+            transition={{ delay: 0.3 }}
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -316,7 +312,7 @@ const HeroSection: React.FC = () => {
             variants={formVariants}
             initial="hidden"
             animate="visible"
-            transition={{ delay: 0.5 }} // Retraso ajustado
+            transition={{ delay: 0.5 }}
           >
             <div className="flex-1 relative">
               <motion.input
@@ -349,9 +345,9 @@ const HeroSection: React.FC = () => {
           onClick={handleScrollToServices}
         >
           <div className="flex flex-col items-center">
-          <span className="whitespace-nowrap text-xs md:text-sm text-[#7252A5] font-medium mb-2 tracking-wider uppercase">
-            {t('hero.scrollText')}
-          </span>
+            <span className="whitespace-nowrap text-xs md:text-sm text-[#7252A5] font-medium mb-2 tracking-wider uppercase">
+              {t('hero.scrollText')}
+            </span>
             <motion.div
               className="w-10 h-10 md:w-12 md:h-12 border-2 border-[#7252A5] rounded-full flex items-center justify-center hover:bg-[#7252A5] hover:text-white transition-all duration-300"
               whileHover={{ scale: 1.1 }}
