@@ -353,7 +353,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               {isLoading ? (
                 <>
                   <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin" />
-                  Enviando...
+                  {t('toast.send')}
                 </>
               ) : (
                 <>
@@ -365,7 +365,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           ) : (
             <div className="max-w-2xl mx-auto px-4 sm:px-0">
               <InlineSuccess 
-                message="¡Listo! 🎉"
+                message={t('toast.lesto')}
               />
             </div>
           )}

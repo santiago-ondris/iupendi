@@ -62,7 +62,6 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               <LanguageSelector />
             </motion.div>
 
-            {/* Logo Central - sin cambios */}
             <motion.div 
               className="flex-1 flex justify-center md:flex-none"
               whileHover={{ scale: 1.05 }}
@@ -82,7 +81,6 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
               </button>
             </motion.div>
 
-            {/* Menú Hamburguesa - sin cambios */}
             <motion.div className="flex items-center">
               <motion.button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -102,7 +100,6 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         </div>
       </motion.header>
 
-      {/* Menú Desplegable */}
       <AnimatePresence>
         {isMenuOpen && (
           <>

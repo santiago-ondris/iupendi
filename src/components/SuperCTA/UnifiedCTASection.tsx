@@ -155,7 +155,6 @@ const UnifiedSuperCTASection: React.FC = () => {
             transition={{ duration: 1, delay: 0.2 }}
           />
 
-          {/* Pregunta principal con animación dramática */}
           <motion.div
             className="mb-8 sm:mb-12 relative"
             initial={{ opacity: 0, scale: 0.5, rotateX: -90 }}
@@ -198,7 +197,6 @@ const UnifiedSuperCTASection: React.FC = () => {
                 transition={{ duration: 1, delay: 1.7 }}
               >
                 {t('superCta.titleHighlight')}
-                {/* Subrayado animado - SIN CAMBIOS */}
                 <motion.div
                   className="absolute bottom-0 left-0 w-full h-1 bg-[#D4F225]"
                   initial={{ scaleX: 0 }}
@@ -233,7 +231,6 @@ const UnifiedSuperCTASection: React.FC = () => {
                 animate={{ scale: isInView ? [1, 1.05, 1] : 1 }}
                 transition={{ duration: 0.6, delay: 2.4 }}
               >
-                {/* Efecto de brillo - SIN CAMBIOS */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12"
                   initial={{ x: '-100%' }}
@@ -347,7 +344,7 @@ const UnifiedSuperCTASection: React.FC = () => {
                 {isLoading ? (
                   <>
                     <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin relative z-10" />
-                    <span className="relative z-10">Enviando...</span>
+                    <span className="relative z-10">{t('toast.send')}</span>
                   </>
                 ) : (
                   <>
@@ -360,13 +357,12 @@ const UnifiedSuperCTASection: React.FC = () => {
             ) : (
               <div className="max-w-2xl mx-auto px-4 sm:px-0">
                 <InlineSuccess 
-                  message="¡Genial! 🎉"
+                  message={t('toast.lesto')}
                 />
               </div>
             )}
           </motion.div>
 
-          {/* Mensaje final con humor y línea conectora */}
           <motion.div
             className="mt-8 relative"
             initial={{ opacity: 0 }}

@@ -7,6 +7,11 @@
       "scrollText": "Do you want to see how we do it?",
       "subtitleHighlight": "Warning: Overselling. May lead to overselling addiction."
     },
+    "toast": {
+      "grax": "Thanks for your interest 💚",
+      "lesto": "¡Ready! 🎉",
+      "send": "Sending..."
+    },
     "navigation": {
       "home": "Home",
       "services": "Services",

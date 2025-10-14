@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { useTranslation } from 'react-i18next';
 
 interface InlineSuccessProps {
   message?: string;
@@ -14,9 +15,10 @@ const InlineSuccess: React.FC<InlineSuccessProps> = ({
   onComplete,
   duration = 4000 
 }) => {
+
+  const { t } = useTranslation(); 
   
   useEffect(() => {
-    // Confetti discreto cuando aparece el componente
     const colors = ['#D4F225', '#7252A5', '#FFFFFF'];
     
     confetti({
@@ -32,7 +34,6 @@ const InlineSuccess: React.FC<InlineSuccessProps> = ({
       shapes: ['circle', 'square']
     });
 
-    // Auto ocultar después de la duración
     if (onComplete) {
       const timer = setTimeout(onComplete, duration);
       return () => clearTimeout(timer);
@@ -51,7 +52,6 @@ const InlineSuccess: React.FC<InlineSuccessProps> = ({
         damping: 20 
       }}
     >
-      {/* Checkmark grande con animación de dibujo */}
       <motion.div
         initial={{ scale: 0, rotate: -180 }}
         animate={{ scale: 1, rotate: 0 }}
@@ -68,7 +68,6 @@ const InlineSuccess: React.FC<InlineSuccessProps> = ({
         />
       </motion.div>
 
-      {/* Mensaje */}
       <motion.div
         className="flex flex-col items-start"
         initial={{ opacity: 0, x: -20 }}
@@ -82,7 +81,7 @@ const InlineSuccess: React.FC<InlineSuccessProps> = ({
           {message}
         </span>
         <span className="text-gray-600 text-sm">
-          Gracias por tu interés 💚
+          {t('toast.grax')}
         </span>
       </motion.div>
     </motion.div>

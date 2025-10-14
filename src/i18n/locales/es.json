@@ -7,6 +7,11 @@
       "scrollText": "¿Querés ver cómo lo hacemos?",
       "subtitleHighlight": "Advertencia: Exceso de ventas. Puede generar adicción a vender más."
     },
+    "toast": {
+      "grax": "Gracias por tu interés 💚",
+      "lesto": "¡Listo! 🎉",
+      "send": "Enviando..."
+    },
     "navigation": {
       "home": "Inicio",
       "services": "Servicios", 
