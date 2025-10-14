@@ -11,15 +11,30 @@ import {
   formVariants,
   scrollIndicatorVariants
 } from '@/utils/Hero/heroAnimations';
+import { sendNewsletterLead } from '@/utils/sheets';
+import InlineSuccess from '../Toast/InlineSuccess';
 
 const HeroSection: React.FC = () => {
   const { t } = useTranslation(); 
   const [email, setEmail] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Email submitted:', email);
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (!email.trim() || isLoading) return;
+  
+  setIsLoading(true);
+  
+  await sendNewsletterLead({ 
+    email: email.trim(), 
+    origen: 'hero' 
+  });
+  
+  setIsLoading(false);
+  setEmail('');
+  setShowSuccess(true);
+};
 
   const handleScrollToServices = () => {
     const servicesSection = document.getElementById('core-services');
@@ -306,6 +321,7 @@ const HeroSection: React.FC = () => {
           </motion.p>
 
           {/* FORMULARIO */}
+          {!showSuccess ? (
           <motion.form
             onSubmit={handleSubmit}
             className="flex flex-col sm:flex-row gap-4 w-full mx-auto mb-4 md:mb-6"
@@ -327,13 +343,32 @@ const HeroSection: React.FC = () => {
             </div>
             <motion.button
               type="submit"
-              className="bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-gray-900 px-8 md:px-12 py-5 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all duration-300 min-w-[160px] shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              disabled={isLoading || !email.trim()}
+              className={`bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-gray-900 px-8 md:px-12 py-5 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all duration-300 min-w-[160px] shadow-lg hover:shadow-xl ${
+                isLoading ? 'opacity-70 cursor-not-allowed' : ''
+              }`}
+              whileHover={!isLoading ? { scale: 1.05 } : {}}
+              whileTap={!isLoading ? { scale: 0.95 } : {}}
             >
-              {t('hero.cta')} <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+              {isLoading ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin" />
+                  Enviando...
+                </>
+              ) : (
+                <>
+                  {t('hero.cta')} <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                </>
+              )}
             </motion.button>
           </motion.form>
+          ) : (
+            <div className="max-w-2xl mx-auto px-4 sm:px-0">
+              <InlineSuccess 
+                message="¡Listo! 🎉"
+              />
+            </div>
+          )}
         </div>
 
         {/* SCROLL INDICATOR */}

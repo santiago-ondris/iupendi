@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { User, Mail, Phone, Building, Check, ArrowRight, Calendar } from 'lucide-react';
 import type { StepProps } from '@/utils/onboarding/types';
 import { useTranslation } from 'react-i18next';
+import { sendFormularioLead } from '@/utils/sheets';
 
 const StepSix: React.FC<StepProps> = ({
   data,
@@ -68,21 +69,21 @@ const StepSix: React.FC<StepProps> = ({
     
     setIsSubmitting(true);
     
-    // Simular envío (aquí iría la lógica real)
-    setTimeout(() => {
-      console.log('Datos del formulario enviados:', {
-        ...data,
-        stepSix: personalData
-      });
-      
-      // Aquí:
-      // 1. Enviar a una API
-      // 2. Guardar en localStorage
-      // 3. Tracking/Analytics
-      
-      setIsSubmitting(false);
-      onNext();
-    }, 2000);
+    // Enviar a Google Sheets
+    await sendFormularioLead({
+      firstName: personalData.firstName,
+      lastName: personalData.lastName,
+      email: personalData.email,
+      phone: personalData.phone,
+      company: personalData.company,
+      instagram: data.stepFive?.instagram,
+      facebook: data.stepFive?.facebook,
+      website: data.stepFive?.website,
+      other: data.stepFive?.other
+    });
+    
+    setIsSubmitting(false);
+    onNext();
   };
 
   return (

@@ -4,10 +4,14 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import { useInView } from '@/utils/useInView';
 import { CTAToFooterTransition } from '@/components/Transitions/EnhancedTransitions';
 import { useTranslation } from 'react-i18next';
+import { sendNewsletterLead } from '@/utils/sheets';
+import InlineSuccess from '../Toast/InlineSuccess';
 
 const UnifiedSuperCTASection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.3 });
   const [email, setEmail] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { t } = useTranslation();
 
   const floatingShapes = [
@@ -19,9 +23,20 @@ const UnifiedSuperCTASection: React.FC = () => {
     { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Email submitted:', email);
+    if (!email.trim() || isLoading) return;
+    
+    setIsLoading(true);
+    
+    await sendNewsletterLead({ 
+      email: email.trim(), 
+      origen: 'super-cta' 
+    });
+    
+    setIsLoading(false);
+    setEmail('');
+    setShowSuccess(true);
   };
 
   return (
@@ -283,6 +298,7 @@ const UnifiedSuperCTASection: React.FC = () => {
               />
             ))}
 
+            {!showSuccess ? (
             <form 
               onSubmit={handleSubmit}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-2xl mx-auto relative z-10 px-4 sm:px-0"
@@ -301,12 +317,15 @@ const UnifiedSuperCTASection: React.FC = () => {
               
               <motion.button
                 type="submit"
-                className="bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-black px-10 py-5 rounded-full font-black text-lg flex items-center justify-center gap-3 transition-all duration-300 min-w-[200px] shadow-xl hover:shadow-2xl relative overflow-hidden mb-7"
-                whileHover={{ 
+                disabled={isLoading || !email.trim()}
+                className={`bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-black px-10 py-5 rounded-full font-black text-lg flex items-center justify-center gap-3 transition-all duration-300 min-w-[200px] shadow-xl hover:shadow-2xl relative overflow-hidden mb-7 ${
+                  isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                }`}
+                whileHover={!isLoading ? { 
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(212, 242, 37, 0.4)"
-                }}
-                whileTap={{ scale: 0.95 }}
+                } : {}}
+                whileTap={!isLoading ? { scale: 0.95 } : {}}
                 initial={{ rotate: -5 }}
                 animate={{ rotate: isInView ? 0 : -5 }}
                 transition={{ duration: 0.6, delay: 3.4 }}
@@ -324,10 +343,27 @@ const UnifiedSuperCTASection: React.FC = () => {
                   animate={{ x: '-200%' }}
                   transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 4, delay: 1 }}
                 />
-                <span className="relative z-10">{t('superCta.button')}</span>
-                <ArrowRight className="w-6 h-6 relative z-10" />
+                
+                {isLoading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin relative z-10" />
+                    <span className="relative z-10">Enviando...</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="relative z-10">{t('superCta.button')}</span>
+                    <ArrowRight className="w-6 h-6 relative z-10" />
+                  </>
+                )}
               </motion.button>
             </form>
+            ) : (
+              <div className="max-w-2xl mx-auto px-4 sm:px-0">
+                <InlineSuccess 
+                  message="¡Genial! 🎉"
+                />
+              </div>
+            )}
           </motion.div>
 
           {/* Mensaje final con humor y línea conectora */}
