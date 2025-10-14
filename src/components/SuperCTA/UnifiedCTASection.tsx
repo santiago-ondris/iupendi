@@ -6,6 +6,17 @@ import { CTAToFooterTransition } from '@/components/Transitions/EnhancedTransiti
 import { useTranslation } from 'react-i18next';
 import { sendNewsletterLead } from '@/utils/sheets';
 import InlineSuccess from '../Toast/InlineSuccess';
+import FloatingShapes from '../Background/FloatingShapes';
+
+const floatingShapes = [
+  { type: 'circle' as const, color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
+  { type: 'circle' as const, color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
+  { type: 'circle' as const, color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
+  { type: 'circle' as const, color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
+  { type: 'square' as const, color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
+  { type: 'square' as const, color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
+];
+
 
 const UnifiedSuperCTASection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.3 });
@@ -13,15 +24,6 @@ const UnifiedSuperCTASection: React.FC = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { t } = useTranslation();
-
-  const floatingShapes = [
-    { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
-    { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
-    { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
-    { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
-    { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
-    { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
-  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -76,33 +78,7 @@ const UnifiedSuperCTASection: React.FC = () => {
         {/* Elementos decorativos de fondo conectados */}
         <div className="absolute inset-0">
         {/* Figuras flotantes como el Hero */}
-        {floatingShapes.map((shape, i) => (
-          <motion.div
-            key={i}
-            className={`absolute ${shape.size} ${
-              shape.type === 'circle' 
-                ? `${shape.color} rounded-full` 
-                : `${shape.color} transform rotate-45`
-            }`}
-            style={{
-              left: `${5 + Math.random() * 90}%`,
-              top: `${5 + Math.random() * 90}%`,
-              zIndex: 1,
-            }}
-            animate={{
-              y: [0, -40, 0],
-              x: [0, Math.random() * 30 - 15, 0],
-              rotate: shape.type === 'square' ? [45, 225, 45] : [0, 360, 0],
-              scale: [1, 1.15, 1],
-            }}
-            transition={{
-              duration: 10 + Math.random() * 6,
-              repeat: Infinity,
-              delay: shape.delay,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
+        <FloatingShapes shapes={floatingShapes} />
 
         {/* Gradientes radiales evolutivos más prominentes */}
         <motion.div
