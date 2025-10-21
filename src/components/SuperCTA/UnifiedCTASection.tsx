@@ -345,9 +345,6 @@ const UnifiedSuperCTASection: React.FC = () => {
             animate={{ opacity: isInView ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 3.8 }}
           >
-            <p className="text-gray-600 text-sm">
-              {t('superCta.disclaimer')}
-            </p>
             
             {/* Línea conectora hacia footer */}
             <motion.div

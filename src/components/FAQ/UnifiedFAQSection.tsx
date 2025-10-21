@@ -235,7 +235,6 @@ const UnifiedFAQSection: React.FC = () => {
               />
             </motion.div>
 
-            {/* 🎯 TÍTULO PRINCIPAL RESPONSIVE MEJORADO */}
             <motion.h2 
               className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 mb-4 sm:mb-6 leading-none relative px-2"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
@@ -254,7 +253,7 @@ const UnifiedFAQSection: React.FC = () => {
                       animate={{ rotate: [0, 15, -15, 0] }}
                       transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                     >
-                      🤔​
+                      🫡
                     </motion.span>
                   </span>
                 </span>

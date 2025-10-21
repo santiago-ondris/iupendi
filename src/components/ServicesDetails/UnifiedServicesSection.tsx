@@ -61,7 +61,7 @@ const UnifiedServicesSection: React.FC = () => {
     <>
       <section 
         ref={ref}
-        id="core-services"
+        id="detailed-services"
         className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden"
         style={{ marginTop: '-180px', paddingTop: '4px' }}
       >
@@ -207,7 +207,7 @@ const UnifiedServicesSection: React.FC = () => {
               </motion.h3>
 
               {/* GRID DE ESTADÍSTICAS */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 relative z-10">
                 {[
                   { 
                     number: t('detailedServices.stats.projects'), 
@@ -223,6 +223,11 @@ const UnifiedServicesSection: React.FC = () => {
                     number: t('detailedServices.stats.roi'), 
                     label: t('detailedServices.stats.roiLabel'), 
                     color: '#759CCF' 
+                  },
+                  { 
+                    number: t('detailedServices.stats.mm'), 
+                    label: t('detailedServices.stats.mmLabel'), 
+                    color: '#F2AE1F' 
                   }
                 ].map((stat, index) => (
                   <motion.div 
@@ -328,31 +333,31 @@ const UnifiedServicesSection: React.FC = () => {
               transition={{ duration: 1, delay: 1.7 }}
             />
 
-{servicesData.map((service, index) => (
-  <motion.div
-    key={service.id}
-    variants={headerVariants}
-    custom={index}
-    className="relative"
-  >
-    {/* Conectores */}
-    <motion.div
-      className={`absolute ${
-        index === 0 ? 'bottom-1/2 right-0' :
-        index === 1 ? 'bottom-1/2 left-0' :
-        index === 2 ? 'top-1/2 right-0' :
-        'top-1/2 left-0'
-      } w-4 h-px bg-gradient-to-r from-gray-200 to-transparent hidden md:block`}
-      initial={{ scaleX: 0 }}
-      animate={{ scaleX: isInView ? 1 : 0 }}
-      transition={{ duration: 0.6, delay: 2 + index * 0.1 }}
-    />
-    <InteractiveServiceCard 
-      {...service}
-      index={index} 
-    />
-  </motion.div>
-))}
+            {servicesData.map((service, index) => (
+              <motion.div
+                key={service.id}
+                variants={headerVariants}
+                custom={index}
+                className="relative"
+              >
+                {/* Conectores */}
+                <motion.div
+                  className={`absolute ${
+                    index === 0 ? 'bottom-1/2 right-0' :
+                    index === 1 ? 'bottom-1/2 left-0' :
+                    index === 2 ? 'top-1/2 right-0' :
+                    'top-1/2 left-0'
+                  } w-4 h-px bg-gradient-to-r from-gray-200 to-transparent hidden md:block`}
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: isInView ? 1 : 0 }}
+                  transition={{ duration: 0.6, delay: 2 + index * 0.1 }}
+                />
+                <InteractiveServiceCard 
+                  {...service}
+                  index={index} 
+                />
+              </motion.div>
+            ))}
           </motion.div>
 
           {/* Elementos que fluyen */}

@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 import {
   Instagram,
   Linkedin,
-  Twitter,
   Mail,
   Phone,
   MapPin,
@@ -28,12 +27,11 @@ const UnifiedFooterSection: React.FC = () => {
   const socialLinks = [
     { Icon: Instagram, href: '#', label: 'Instagram', color: '#E4405F' },
     { Icon: Linkedin, href: '#', label: 'LinkedIn', color: '#0077B5' },
-    { Icon: Twitter, href: '#', label: 'Twitter', color: '#1DA1F2' },
   ];
 
   const contactInfo = [
     { Icon: Mail, text: 'infoiupendi@gmail.com', href: 'mailto:infoiupendi@gmail.com' },
-    { Icon: Phone, text: '+61 433 402 744', href: 'tel:+61433402744' },
+    { Icon: Phone, text: '+54 9 11 6432-0114', href: 'https://wa.link/o1y9sk' },
     { Icon: MapPin, text: t('footer.navigation.world'), href: '#' },
   ];
 
@@ -257,7 +255,10 @@ const UnifiedFooterSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 1.8 }}
             />
 
-            <motion.button
+            <motion.a
+              href="https://wa.link/o1y9sk"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-[#7252A5] to-[#6341a0] hover:from-[#6341a0] hover:to-[#5a3899] text-white font-bold py-4 px-8 rounded-full text-lg flex items-center gap-3 mx-auto transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden"
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
@@ -277,7 +278,7 @@ const UnifiedFooterSection: React.FC = () => {
               />
               <span className="relative z-10">{t('footer.ctaButton')}</span>
               <ArrowRight className="w-5 h-5 relative z-10" />
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
 
@@ -351,6 +352,8 @@ const UnifiedFooterSection: React.FC = () => {
                 <motion.a
                   key={text}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 text-gray-600 hover:text-[#7252A5] transition-colors duration-300 group"
                   whileHover={{ x: 5 }}
                   initial={{ opacity: 0, x: -20 }}

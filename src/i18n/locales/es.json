@@ -18,7 +18,7 @@
       "clients": "Clientes",
       "faq": "FAQ",
       "contact": "Contacto",
-      "phone": "+61 433 402 744"
+      "phone": "+54 9 11 6432 0114"
     },
     "services": {
       "sectionTitle": "NUESTROS SERVICIOS",
@@ -28,14 +28,14 @@
         "subtitle": "APRENDE DE NOSOTROS.",
         "title": "AGENCIA",
         "description": "📈 Nos encargamos de todo: campañas, contenido, redes y estrategia. Vos enfocáte en tu negocio, nosotros lo hacemos crecer.",
-        "button": "Empezá ahora",
+        "button": "Hace crecer tu negocio",
         "rating": "{{rating}} estrellas de {{count}} reviews"
       },
       "courses": {
         "subtitle": "APRENDE CON NOSOTROS.",
         "title": "CURSOS",
         "description": "🎓 Aprendé a manejar tu marca, atraer clientes y escalar tu negocio. Te enseñamos lo que hacemos todos los días, sin vueltas.",
-        "button": "Empezá ahora",
+        "button": "Empezá a aprender",
         "rating": "{{rating}} estrellas de {{count}} reviews"
       }
     },
@@ -78,28 +78,14 @@
       }
     },
     "calendlyCta": {
-      "badge": "¡ASEGURÁ TU MEET!",
-      "titlePart1": "¿Querés una",
-      "titleHighlight": "charla estratégica",
-      "titlePart2": "GRATIS de 30 minutos?",
-      "subtitle": "Completá este formulario y conseguí tu",
-      "subtitleHighlight": "análisis personalizado",
-      "subtitlePart2": "YA",
-      "description": "No pierdas más tiempo - te damos una estrategia concreta para TU negocio",
-      "features": {
-        "time": "30 minutos intensivos",
-        "booking": "Directo al grano", 
-        "strategy": "Plan de acción concreto"
-      },
-      "esperando": "Sabes que te estamos esperando...",
-      "calenTitle": "Agendá tu reunión gratis",
-      "ready": "Quiero la reunion",
-      "disclaimer": "⚡ Sin compromisos - Solo estrategia pura"
+      "title": "¿Creés que podes trabajar con nosotros?",
+      "subtitle": "Pongámoslo a prueba",
+      "cta": "Quiero la reunión"
     },
     "superCta": {
       "note": "(No te juzgamos, es normal)",
       "emailPlaceholder": "Mail (sin spam... tanto 😉)",
-      "button": "¡Me convencieron!",
+      "button": "¡Animate!",
       "disclaimer": "*Respondemos rápido, pero no tanto como para parecer desesperados 😅",
       "titlePart1": "¿Todavía no te",
       "titleHighlight": "convencimos",
@@ -128,14 +114,16 @@
       "sectionTitle": "SERVICIOS QUE CONVIERTEN",
       "badge": "Servicios Iupendi",
       "statsTitle": "Resultados que hablan por nosotros",
-      "subtitle": "👉 Estrategia, contenido y campañas que dan resultado. Sin humo.",
+      "subtitle": "👉 Estrategia, contenido y campañas que dan resultado.",
       "stats": {
         "projects": "+100",
         "projectsLabel": "Proyectos trabajados",
         "satisfaction": "98%",
         "satisfactionLabel": "Clientes felices (y nos siguen eligiendo)",
-        "roi": "3x",
-        "roiLabel": "Promedio en Ads gestionados"
+        "roi": "3xROI",
+        "roiLabel": "Promedio en Ads gestionados",
+        "mm": "+10MM",
+        "mmLabel": "De pesos facturados para nuestros clientes"
       },
       "services": {
         "paidAds": {
@@ -147,7 +135,7 @@
             "Creamos campañas con foco en resultados",
             "Analizamos y ajustamos para escalar"
           ],
-          "cta": "👉 Campañas que venden"
+          "cta": "Hacemos campañas que venden"
         },
         "socialMedia": {
           "title": "Social Media Management",
@@ -159,7 +147,7 @@
             "Producimos y diseñamos lo que se publica",
             "Medimos y ajustamos en reuniones mensuales"
           ],
-          "cta": "👉 Redes que trabajan por vos"
+          "cta": "Las redes trabajan para vos"
         },
         "consulting": {
           "title": "Asesoramiento en Marketing Digital",
@@ -171,7 +159,7 @@
             "Revisión mensual y ajustes para que sigas creciendo",
             "Ideal si querés aprender y hacerlo bien desde el día uno"
           ],
-          "cta": "👉 Acompañarme a hacerlo bien"
+          "cta": "Te asesoramos como nadie"
         },
         "webDevelopment": {
           "title": "Sitio Web (Creación y Desarrollo)",
@@ -183,7 +171,7 @@
             "Integramos herramientas clave (formulario, WhatsApp, seguimiento, etc.)",
             "Te entregamos una web lista para salir a vender"
           ],
-          "cta": "👉 Quiero una web que venda"
+          "cta": "Hacemos una web que venda"
         }
       }
     },

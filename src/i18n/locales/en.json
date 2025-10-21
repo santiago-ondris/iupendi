@@ -18,7 +18,7 @@
       "clients": "Clients", 
       "faq": "FAQ",
       "contact": "Contact",
-      "phone": "+61 433 402 744"
+      "phone": "+54 9 11 6432 0114"
     },
     "services": {
       "sectionTitle": "OUR SERVICES",
@@ -28,14 +28,14 @@
         "subtitle": "LEARN FROM US",
         "title": "AGENCY",
         "description": "📈 We take care of everything: campaigns, content, social media, and strategy. You focus on your business, we'll help it grow.",
-        "button": "Get Started",
+        "button": "Make your business grow",
         "rating": "{{rating}} stars from {{count}} reviews"
       },
       "courses": {
         "subtitle": "LEARN WITH US.",
         "title": "COURSES", 
         "description": "🎓 Learn how to manage your brand, attract customers, and scale your business. We'll teach you what we do every day, no strings attached.",
-        "button": "Get Started",
+        "button": "Start learning",
         "rating": "{{rating}} stars from {{count}} reviews"
       }
     },
@@ -78,29 +78,15 @@
       }
     },
     "calendlyCta": {
-      "badge": "SECURE YOUR MEET!",
-      "titlePart1": "Want a",
-      "titleHighlight": "strategic chat",
-      "titlePart2": "FREE for 30 minutes?",
-      "subtitle": "Complete this form and get your",
-      "subtitleHighlight": "personalized analysis",
-      "subtitlePart2": "NOW",
-      "description": "Don't waste more time - we give you a concrete strategy for YOUR business",
-      "features": {
-        "time": "30 intensive minutes",
-        "booking": "Straight to the point",
-        "strategy": "Concrete action plan"
-      },
-      "esperando": "You know we're waiting for you...",
-      "calenTitle": "Schedule your free meeting",
-      "ready": "I'm ready",
-      "disclaimer": "⚡ No commitments - Just pure strategy"
+      "title": "Do you think you're ready to work with us?",
+      "subtitle": "Let's put it to the test",
+      "cta": "I want the meeting"
     },
     "superCta": {
       "subtitle": "Come on, we know you want to",
       "note": "(We don't judge, it's normal)",
       "emailPlaceholder": "Email (no spam... that much 😉)",
-      "button": "You convinced me!",
+      "button": "Let's do it!",
       "disclaimer": "*We respond quickly, but not so fast as to seem desperate 😅",
       "titlePart1": "Still not",
       "titleHighlight": "convinced",
@@ -128,13 +114,13 @@
       "sectionTitle": "SERVICES THAT CONVERT",
       "badge": "Iupendi Services",
       "statsTitle": "Results that speak for themselves",
-      "subtitle": "👉 Strategy, content, and campaigns that deliver. No smoke and mirrors.",
+      "subtitle": "👉 Strategy, content, and campaigns that deliver.",
       "stats": {
         "projects": "100+",
         "projectsLabel": "Projects worked",
         "satisfaction": "98%",
         "satisfactionLabel": "Happy customers (and they keep choosing us)",
-        "roi": "3x",
+        "roi": "3xROI",
         "roiLabel": "Average ROI"
       },
       "services": {

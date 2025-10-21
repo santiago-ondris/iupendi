@@ -5,7 +5,6 @@ import {
   cardContentVariants,
   titleVariants,
   featureVariants,
-  ctaVariants
 } from '@/utils/ServiceDetails/servicesAnimations';
 
 interface ServiceCardProps {
@@ -25,7 +24,7 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
   cta,
   accentColor,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered] = useState(false);
 
   // Extraer el color base para las animaciones
   const colorClass = accentColor.split(' ')[0]; // bg-[#D4F225]
@@ -35,13 +34,10 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
     <motion.div
       className="relative group"
       variants={serviceCardVariants}
-      whileHover="hover"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
     >
       {/* Card principal */}
       <motion.div
-        className="relative bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100 overflow-hidden cursor-pointer min-h-[480px] flex flex-col"
+        className="relative bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100 overflow-hidden min-h-[480px] flex flex-col"
         style={{
           boxShadow: isHovered 
             ? `0 25px 50px rgba(0,0,0,0.15), 0 0 0 1px ${colorValue}20`
@@ -63,7 +59,6 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
           transition={{ duration: 0.3 }}
         />
 
-        {/* Contenido de la card */}
         <motion.div
           variants={cardContentVariants}
           initial="hidden"
@@ -71,12 +66,10 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
           whileHover="hover"
           className="relative z-10 flex flex-col h-full"
         >
-          {/* Título principal con punto de color */}
           <motion.div
             className="flex items-center gap-3 mb-4 mt-2"
             variants={titleVariants}
           >
-            {/* Punto de color junto al título */}
             <motion.div
               className="w-4 h-4 rounded-full flex-shrink-0"
               style={{ backgroundColor: colorValue }}
@@ -97,7 +90,6 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
             </h3>
           </motion.div>
 
-          {/* Subtítulo descriptivo */}
           <motion.p
             className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base"
             initial={{ opacity: 0, y: 10 }}
@@ -141,64 +133,32 @@ const InteractiveServiceCard: React.FC<ServiceCardProps> = ({
           {/* CTA Button */}
           <motion.div
             className="mt-auto"
-            variants={ctaVariants}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <motion.button
-              className="w-full flex items-center justify-between p-4 rounded-2xl font-bold text-gray-900 transition-all duration-300 relative overflow-hidden"
-              style={{ backgroundColor: `${colorValue}15` }}
-              variants={ctaVariants}
-              whileHover={{
-                backgroundColor: `${colorValue}25`,
-                scale: 1.02
-              }}
-              whileTap={{ scale: 0.98 }}
+            <div 
+              className="relative p-4 rounded-2xl overflow-hidden"
+              style={{ backgroundColor: `${colorValue}08` }}
             >
-              {/* Efecto de brillo en hover */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12"
-                initial={{ x: '-100%' }}
-                animate={isHovered ? { x: '200%' } : { x: '-100%' }}
-                transition={{ duration: 0.6 }}
+                className="absolute top-0 left-0 w-full h-0.5"
+                style={{ backgroundColor: colorValue }}
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 1, delay: 1 }}
               />
               
-              <span className="relative z-10 text-left flex-1">
-                {cta}
-              </span>
-              
-              <motion.div
-                className="relative z-10 ml-2"
-                animate={{ x: isHovered ? 5 : 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <div 
-                  className="w-6 h-6 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: colorValue }}
-                >
-                  <svg 
-                    className="w-3 h-3 text-white" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M9 5l7 7-7 7" 
-                    />
-                  </svg>
-                </div>
-              </motion.div>
-            </motion.button>
+              <div className="flex flex-col items-center gap-3">
+                <p className="text-gray-900 font-bold text-sm">
+                  {cta}
+                </p>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
 
-        {/* Efectos decorativos de fondo */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {/* Gradiente sutil */}
           <motion.div
             className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-5"
             style={{ backgroundColor: colorValue }}

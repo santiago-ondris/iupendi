@@ -104,7 +104,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 
                 {/* "MARCA 💡" */}
                 <motion.div className="text-[#7252A5]" variants={highlightWordVariants} animate={["visible", "float"]}>
-                  {titleWords[5].text} 💡
+                  {titleWords[5].text} 📈
                 </motion.div>
               </div>
 
@@ -151,14 +151,13 @@ const handleSubmit = async (e: React.FormEvent) => {
                     variants={asteriskVariants}
                     animate={["visible", "float"]}
                   >
-                    💡
+                    📈
                   </motion.span>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* NUEVO SUBTÍTULO WARNING */}
           <motion.div
             className="mb-6 md:mb-8 relative"
             initial={{ opacity: 0, y: 20 }}
@@ -202,7 +201,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 ⚠️
               </motion.span>
 
-              <span className="text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-800">
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gray-800">
                 <span className="hidden sm:inline">
                   {t('hero.subtitleHighlight')}
                 </span>
