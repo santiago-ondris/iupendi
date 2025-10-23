@@ -13,17 +13,16 @@ import {
 } from '@/utils/Hero/heroAnimations';
 import { sendNewsletterLead } from '@/utils/sheets';
 import InlineSuccess from '../Toast/InlineSuccess';
-import FloatingBlobs from '../Background/FloatingBlobs';
 
-const blobShapes = [
-  { type: 'blob1', color: '#f2ae1f', size: 'w-32 h-32', delay: 0, stroke: 2 },
-  { type: 'blob2', color: '#6e787d', size: 'w-24 h-24', delay: 1, stroke: 1.5 },
-  { type: 'blob3', color: '#d4f225', size: 'w-40 h-40', delay: 2, stroke: 2.5 },
-  { type: 'blob4', color: '#759ccf', size: 'w-20 h-20', delay: 0.5, stroke: 1 },
-  { type: 'blob5', color: '#7252a5', size: 'w-28 h-28', delay: 0.8, stroke: 1.8 },
-  { type: 'blob6', color: '#e7e8cf', size: 'w-16 h-16', delay: 2.2, stroke: 1.2 },
-  { type: 'blob4', color: '#f2ae1f', size: 'w-40 h-40', delay: 2.2, stroke: 1.2 },
-];
+// const blobShapes = [
+//   { type: 'blob1', color: '#f2ae1f', size: 'w-32 h-32', delay: 0, stroke: 2 },
+//   { type: 'blob2', color: '#6e787d', size: 'w-24 h-24', delay: 1, stroke: 1.5 },
+//   { type: 'blob3', color: '#d4f225', size: 'w-40 h-40', delay: 2, stroke: 2.5 },
+//   { type: 'blob4', color: '#759ccf', size: 'w-20 h-20', delay: 0.5, stroke: 1 },
+//   { type: 'blob5', color: '#7252a5', size: 'w-28 h-28', delay: 0.8, stroke: 1.8 },
+//   { type: 'blob6', color: '#e7e8cf', size: 'w-16 h-16', delay: 2.2, stroke: 1.2 },
+//   { type: 'blob4', color: '#f2ae1f', size: 'w-40 h-40', delay: 2.2, stroke: 1.2 },
+// ];
 
 const HeroSection: React.FC = () => {
   const { t } = useTranslation(); 
@@ -67,7 +66,24 @@ const handleSubmit = async (e: React.FormEvent) => {
       >
         {/* Background pattern */}
         <div className="absolute inset-0 overflow-hidden z-0">
-          <FloatingBlobs shapes={blobShapes} showExtendingElements={true} />
+          <div 
+            className="absolute inset-0 opacity-40"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E")`
+            }}
+          />
+          
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: `
+                radial-gradient(circle at 20% 30%, rgba(114, 82, 165, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 242, 37, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(242, 174, 31, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 70%, rgba(117, 156, 207, 0.04) 0%, transparent 50%)
+              `
+            }}
+          />
         </div>
         
         {/* Contenido principal */}

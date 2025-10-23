@@ -35,67 +35,91 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   return (
     <>
       <motion.header
-        className={`relative z-50 bg-transparent ${className}`}
+        className={`relative z-50 ${className}`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.5 }}
+        style={{
+          background: 'linear-gradient(to bottom right, rgb(249 250 251), rgb(249 250 251), white)'
+        }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 sm:h-20">
-            
-            {/* Teléfono + Selector de idioma - Desktop */}
-            <motion.div 
-              className="hidden md:flex items-center gap-4"
-              whileHover={{ scale: 1.05 }}
-            >
-              <motion.button
-                onClick={handlePhoneCall}
-                className="flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 text-gray-700 hover:bg-white/20"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Phone className="w-4 h-4" />
-                <span className="text-sm font-medium">{t('navigation.phone')}</span>
-              </motion.button>
+        {/* Noise texture */}
+        <div 
+          className="absolute inset-0 opacity-40 pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E")`
+          }}
+        />
+        
+        {/* Gradient mesh */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `
+              radial-gradient(circle at 20% 30%, rgba(114, 82, 165, 0.06) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(212, 242, 37, 0.04) 0%, transparent 50%)
+            `
+          }}
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="flex items-center justify-between h-16 sm:h-20">
               
-              {/* Selector de idioma */}
-              <LanguageSelector />
-            </motion.div>
-
-            <motion.div 
-              className="flex-1 flex justify-center md:flex-none"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <button
-                onClick={() => scrollToSection('hero')}
-                className="flex flex-col items-center group"
+              {/* Teléfono + Selector de idioma - Desktop */}
+              <motion.div 
+                className="hidden md:flex items-center gap-4"
+                whileHover={{ scale: 1.05 }}
               >
-                <motion.div className="relative" transition={{ duration: 0.6 }}>
-                  <img
-                    src="/logo4.svg"
-                    alt="Iupendi Digital"
-                    className="h-16 md:h-22 transition-all duration-300 opacity-90 hover:opacity-100"
-                  />
-                </motion.div>
-              </button>
-            </motion.div>
-
-            <motion.div className="flex items-center">
-              <motion.button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="relative p-2 rounded-full transition-all duration-300 text-gray-700 hover:bg-white/20"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <motion.div
-                  animate={{ rotate: isMenuOpen ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
+                <motion.button
+                  onClick={handlePhoneCall}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 text-gray-700 hover:bg-white/20"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                </motion.div>
-              </motion.button>
-            </motion.div>
+                  <Phone className="w-4 h-4" />
+                  <span className="text-sm font-medium">{t('navigation.phone')}</span>
+                </motion.button>
+                
+                {/* Selector de idioma */}
+                <LanguageSelector />
+              </motion.div>
+
+              <motion.div 
+                className="flex-1 flex justify-center md:flex-none"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <button
+                  onClick={() => scrollToSection('hero')}
+                  className="flex flex-col items-center group"
+                >
+                  <motion.div className="relative" transition={{ duration: 0.6 }}>
+                    <img
+                      src="/logo4.svg"
+                      alt="Iupendi Digital"
+                      className="h-16 md:h-22 transition-all duration-300 opacity-90 hover:opacity-100"
+                    />
+                  </motion.div>
+                </button>
+              </motion.div>
+
+              <motion.div className="flex items-center">
+                <motion.button
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="relative p-2 rounded-full transition-all duration-300 text-gray-700 hover:bg-white/20"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <motion.div
+                    animate={{ rotate: isMenuOpen ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                  </motion.div>
+                </motion.button>
+              </motion.div>
+            </div>
           </div>
         </div>
       </motion.header>

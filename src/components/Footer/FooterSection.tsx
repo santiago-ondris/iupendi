@@ -255,11 +255,12 @@ const UnifiedFooterSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 1.8 }}
             />
 
+            <div className="flex justify-center">
             <motion.a
               href="https://wa.link/o1y9sk"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-[#7252A5] to-[#6341a0] hover:from-[#6341a0] hover:to-[#5a3899] text-white font-bold py-4 px-8 rounded-full text-lg flex items-center gap-3 mx-auto transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden"
+              className="bg-gradient-to-r from-[#7252A5] to-[#6341a0] hover:from-[#6341a0] hover:to-[#5a3899] text-white font-bold py-4 px-8 rounded-full text-lg inline-flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden"
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -279,6 +280,7 @@ const UnifiedFooterSection: React.FC = () => {
               <span className="relative z-10">{t('footer.ctaButton')}</span>
               <ArrowRight className="w-5 h-5 relative z-10" />
             </motion.a>
+            </div>
           </motion.div>
         </motion.div>
 
