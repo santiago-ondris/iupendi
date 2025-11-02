@@ -13,14 +13,14 @@ const UnifiedServicesSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.1 });
   const { t } = useTranslation();
 
-  const floatingShapes = [
-    { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
-    { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
-    { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
-    { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
-    { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
-    { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
-  ];
+  // const floatingShapes = [
+  //   { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
+  //   { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
+  //   { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
+  //   { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
+  //   { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
+  //   { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
+  // ];
 
   const servicesData = [
     {
@@ -67,7 +67,7 @@ const UnifiedServicesSection: React.FC = () => {
       >
         
         {/* Figuras flotantes */}
-        <div className="absolute inset-0 overflow-hidden z-0">
+        {/* <div className="absolute inset-0 overflow-hidden z-0">
           {floatingShapes.map((shape, i) => (
             <motion.div
               key={i}
@@ -95,7 +95,7 @@ const UnifiedServicesSection: React.FC = () => {
               }}
             />
           ))}
-        </div>
+        </div> */}
 
         <motion.div
           className="relative z-10 max-w-7xl mx-auto px-6"
@@ -146,13 +146,6 @@ const UnifiedServicesSection: React.FC = () => {
               <span className="block">{t('detailedServices.sectionTitle').split(' ').slice(0, 2).join(' ')}</span>
               <span className="block">
                 <span className="text-[#7252A5]">{t('detailedServices.sectionTitle').split(' ').slice(2).join(' ')}</span>
-                <motion.span
-                  className="inline-block text-[#D4F225] ml-4"
-                  animate={{ rotate: [0, 15, -15, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-                >
-                  ✦
-                </motion.span>
               </span>
             </motion.h2>
 
@@ -281,7 +274,7 @@ const UnifiedServicesSection: React.FC = () => {
                     />
 
                     {/* Partícula flotante */}
-                    <motion.div
+                    {/* <motion.div
                       className="absolute -top-2 -right-2 w-2 h-2 rounded-full opacity-60"
                       style={{ backgroundColor: stat.color }}
                       animate={{
@@ -293,7 +286,7 @@ const UnifiedServicesSection: React.FC = () => {
                         repeat: Infinity,
                         delay: index * 0.5,
                       }}
-                    />
+                    /> */}
                   </motion.div>
                 ))}
               </div>

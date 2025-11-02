@@ -101,12 +101,11 @@ const handleSubmit = async (e: React.FormEvent) => {
             <div className="
               text-[2.5rem] leading-[0.9] tracking-tighter
               sm:text-[3rem] sm:leading-[0.9] sm:tracking-tighter
-              md:text-[5rem] md:leading-[0.85] md:tracking-tighter
-              lg:text-[6.5rem] lg:leading-[0.85] lg:tracking-tighter
-              xl:text-[7.5rem] xl:leading-[0.85] xl:tracking-tighter
+              md:text-[3.5rem] md:leading-[0.85] md:tracking-tighter
+              lg:text-[5rem] lg:leading-[0.85] lg:tracking-tighter
+              xl:text-[6.5rem] xl:leading-[0.85] xl:tracking-tighter
               font-black text-[#292929]
             ">
-              {/* Mobile: cada palabra en su línea si es necesario */}
               <div className="block md:hidden space-y-1">
                 {/* "COMO ANABOLICOS" */}
                 <motion.div variants={titleWordVariants}>
@@ -163,7 +162,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   ))}
 
                   <motion.span
-                    className="inline-block text-[#7252A5]"
+                    className="inline-block text-[#7252A5] text-[0.8em]"
                     variants={asteriskVariants}
                     animate={["visible", "float"]}
                   >
@@ -185,39 +184,44 @@ const handleSubmit = async (e: React.FormEvent) => {
             }}
           >
             <motion.div
-              className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-md relative overflow-hidden"
+              className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-sm border-2 border-[#F2AE1F] rounded-2xl px-4 sm:px-6 py-3 sm:py-4 shadow-lg relative overflow-hidden"
               whileHover={{ 
-                scale: 1.02,
-                boxShadow: '0 8px 25px rgba(0,0,0,0.1)'
+                scale: 1.03,
+                boxShadow: '0 12px 40px rgba(242, 174, 31, 0.25)'
               }}
             >
               <motion.div
-                className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#F2AE1F] via-red-500 to-[#F2AE1F]"
+                className="absolute inset-0 rounded-2xl"
+                style={{
+                  background: 'linear-gradient(90deg, transparent 0%, rgba(242, 174, 31, 0.75) 50%, transparent 100%)',
+                }}
                 animate={{
-                  scaleX: [0, 1, 0],
+                  x: ['-100%', '200%'],
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 4,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
+                  repeatDelay: 1.5
                 }}
               />
 
               <motion.span
-                className="text-xl"
+                className="text-2xl sm:text-3xl relative z-10"
                 animate={{
-                  scale: [1, 1.2, 1],
+                  scale: [1, 1.15, 1],
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 2.5,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
+                  repeatDelay: 1
                 }}
               >
                 ⚠️
               </motion.span>
 
-              <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gray-800">
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-black text-[#292929] relative z-10">
                 <span className="hidden sm:inline">
                   {t('hero.subtitleHighlight')}
                 </span>
@@ -227,13 +231,13 @@ const handleSubmit = async (e: React.FormEvent) => {
               </span>
 
               <motion.div
-                className="w-2 h-2 bg-[#F2AE1F] rounded-full"
+                className="w-2 h-2 bg-[#F2AE1F] rounded-full relative z-10"
                 animate={{
-                  opacity: [0.5, 1, 0.5],
-                  scale: [1, 1.3, 1],
+                  opacity: [0.6, 1, 0.6],
+                  scale: [1, 1.2, 1],
                 }}
                 transition={{
-                  duration: 1.5,
+                  duration: 2,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}

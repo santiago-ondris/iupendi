@@ -14,14 +14,14 @@ const UnifiedFAQSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
   const { t } = useTranslation();
 
-  const floatingShapes = [
-    { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-64 h-64', delay: 0 },
-    { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-48 h-48', delay: 1 },
-    { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-80 h-80', delay: 2 },
-    { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-40 h-40', delay: 0.5 },
-    { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0.8 },
-    { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 2.2 },
-  ];
+  // const floatingShapes = [
+  //   { type: 'circle', color: 'bg-[#D4F225]/12', size: 'w-64 h-64', delay: 0 },
+  //   { type: 'circle', color: 'bg-[#7252A5]/10', size: 'w-48 h-48', delay: 1 },
+  //   { type: 'circle', color: 'bg-[#759CCF]/14', size: 'w-80 h-80', delay: 2 },
+  //   { type: 'circle', color: 'bg-[#F2AE1F]/10', size: 'w-40 h-40', delay: 0.5 },
+  //   { type: 'square', color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0.8 },
+  //   { type: 'square', color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 2.2 },
+  // ];
 
   const faqData = [
     {
@@ -98,7 +98,7 @@ const UnifiedFAQSection: React.FC = () => {
         {/* Elementos decorativos de fondo conectados */}
         <div className="absolute inset-0 overflow-hidden">
         {/* Figuras flotantes como el Hero */}
-        {floatingShapes.map((shape, i) => (
+        {/* {floatingShapes.map((shape, i) => (
           <motion.div
             key={i}
             className={`absolute ${shape.size} ${
@@ -124,7 +124,7 @@ const UnifiedFAQSection: React.FC = () => {
               ease: "easeInOut",
             }}
           />
-        ))}
+        ))} */}
 
         {/* Gradientes radiales evolutivos más prominentes */}
         <motion.div

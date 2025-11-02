@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useInView } from '@/utils/useInView';
 import { CTAToFooterTransition } from '@/components/Transitions/EnhancedTransitions';
 import { useTranslation } from 'react-i18next';
 import { sendNewsletterLead } from '@/utils/sheets';
 import InlineSuccess from '../Toast/InlineSuccess';
-import FloatingShapes from '../Background/FloatingShapes';
 
-const floatingShapes = [
-  { type: 'circle' as const, color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
-  { type: 'circle' as const, color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
-  { type: 'circle' as const, color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
-  { type: 'circle' as const, color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
-  { type: 'square' as const, color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
-  { type: 'square' as const, color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
-];
+// const floatingShapes = [
+//   { type: 'circle' as const, color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
+//   { type: 'circle' as const, color: 'bg-[#7252A5]/10', size: 'w-24 h-24', delay: 1 },
+//   { type: 'circle' as const, color: 'bg-[#759CCF]/14', size: 'w-40 h-40', delay: 2 },
+//   { type: 'circle' as const, color: 'bg-[#F2AE1F]/10', size: 'w-20 h-20', delay: 0.5 },
+//   { type: 'square' as const, color: 'bg-[#D4F225]/12', size: 'w-16 h-16', delay: 0.8 },
+//   { type: 'square' as const, color: 'bg-[#7252A5]/10', size: 'w-12 h-12', delay: 2.2 },
+// ];
 
 
 const UnifiedSuperCTASection: React.FC = () => {
@@ -78,7 +77,7 @@ const UnifiedSuperCTASection: React.FC = () => {
         {/* Elementos decorativos de fondo conectados */}
         <div className="absolute inset-0">
         {/* Figuras flotantes como el Hero */}
-        <FloatingShapes shapes={floatingShapes} />
+        {/* <FloatingShapes shapes={floatingShapes} /> */}
 
         {/* Gradientes radiales evolutivos más prominentes */}
         <motion.div
@@ -217,7 +216,7 @@ const UnifiedSuperCTASection: React.FC = () => {
               </motion.span>
             </motion.div>
             
-            <motion.div
+            {/* <motion.div
               className="flex items-center justify-center gap-2 relative z-10"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
@@ -228,7 +227,7 @@ const UnifiedSuperCTASection: React.FC = () => {
                   {t('superCta.note')}
               </span>
               <Sparkles className="w-6 h-6 text-[#D4F225]" />
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* Formulario con marco conector */}

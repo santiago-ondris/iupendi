@@ -83,15 +83,15 @@
       "cta": "I want the meeting"
     },
     "superCta": {
-      "subtitle": "Come on, we know you want to",
       "note": "(We don't judge, it's normal)",
       "emailPlaceholder": "Email (no spam... that much 😉)",
       "button": "Let's do it!",
       "disclaimer": "*We respond quickly, but not so fast as to seem desperate 😅",
-      "titlePart1": "Still not",
-      "titleHighlight": "convinced",
+      "titlePart1": "Ready to",
+      "titleHighlight": "take the leap",
       "titlePart2": "?",
-      "subtitleHighlight": "contact us"
+      "subtitle": "We're already set to",
+      "subtitleHighlight": "make something great"
     },
     "footer": {
       "title": "IUPENDI DIGITAL",

@@ -64,29 +64,6 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
               transition={{ duration: 0.8, delay: 0.8 }}
             />
 
-            <motion.div
-              className="inline-flex items-center gap-2 mb-6"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -10 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <motion.div
-                className="w-2 h-2 rounded-full bg-[#7252A5]"
-                animate={{ scale: [1, 1.3, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <motion.div
-                className="w-2 h-2 rounded-full bg-[#D4F225]"
-                animate={{ scale: [1, 1.3, 1] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-              />
-              <motion.div
-                className="w-2 h-2 rounded-full bg-[#759CCF]"
-                animate={{ scale: [1, 1.3, 1] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-              />
-            </motion.div>
-
             <motion.h3
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
