@@ -121,7 +121,9 @@
         "satisfaction": "98%",
         "satisfactionLabel": "Happy customers (and they keep choosing us)",
         "roi": "3xROI",
-        "roiLabel": "Average ROI"
+        "roiLabel": "Average ROI",
+        "mm": "+10MM",
+        "mmLabel": "Revenue generated for our clients"
       },
       "services": {
         "paidAds": {
