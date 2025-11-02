@@ -135,7 +135,7 @@
             "We create campaigns focused on results",
             "We analyze and adjust to scale"
           ],
-          "cta": "👉 Campaigns that sell"
+          "cta": "Hacemos campañas que venden"
         },
         "socialMedia": {
           "title": "Social Media Management",
@@ -147,7 +147,7 @@
             "We produce and design what gets published",
             "We measure and adjust in monthly meetings"
           ],
-          "cta": "👉 Social media that works for you"
+          "cta": "Social media works for you"
         },
         "consulting": {
           "title": "Digital Marketing Consulting",
@@ -159,7 +159,7 @@
             "Monthly review and adjustments to keep growing",
             "Ideal if you want to learn and do it right from day one"
           ],
-          "cta": "👉 Guide me to do it right"
+          "cta": "We advise you like no one else"
         },
         "webDevelopment": {
           "title": "Website (Creation and Development)",
@@ -171,7 +171,7 @@
             "We integrate key tools (forms, WhatsApp, tracking, etc.)",
             "We deliver a website ready to sell"
           ],
-          "cta": "👉 I want a website that sells"
+          "cta": "We create a website that sells"
         }
       }
     },
