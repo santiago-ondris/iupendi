@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ChevronRight, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { gtmEvent, GTM_EVENTS } from '@/utils/gtm';
 
 interface CalendlyCTASectionProps {
   isInView: boolean;
@@ -13,6 +14,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
   const { t } = useTranslation();
 
   const handleStartOnboarding = () => {
+    gtmEvent(GTM_EVENTS.CTA_CLICK, { location: 'calendly_cta' });
     navigate('/onboarding');
   };
 
@@ -20,12 +22,12 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
     <motion.div
       className="mt-16 sm:mt-20 relative"
       initial={{ opacity: 0, y: 40 }}
-      animate={{ 
-        opacity: isInView ? 1 : 0, 
+      animate={{
+        opacity: isInView ? 1 : 0,
         y: isInView ? 0 : 40
       }}
-      transition={{ 
-        duration: 0.8, 
+      transition={{
+        duration: 0.8,
         delay: 0.2
       }}
     >
@@ -114,7 +116,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
                   animate={{ x: '200%' }}
                   transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
                 />
-                
+
                 <Sparkles className="w-5 h-5 relative z-10" />
                 <span className="relative z-10">{t('calendlyCta.cta')}</span>
                 <ChevronRight className="w-6 h-6 relative z-10 group-hover:translate-x-1 transition-transform" />

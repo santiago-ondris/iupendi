@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { useInView } from '@/utils/useInView';
 import { useTranslation } from 'react-i18next';
+import { gtmEvent, GTM_EVENTS } from '@/utils/gtm';
 
 const UnifiedFooterSection: React.FC = () => {
   const { ref, isInView } = useInView({ threshold: 0.2 });
@@ -110,7 +111,7 @@ const UnifiedFooterSection: React.FC = () => {
           animate={{ scaleX: isInView ? 1 : 0 }}
           transition={{ duration: 3, delay: 1 }}
         />
-        
+
         <motion.div
           className="absolute bottom-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7252A5]/20 to-transparent"
           initial={{ scaleX: 0 }}
@@ -167,8 +168,8 @@ const UnifiedFooterSection: React.FC = () => {
             />
 
             <motion.div
-            className="mb-8 relative md:flex md:justify-center"
-            transition={{ duration: 0.6 }}>
+              className="mb-8 relative md:flex md:justify-center"
+              transition={{ duration: 0.6 }}>
               <img
                 src="/logo4.svg" //svg del
                 alt="Iupendi Digital"
@@ -215,8 +216,8 @@ const UnifiedFooterSection: React.FC = () => {
                 key={label}
                 href={href}
                 className="w-14 h-14 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center text-gray-600 shadow-lg relative overflow-hidden group"
-                whileHover={{ 
-                  scale: 1.15, 
+                whileHover={{
+                  scale: 1.15,
                   y: -8,
                   backgroundColor: color,
                   borderColor: color,
@@ -226,6 +227,7 @@ const UnifiedFooterSection: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
                 transition={{ duration: 0.6, delay: 1.4 + index * 0.1 }}
+                onClick={() => gtmEvent(GTM_EVENTS.SOCIAL_CLICK, { platform: label, url: href })}
               >
                 {/* Efecto de onda en hover */}
                 <motion.div
@@ -256,30 +258,31 @@ const UnifiedFooterSection: React.FC = () => {
             />
 
             <div className="flex justify-center">
-            <motion.a
-              href="https://wa.link/o1y9sk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gradient-to-r from-[#7252A5] to-[#6341a0] hover:from-[#6341a0] hover:to-[#5a3899] text-white font-bold py-4 px-8 rounded-full text-lg inline-flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {/* Efectos múltiples de brillo */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12"
-                initial={{ x: '-100%' }}
-                animate={{ x: '200%' }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}
-              />
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D4F225]/30 to-transparent skew-x-12"
-                initial={{ x: '100%' }}
-                animate={{ x: '-200%' }}
-                transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 5, delay: 1 }}
-              />
-              <span className="relative z-10">{t('footer.ctaButton')}</span>
-              <ArrowRight className="w-5 h-5 relative z-10" />
-            </motion.a>
+              <motion.a
+                href="https://wa.link/o1y9sk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-[#7252A5] to-[#6341a0] hover:from-[#6341a0] hover:to-[#5a3899] text-white font-bold py-4 px-8 rounded-full text-lg inline-flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden"
+                whileHover={{ scale: 1.05, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => gtmEvent(GTM_EVENTS.WHATSAPP_CLICK, { location: 'footer_cta' })}
+              >
+                {/* Efectos múltiples de brillo */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12"
+                  initial={{ x: '-100%' }}
+                  animate={{ x: '200%' }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 4 }}
+                />
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-[#D4F225]/30 to-transparent skew-x-12"
+                  initial={{ x: '100%' }}
+                  animate={{ x: '-200%' }}
+                  transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 5, delay: 1 }}
+                />
+                <span className="relative z-10">{t('footer.ctaButton')}</span>
+                <ArrowRight className="w-5 h-5 relative z-10" />
+              </motion.a>
             </div>
           </motion.div>
         </motion.div>
@@ -307,7 +310,7 @@ const UnifiedFooterSection: React.FC = () => {
               animate={{ scaleX: isInView ? 1 : 0 }}
               transition={{ duration: 1, delay: 2.4 }}
             />
-            
+
             <h4
               className="text-xl font-bold mb-6 text-gray-900"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
@@ -342,7 +345,7 @@ const UnifiedFooterSection: React.FC = () => {
               animate={{ scaleX: isInView ? 1 : 0 }}
               transition={{ duration: 1, delay: 2.6 }}
             />
-            
+
             <h4
               className="text-xl font-bold mb-6 text-gray-900"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
@@ -361,6 +364,11 @@ const UnifiedFooterSection: React.FC = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -20 }}
                   transition={{ duration: 0.6, delay: 2.8 + index * 0.1 }}
+                  onClick={() => {
+                    if (text.includes('+54')) {
+                      gtmEvent(GTM_EVENTS.WHATSAPP_CLICK, { location: 'footer_contact_list' });
+                    }
+                  }}
                 >
                   <Icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
                   <span>{text}</span>

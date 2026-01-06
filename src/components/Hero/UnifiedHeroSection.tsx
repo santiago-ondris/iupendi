@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next'; 
+import { useTranslation } from 'react-i18next';
 import {
   titleContainerVariants,
   titleWordVariants,
@@ -13,6 +13,7 @@ import {
 } from '@/utils/Hero/heroAnimations';
 import { sendNewsletterLead } from '@/utils/sheets';
 import InlineSuccess from '../Toast/InlineSuccess';
+import { gtmEvent, GTM_EVENTS } from '@/utils/gtm';
 
 // const blobShapes = [
 //   { type: 'blob1', color: '#f2ae1f', size: 'w-32 h-32', delay: 0, stroke: 2 },
@@ -25,26 +26,26 @@ import InlineSuccess from '../Toast/InlineSuccess';
 // ];
 
 const HeroSection: React.FC = () => {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  if (!email.trim() || isLoading) return;
-  
-  setIsLoading(true);
-  
-  await sendNewsletterLead({ 
-    email: email.trim(), 
-    origen: 'hero' 
-  });
-  
-  setIsLoading(false);
-  setEmail('');
-  setShowSuccess(true);
-};
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim() || isLoading) return;
+
+    setIsLoading(true);
+
+    await sendNewsletterLead({
+      email: email.trim(),
+      origen: 'hero'
+    });
+
+    setIsLoading(false);
+    setEmail('');
+    setShowSuccess(true);
+  };
 
   const handleScrollToServices = () => {
     const servicesSection = document.getElementById('core-services');
@@ -60,20 +61,20 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   return (
     <>
-      <section 
+      <section
         id="hero"
         className="relative h-screen bg-gradient-to-br from-gray-50 via-gray-50 to-white flex flex-col justify-center items-center px-6 py-8 overflow-hidden mb-20"
       >
         {/* Background pattern */}
         <div className="absolute inset-0 overflow-hidden z-0">
-          <div 
+          <div
             className="absolute inset-0 opacity-40"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E")`
             }}
           />
-          
-          <div 
+
+          <div
             className="absolute inset-0"
             style={{
               background: `
@@ -85,7 +86,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             }}
           />
         </div>
-        
+
         {/* Contenido principal */}
         <div className="
             relative z-10 max-w-7xl mx-auto text-center w-full 
@@ -111,12 +112,12 @@ const handleSubmit = async (e: React.FormEvent) => {
                 <motion.div variants={titleWordVariants}>
                   {titleWords[0].text} {titleWords[1].text}
                 </motion.div>
-                
+
                 {/* "PERO PARA TU" */}
                 <motion.div variants={titleWordVariants}>
                   {titleWords[2].text} {titleWords[3].text} {titleWords[4].text}
                 </motion.div>
-                
+
                 {/* "MARCA 💡" */}
                 <motion.div className="text-[#7252A5]" variants={highlightWordVariants} animate={["visible", "float"]}>
                   {titleWords[5].text} 📈
@@ -128,8 +129,8 @@ const handleSubmit = async (e: React.FormEvent) => {
                 {/* Primera línea */}
                 <div className="whitespace-nowrap">
                   {titleWords.slice(0, 2).map((w, i) => (
-                    <motion.span 
-                      key={i} 
+                    <motion.span
+                      key={i}
                       className="inline-block mr-3 lg:mr-4"
                       variants={titleWordVariants}
                     >
@@ -149,7 +150,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       {w.text}
                     </motion.span>
                   ))}
-                  
+
                   {titleWords.slice(-2).map((w, i) => (
                     <motion.span
                       key={`highlight-${i}`}
@@ -177,15 +178,15 @@ const handleSubmit = async (e: React.FormEvent) => {
             className="mb-6 md:mb-8 relative"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.6, 
+            transition={{
+              duration: 0.6,
               delay: 1.8,
               ease: "easeOut"
             }}
           >
             <motion.div
               className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-sm border-2 border-[#F2AE1F] rounded-2xl px-4 sm:px-6 py-3 sm:py-4 shadow-lg relative overflow-hidden"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.03,
                 boxShadow: '0 12px 40px rgba(242, 174, 31, 0.25)'
               }}
@@ -261,49 +262,50 @@ const handleSubmit = async (e: React.FormEvent) => {
 
           {/* FORMULARIO */}
           {!showSuccess ? (
-          <motion.form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-4 w-full mx-auto mb-4 md:mb-6"
-            variants={formVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 0.5 }}
-          >
-            <div className="flex-1 relative">
-              <motion.input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t('hero.emailPlaceholder')} 
-                className="w-full px-8 py-5 text-base md:text-lg bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-full focus:outline-none focus:ring-4 focus:ring-[#D4F225]/30 focus:border-[#D4F225] placeholder-gray-500 transition-all duration-300 shadow-lg"
-                required
-                whileFocus={{ scale: 1.02 }}
-              />
-            </div>
-            <motion.button
-              type="submit"
-              disabled={isLoading || !email.trim()}
-              className={`bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-gray-900 px-8 md:px-12 py-5 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all duration-300 min-w-[160px] shadow-lg hover:shadow-xl ${
-                isLoading ? 'opacity-70 cursor-not-allowed' : ''
-              }`}
-              whileHover={!isLoading ? { scale: 1.05 } : {}}
-              whileTap={!isLoading ? { scale: 0.95 } : {}}
+            <motion.form
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-row gap-4 w-full mx-auto mb-4 md:mb-6"
+              variants={formVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.5 }}
             >
-              {isLoading ? (
-                <>
-                  <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin" />
-                  {t('toast.send')}
-                </>
-              ) : (
-                <>
-                  {t('hero.cta')} <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-                </>
-              )}
-            </motion.button>
-          </motion.form>
+              <div className="flex-1 relative">
+                <motion.input
+                  type="email"
+                  value={email}
+                  onFocus={() => gtmEvent(GTM_EVENTS.FORM_START, { location: 'hero' })}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={t('hero.emailPlaceholder')}
+                  className="w-full px-8 py-5 text-base md:text-lg bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-full focus:outline-none focus:ring-4 focus:ring-[#D4F225]/30 focus:border-[#D4F225] placeholder-gray-500 transition-all duration-300 shadow-lg"
+                  required
+                  whileFocus={{ scale: 1.02 }}
+                />
+              </div>
+              <motion.button
+                type="submit"
+                disabled={isLoading || !email.trim()}
+                onClick={() => gtmEvent(GTM_EVENTS.CTA_CLICK, { location: 'hero', label: 'email_submit_init' })}
+                className={`bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-gray-900 px-8 md:px-12 py-5 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-2 transition-all duration-300 min-w-[160px] shadow-lg hover:shadow-xl ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
+                whileHover={!isLoading ? { scale: 1.05 } : {}}
+                whileTap={!isLoading ? { scale: 0.95 } : {}}
+              >
+                {isLoading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin" />
+                    {t('toast.send')}
+                  </>
+                ) : (
+                  <>
+                    {t('hero.cta')} <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                  </>
+                )}
+              </motion.button>
+            </motion.form>
           ) : (
             <div className="max-w-2xl mx-auto px-4 sm:px-0">
-              <InlineSuccess 
+              <InlineSuccess
                 message={t('toast.lesto')}
               />
             </div>

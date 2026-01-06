@@ -9,6 +9,7 @@ import {
   ratingVariants
 } from '../../utils/Cards/cardAnimations';
 import { useNavigate } from 'react-router-dom';
+import { gtmEvent, GTM_EVENTS } from '@/utils/gtm';
 
 interface ServiceCardProps {
   id: string;
@@ -41,7 +42,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     >
       {/* Overlay sutil */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
-      
+
       {/* Forma decorativa giratoria */}
       <motion.div
         className={`absolute -top-10 -right-10 w-32 h-32 ${type === 'primary' ? 'bg-[#D4F225]/10' : 'bg-[#F2AE1F]/10'} rounded-full`}
@@ -93,18 +94,20 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       {/* Footer con CTA y rating */}
       <div className="relative z-10">
         <motion.button
-          className={`w-full ${
-            type === 'primary'
+          className={`w-full ${type === 'primary'
               ? 'bg-[#D4F225] hover:bg-[#c4e520]'
               : 'bg-[#F2AE1F] hover:bg-[#F2AE1F]'
-          } text-black font-bold py-4 px-8 rounded-full text-lg mb-6 transition-all duration-300`}
+            } text-black font-bold py-4 px-8 rounded-full text-lg mb-6 transition-all duration-300`}
           variants={buttonVariants}
           initial="hidden"
           animate="visible"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           aria-label={buttonText}
-          onClick={() => navigate('/onboarding')}
+          onClick={() => {
+            gtmEvent(GTM_EVENTS.SERVICE_CLICK, { service: title, type: type });
+            navigate('/onboarding');
+          }}
         >
           {buttonText}
         </motion.button>
@@ -119,9 +122,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
-                className={`w-5 h-5 ${
-                  i < 5 ? 'text-[#F2AE1F] fill-current' : 'text-gray-500'
-                }`}
+                className={`w-5 h-5 ${i < 5 ? 'text-[#F2AE1F] fill-current' : 'text-gray-500'
+                  }`}
               />
             ))}
           </div>

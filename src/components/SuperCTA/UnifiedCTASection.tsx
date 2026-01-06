@@ -6,6 +6,8 @@ import { CTAToFooterTransition } from '@/components/Transitions/EnhancedTransiti
 import { useTranslation } from 'react-i18next';
 import { sendNewsletterLead } from '@/utils/sheets';
 import InlineSuccess from '../Toast/InlineSuccess';
+import { gtmEvent, GTM_EVENTS } from '@/utils/gtm';
+import { useEffect } from 'react';
 
 // const floatingShapes = [
 //   { type: 'circle' as const, color: 'bg-[#D4F225]/12', size: 'w-32 h-32', delay: 0 },
@@ -24,25 +26,32 @@ const UnifiedSuperCTASection: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { t } = useTranslation();
 
+  useEffect(() => {
+    if (isInView) {
+      gtmEvent(GTM_EVENTS.SECTION_VIEW, { section: 'super_cta' });
+    }
+  }, [isInView]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim() || isLoading) return;
-    
+
     setIsLoading(true);
-    
-    await sendNewsletterLead({ 
-      email: email.trim(), 
-      origen: 'super-cta' 
+
+    await sendNewsletterLead({
+      email: email.trim(),
+      origen: 'super-cta'
     });
-    
+
     setIsLoading(false);
     setEmail('');
     setShowSuccess(true);
+    gtmEvent(GTM_EVENTS.FORM_SUBMIT, { location: 'super_cta', type: 'newsletter_lead' });
   };
 
   return (
     <>
-      <section 
+      <section
         ref={ref}
         id="super-cta"
         className="relative py-20 sm:py-24 md:py-32 bg-gradient-to-br from-gray-100 via-slate-100 to-gray-200 overflow-hidden"
@@ -76,50 +85,50 @@ const UnifiedSuperCTASection: React.FC = () => {
 
         {/* Elementos decorativos de fondo conectados */}
         <div className="absolute inset-0">
-        {/* Figuras flotantes como el Hero */}
-        {/* <FloatingShapes shapes={floatingShapes} /> */}
+          {/* Figuras flotantes como el Hero */}
+          {/* <FloatingShapes shapes={floatingShapes} /> */}
 
-        {/* Gradientes radiales evolutivos más prominentes */}
-        <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-radial from-[#D4F225]/15 to-transparent rounded-full"
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-radial from-[#7252A5]/12 to-transparent rounded-full"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
+          {/* Gradientes radiales evolutivos más prominentes */}
+          <motion.div
+            className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-radial from-[#D4F225]/15 to-transparent rounded-full"
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+          <motion.div
+            className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-radial from-[#7252A5]/12 to-transparent rounded-full"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              rotate: [360, 180, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
 
-        {/* Resto del contenido existente */}
-        <motion.div
-          className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#D4F225]/20 to-transparent"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: isInView ? 1 : 0 }}
-          transition={{ duration: 3, delay: 1 }}
-        />
-        
-        <motion.div
-          className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7252A5]/15 to-transparent"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: isInView ? 1 : 0 }}
-          transition={{ duration: 3.5, delay: 1.5 }}
-        />
-      </div>
+          {/* Resto del contenido existente */}
+          <motion.div
+            className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#D4F225]/20 to-transparent"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: isInView ? 1 : 0 }}
+            transition={{ duration: 3, delay: 1 }}
+          />
+
+          <motion.div
+            className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7252A5]/15 to-transparent"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: isInView ? 1 : 0 }}
+            transition={{ duration: 3.5, delay: 1.5 }}
+          />
+        </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           {/* Línea conectora desde FAQ */}
@@ -133,13 +142,13 @@ const UnifiedSuperCTASection: React.FC = () => {
           <motion.div
             className="mb-8 sm:mb-12 relative"
             initial={{ opacity: 0, scale: 0.5, rotateX: -90 }}
-            animate={{ 
-              opacity: isInView ? 1 : 0, 
+            animate={{
+              opacity: isInView ? 1 : 0,
               scale: isInView ? 1 : 0.5,
               rotateX: isInView ? 0 : -90
             }}
-            transition={{ 
-              duration: 1.2, 
+            transition={{
+              duration: 1.2,
               delay: 0.5,
               type: "spring",
               stiffness: 100
@@ -157,7 +166,7 @@ const UnifiedSuperCTASection: React.FC = () => {
               transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
             />
 
-            <motion.h2 
+            <motion.h2
               className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-4 sm:mb-6 px-2"
               style={{ fontFamily: 'Codec Pro, sans-serif' }}
               initial={{ opacity: 0 }}
@@ -182,10 +191,10 @@ const UnifiedSuperCTASection: React.FC = () => {
               <motion.span
                 className="inline-block ml-4"
                 initial={{ opacity: 0, rotate: -45, scale: 0 }}
-                animate={{ 
-                  opacity: isInView ? 1 : 0, 
-                  rotate: isInView ? 0 : -45, 
-                  scale: isInView ? 1 : 0 
+                animate={{
+                  opacity: isInView ? 1 : 0,
+                  rotate: isInView ? 0 : -45,
+                  scale: isInView ? 1 : 0
                 }}
                 transition={{ duration: 0.6, delay: 2.5 }}
               >
@@ -215,7 +224,7 @@ const UnifiedSuperCTASection: React.FC = () => {
                 <span className="relative z-10">{t('superCta.subtitleHighlight')}</span>
               </motion.span>
             </motion.div>
-            
+
             {/* <motion.div
               className="flex items-center justify-center gap-2 relative z-10"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -234,13 +243,13 @@ const UnifiedSuperCTASection: React.FC = () => {
           <motion.div
             className="relative"
             initial={{ opacity: 0, y: 100, scale: 0.8 }}
-            animate={{ 
-              opacity: isInView ? 1 : 0, 
+            animate={{
+              opacity: isInView ? 1 : 0,
               y: isInView ? 0 : 100,
               scale: isInView ? 1 : 0.8
             }}
-            transition={{ 
-              duration: 1, 
+            transition={{
+              duration: 1,
               delay: 2.6,
               type: "spring",
               stiffness: 80
@@ -258,12 +267,11 @@ const UnifiedSuperCTASection: React.FC = () => {
             {['top-left', 'top-right', 'bottom-left', 'bottom-right'].map((position, i) => (
               <motion.div
                 key={position}
-                className={`absolute w-3 h-3 bg-[#D4F225] rounded-full ${
-                  position === 'top-left' ? '-top-1.5 -left-1.5' :
+                className={`absolute w-3 h-3 bg-[#D4F225] rounded-full ${position === 'top-left' ? '-top-1.5 -left-1.5' :
                   position === 'top-right' ? '-top-1.5 -right-1.5' :
-                  position === 'bottom-left' ? '-bottom-1.5 -left-1.5' :
-                  '-bottom-1.5 -right-1.5'
-                }`}
+                    position === 'bottom-left' ? '-bottom-1.5 -left-1.5' :
+                      '-bottom-1.5 -right-1.5'
+                  }`}
                 initial={{ scale: 0 }}
                 animate={{ scale: isInView ? 1 : 0 }}
                 transition={{ duration: 0.4, delay: 3.2 + i * 0.1 }}
@@ -271,67 +279,67 @@ const UnifiedSuperCTASection: React.FC = () => {
             ))}
 
             {!showSuccess ? (
-            <form 
-              onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-2xl mx-auto relative z-10 px-4 sm:px-0"
-            >
-              <div className="flex-1 relative">
-                <motion.input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t('superCta.emailPlaceholder')}
-                  className="w-full px-8 py-5 text-lg bg-white/95 backdrop-blur-sm border-2 border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-[#D4F225]/30 focus:border-[#D4F225] transition-all duration-300 shadow-xl"
-                  required
-                  whileFocus={{ scale: 1.02, borderColor: '#D4F225' }}
-                />
-              </div>
-              
-              <motion.button
-                type="submit"
-                disabled={isLoading || !email.trim()}
-                className={`bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-black px-10 py-5 rounded-full font-black text-lg flex items-center justify-center gap-3 transition-all duration-300 min-w-[200px] shadow-xl hover:shadow-2xl relative overflow-hidden mb-7 ${
-                  isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                }`}
-                whileHover={!isLoading ? { 
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(212, 242, 37, 0.4)"
-                } : {}}
-                whileTap={!isLoading ? { scale: 0.95 } : {}}
-                initial={{ rotate: -5 }}
-                animate={{ rotate: isInView ? 0 : -5 }}
-                transition={{ duration: 0.6, delay: 3.4 }}
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-2xl mx-auto relative z-10 px-4 sm:px-0"
               >
-                {/* Múltiples efectos de brillo */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12"
-                  initial={{ x: '-100%' }}
-                  animate={{ x: '200%' }}
-                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                />
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7252A5]/20 to-transparent skew-x-12"
-                  initial={{ x: '100%' }}
-                  animate={{ x: '-200%' }}
-                  transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 4, delay: 1 }}
-                />
-                
-                {isLoading ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin relative z-10" />
-                    <span className="relative z-10">{t('toast.send')}</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="relative z-10">{t('superCta.button')}</span>
-                    <ArrowRight className="w-6 h-6 relative z-10" />
-                  </>
-                )}
-              </motion.button>
-            </form>
+                <div className="flex-1 relative">
+                  <motion.input
+                    type="email"
+                    value={email}
+                    onFocus={() => gtmEvent(GTM_EVENTS.FORM_START, { location: 'super_cta' })}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={t('superCta.emailPlaceholder')}
+                    className="w-full px-8 py-5 text-lg bg-white/95 backdrop-blur-sm border-2 border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-[#D4F225]/30 focus:border-[#D4F225] transition-all duration-300 shadow-xl"
+                    required
+                    whileFocus={{ scale: 1.02, borderColor: '#D4F225' }}
+                  />
+                </div>
+
+                <motion.button
+                  type="submit"
+                  disabled={isLoading || !email.trim()}
+                  className={`bg-gradient-to-r from-[#D4F225] to-[#c4e520] hover:from-[#c4e520] hover:to-[#b4d50f] text-black px-10 py-5 rounded-full font-black text-lg flex items-center justify-center gap-3 transition-all duration-300 min-w-[200px] shadow-xl hover:shadow-2xl relative overflow-hidden mb-7 ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                    }`}
+                  whileHover={!isLoading ? {
+                    scale: 1.05,
+                    boxShadow: "0 20px 40px rgba(212, 242, 37, 0.4)"
+                  } : {}}
+                  whileTap={!isLoading ? { scale: 0.95 } : {}}
+                  initial={{ rotate: -5 }}
+                  animate={{ rotate: isInView ? 0 : -5 }}
+                  transition={{ duration: 0.6, delay: 3.4 }}
+                >
+                  {/* Múltiples efectos de brillo */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12"
+                    initial={{ x: '-100%' }}
+                    animate={{ x: '200%' }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  />
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7252A5]/20 to-transparent skew-x-12"
+                    initial={{ x: '100%' }}
+                    animate={{ x: '-200%' }}
+                    transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 4, delay: 1 }}
+                  />
+
+                  {isLoading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin relative z-10" />
+                      <span className="relative z-10">{t('toast.send')}</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="relative z-10">{t('superCta.button')}</span>
+                      <ArrowRight className="w-6 h-6 relative z-10" />
+                    </>
+                  )}
+                </motion.button>
+              </form>
             ) : (
               <div className="max-w-2xl mx-auto px-4 sm:px-0">
-                <InlineSuccess 
+                <InlineSuccess
                   message={t('toast.lesto')}
                 />
               </div>
@@ -344,7 +352,7 @@ const UnifiedSuperCTASection: React.FC = () => {
             animate={{ opacity: isInView ? 1 : 0 }}
             transition={{ duration: 0.8, delay: 3.8 }}
           >
-            
+
             {/* Línea conectora hacia footer */}
             <motion.div
               className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-px h-8 bg-gradient-to-t from-gray-400 to-transparent"
