@@ -105,6 +105,7 @@ const CalendlyCTASection: React.FC<CalendlyCTASectionProps> = ({ isInView }) => 
               transition={{ duration: 0.8, delay: 1.2 }}
             >
               <motion.button
+                id="calendly-cta-button"
                 onClick={handleStartOnboarding}
                 className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-[#7252A5] to-[#5f4489] text-white px-10 py-5 rounded-2xl font-black text-xl transition-all duration-300 shadow-2xl hover:shadow-[#7252A5]/50 overflow-hidden"
                 whileHover={{ scale: 1.05, y: -2 }}

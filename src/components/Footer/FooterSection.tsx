@@ -259,13 +259,14 @@ const UnifiedFooterSection: React.FC = () => {
 
             <div className="flex justify-center">
               <motion.a
+                id="footer-whatsapp-cta"
                 href="https://wa.link/o1y9sk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-[#7252A5] to-[#6341a0] hover:from-[#6341a0] hover:to-[#5a3899] text-white font-bold py-4 px-8 rounded-full text-lg inline-flex items-center justify-center gap-3 transition-all duration-300 shadow-xl hover:shadow-2xl relative overflow-hidden"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => gtmEvent(GTM_EVENTS.WHATSAPP_CLICK, { location: 'footer_cta' })}
+                onClick={() => gtmEvent(GTM_EVENTS.WHATSAPP_CLICK, { location: 'footer_cta', service_category: 'general' })}
               >
                 {/* Efectos múltiples de brillo */}
                 <motion.div
@@ -366,7 +367,7 @@ const UnifiedFooterSection: React.FC = () => {
                   transition={{ duration: 0.6, delay: 2.8 + index * 0.1 }}
                   onClick={() => {
                     if (text.includes('+54')) {
-                      gtmEvent(GTM_EVENTS.WHATSAPP_CLICK, { location: 'footer_contact_list' });
+                      gtmEvent(GTM_EVENTS.WHATSAPP_CLICK, { location: 'footer_contact_list', service_category: 'general' });
                     }
                   }}
                 >

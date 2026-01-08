@@ -30,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   };
 
   const handlePhoneCall = () => {
-    gtmEvent(GTM_EVENTS.WHATSAPP_CLICK, { location: 'navbar' });
+    gtmEvent(GTM_EVENTS.WHATSAPP_CLICK, { location: 'navbar', service_category: 'general' });
     window.open('https://wa.link/o1y9sk', '_blank');
   };
 

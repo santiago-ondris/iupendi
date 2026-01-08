@@ -45,6 +45,12 @@ const HeroSection: React.FC = () => {
     setIsLoading(false);
     setEmail('');
     setShowSuccess(true);
+    
+    // Push conversion_lead event to dataLayer
+    gtmEvent(GTM_EVENTS.CONVERSION_LEAD, { 
+      form_location: 'hero',
+      form_type: 'newsletter'
+    });
   };
 
   const handleScrollToServices = () => {
@@ -283,6 +289,7 @@ const HeroSection: React.FC = () => {
                 />
               </div>
               <motion.button
+                id="hero-newsletter-submit"
                 type="submit"
                 disabled={isLoading || !email.trim()}
                 onClick={() => gtmEvent(GTM_EVENTS.CTA_CLICK, { location: 'hero', label: 'email_submit_init' })}

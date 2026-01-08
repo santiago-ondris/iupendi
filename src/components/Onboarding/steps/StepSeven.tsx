@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Calendar, Zap, Clock, ArrowRight, CheckCircle } from 'lucide-react';
 import type { StepSevenProps } from '@/utils/onboarding/types';
 import { useTranslation } from 'react-i18next';
+import { gtmEvent, GTM_EVENTS } from '@/utils/gtm';
 
 const StepSeven: React.FC<StepSevenProps> = ({
   data,
@@ -39,6 +40,12 @@ const StepSeven: React.FC<StepSevenProps> = ({
         setHasScheduled(true);
         onUpdate({ stepSeven: scheduledData });
         onCalendlyScheduled?.(scheduledData);
+        
+        // Push booking_complete event to dataLayer
+        gtmEvent(GTM_EVENTS.BOOKING_COMPLETE, {
+          meeting_type: 'strategy',
+          source: 'onboarding'
+        });
       }
     };
 
